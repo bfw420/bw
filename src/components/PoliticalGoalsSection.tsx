@@ -86,7 +86,7 @@ export default function PoliticalGoalsSection() {
             My Political Goals
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            These are the key policy areas I'm working on to create a better future for Western Australia
+            These are the key policy areas I&apos;m working on to create a better future for Western Australia
           </p>
         </div>
 

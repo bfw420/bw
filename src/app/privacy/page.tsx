@@ -121,7 +121,7 @@ export default function PrivacyPolicy() {
             </CardHeader>
             <CardContent className="prose max-w-none">
               <p className="mb-4">
-                Please note that this privacy policy covers Dr Brian Walker's political activities. For medical consultations 
+                Please note that this privacy policy covers Dr Brian Walker&apos;s political activities. For medical consultations
                 and health-related matters, separate privacy policies apply in accordance with healthcare privacy regulations 
                 and the Australian Privacy Principles for health services.
               </p>

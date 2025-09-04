@@ -102,7 +102,7 @@ export default function HeroSection() {
         </h4>
         
         <p className="text-lg md:text-xl mb-8 text-gray-100 max-w-3xl mx-auto leading-relaxed">
-          I'm a doctor and a politician trying to make this world a better place for our grandchildren - Join me.
+          I&apos;m a doctor and a politician trying to make this world a better place for our grandchildren - Join me.
         </p>
 
         {/* Call to Action Buttons */}

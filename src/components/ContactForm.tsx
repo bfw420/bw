@@ -64,9 +64,8 @@ export default function ContactForm() {
     }
   });
 
-  const { register, handleSubmit, formState: { errors }, reset, watch } = form;
+  const { register, handleSubmit, formState: { errors }, reset } = form;
 
-  const watchContactType = watch("contactType");
 
   const triggerConfetti = () => {
     confetti({
@@ -219,7 +218,7 @@ export default function ContactForm() {
               <CardTitle>Send a Message</CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit(onSubmit as any)} className="space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="firstName">First Name *</Label>

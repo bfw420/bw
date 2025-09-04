@@ -129,7 +129,7 @@ export default function CopyrightPage() {
             <CardContent className="prose max-w-none">
               <p className="mb-4">
                 Materials related to the Legalise Cannabis WA Party, including logos, campaign materials, 
-                and party documents, are subject to the party's intellectual property rights and may have 
+                and party documents, are subject to the party&apos;s intellectual property rights and may have
                 different usage terms.
               </p>
               <p className="mb-4">

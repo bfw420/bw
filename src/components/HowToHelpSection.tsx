@@ -79,7 +79,7 @@ export default function HowToHelpSection() {
             Legacy media is silencing my voice!
           </p>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Here's how you can help amplify our message and create real change
+            Here&apos;s how you can help amplify our message and create real change
           </p>
         </div>
 
