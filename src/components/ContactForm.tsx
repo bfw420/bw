@@ -111,8 +111,8 @@ export default function ContactForm() {
         submittedAt: new Date().toISOString()
       };
 
-      // Send to webhook
-      const response = await fetch("https://n8n.jaxius.net/webhook/6cffe9fc-d8f8-4fdd-8a0d-0b9f94ecadc5", {
+      // Send to our API route which forwards to the webhook
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -120,9 +120,10 @@ export default function ContactForm() {
         body: JSON.stringify(webhookData),
       });
 
-      console.log('Webhook response status:', response.status);
+      const result = await response.json();
+      console.log('API response:', result);
       
-      if (response.ok || response.status === 0) {
+      if (response.ok && result.success) {
         triggerConfetti();
         alert("Thank you! Your message has been sent successfully.");
         reset();
@@ -134,7 +135,7 @@ export default function ContactForm() {
         };
         setCaptchaQuestion(generateNewCaptcha());
       } else {
-        throw new Error(`Webhook failed with status: ${response.status}`);
+        throw new Error(result.message || `API failed with status: ${response.status}`);
       }
     } catch (error) {
       console.error("Error sending message:", error);

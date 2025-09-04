@@ -165,11 +165,14 @@ export default function HowToHelpSection() {
                 <a href={video.url} target="_blank" rel="noopener noreferrer">
                   <div className="relative">
                     <div className="aspect-video bg-gray-300 rounded-t-lg overflow-hidden">
-                      <Image
+                      <img
                         src={video.thumbnail}
                         alt={video.title}
-                        fill
-                        className="object-cover"
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = '/images/hero1.jpg'; // fallback image
+                        }}
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <Play className="w-12 h-12 text-white bg-primary rounded-full p-3 opacity-90" />
