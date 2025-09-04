@@ -67,64 +67,41 @@ export default function HeroSection() {
         <ChevronRight className="h-8 w-8" />
       </Button>
 
-      {/* Centered Content */}
+      {/* Minimal Centered Content - Just Logo */}
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
         {/* Legislative Council Logo */}
         <div className="mb-8">
-          <div className="w-40 h-40 mx-auto mb-4">
+          <div className="w-48 h-48 mx-auto mb-6">
             <Image
               src="/images/CouncilLogo.png"
               alt="WA Legislative Council"
-              width={160}
-              height={160}
+              width={192}
+              height={192}
               className="mx-auto"
             />
           </div>
         </div>
 
-        {/* Main Content */}
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+        {/* Title and Subtitles */}
+        <h1 className="text-5xl md:text-7xl font-bold mb-4">
           Hon Dr Brian Walker MLC
         </h1>
         
-        <h2 className="text-xl md:text-2xl mb-2 text-gray-200">
+        <h2 className="text-2xl md:text-3xl mb-2 text-gray-200">
           Member of the Legislative Council for Western Australia
         </h2>
         
-        <h3 className="text-lg md:text-xl mb-2 text-gray-200">
+        <h3 className="text-xl md:text-2xl mb-2 text-gray-200">
           General Practitioner in Claremont
         </h3>
         
-        <h4 className="text-md md:text-lg mb-6 text-gray-300">
+        <h4 className="text-lg md:text-xl mb-6 text-gray-300">
           MB, ChB MRCGP, RACGP
         </h4>
         
-        <p className="text-lg md:text-xl mb-8 text-gray-100 max-w-3xl mx-auto leading-relaxed">
-          I&apos;m a doctor and a politician trying to make this world a better place for our grandchildren - Join me.
+        <p className="text-xl md:text-2xl mb-8 text-gray-100 max-w-3xl mx-auto leading-relaxed">
+          I'm a doctor and a politician trying to make this world a better place for our grandchildren - Join me.
         </p>
-
-        {/* Call to Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button 
-            asChild 
-            size="lg" 
-            className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg"
-          >
-            <a href="https://www.lcwaparty.org.au/" target="_blank" rel="noopener noreferrer">
-              Join Legalise Cannabis WA
-            </a>
-          </Button>
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="bg-white/20 border-white text-white hover:bg-white hover:text-primary px-8 py-3 text-lg"
-            asChild
-          >
-            <a href="#contact">
-              Get In Touch
-            </a>
-          </Button>
-        </div>
       </div>
 
       {/* Slide Indicators */}

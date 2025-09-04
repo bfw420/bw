@@ -53,7 +53,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-primary text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand Section */}
@@ -109,7 +109,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 pt-8">
+        <div className="border-t border-white/20 pt-8">
           {/* Authorization */}
           <div className="mb-4">
             <p className="text-xs text-gray-400 leading-relaxed">
@@ -139,7 +139,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="text-center pt-4 border-t border-gray-700">
+          <div className="text-center pt-4 border-t border-white/20">
             <p className="text-sm text-gray-400">
               © {new Date().getFullYear()} Dr Brian Walker MLC. All rights reserved.
             </p>

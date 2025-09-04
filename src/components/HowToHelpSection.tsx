@@ -35,10 +35,10 @@ const recentVideos = [
     uploadedAt: "3 weeks ago"
   },
   {
-    id: "dQw4w9WgXcQ",
+    id: "2g0R7MI_twM",
     title: "Mental Health in WA - Community Support",
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+    url: "https://www.youtube.com/watch?v=2g0R7MI_twM",
+    thumbnail: "https://img.youtube.com/vi/2g0R7MI_twM/maxresdefault.jpg",
     duration: "15:22",
     views: "1.8K",
     uploadedAt: "1 month ago"

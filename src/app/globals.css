@@ -79,4 +79,27 @@
     background-color: var(--background);
     color: var(--foreground);
   }
+  
+  /* Override default link colors */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: var(--primary);
+  }
+  
+  /* Ensure no blue colors from browser defaults */
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline-color: var(--primary);
+    border-color: var(--primary);
+  }
+  
+  /* Override any default button focus styles */
+  button:focus {
+    outline-color: var(--primary);
+  }
 }
