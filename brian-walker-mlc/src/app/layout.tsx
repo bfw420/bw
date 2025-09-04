@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Dr Brian Walker" }],
   openGraph: {
     title: "Hon Dr Brian Walker MLC",
-    description: "Member of the Legislative Council for Western Australia & General Practitioner",
+    description: "Member of the Legislative Council for WA & General Practitioner",
     url: "https://brianwalker.com.au",
     siteName: "Brian Walker MLC",
     type: "website",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Hon Dr Brian Walker",
-    description: "Member of the Legislative Council for Western Australia & General Practitioner",
+    description: "Member of the Legislative Council for WA & General Practitioner",
   },
 };
 
