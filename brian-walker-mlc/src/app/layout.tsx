@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hon Dr Brian Walker MLC",
+    title: "Hon Dr Brian Walker",
     description: "Member of the Legislative Council for Western Australia & General Practitioner",
   },
 };
