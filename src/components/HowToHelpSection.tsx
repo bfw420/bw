@@ -1,17 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Mail, 
-  Youtube, 
-  Users, 
-  Heart, 
+import {
+  Mail,
+  Youtube,
+  Users,
+  Heart,
   Handshake,
   ExternalLink,
-  Play 
+  Play
 } from "lucide-react";
 
 // Real YouTube videos from Dr Brian Walker's channel
@@ -164,10 +165,11 @@ export default function HowToHelpSection() {
                 <a href={video.url} target="_blank" rel="noopener noreferrer">
                   <div className="relative">
                     <div className="aspect-video bg-gray-300 rounded-t-lg overflow-hidden">
-                      <img
+                      <Image
                         src={video.thumbnail}
                         alt={video.title}
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <Play className="w-12 h-12 text-white bg-primary rounded-full p-3 opacity-90" />
@@ -195,10 +197,12 @@ export default function HowToHelpSection() {
         <div className="bg-primary/5 rounded-lg p-8 border border-primary/20">
           <div className="text-center mb-8">
             <div className="w-32 h-32 mx-auto mb-6">
-              <img
+              <Image
                 src="/images/LCWA.png"
                 alt="Legalise Cannabis WA Party"
-                className="w-full h-full object-contain"
+                width={128}
+                height={128}
+                className="object-contain"
               />
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">

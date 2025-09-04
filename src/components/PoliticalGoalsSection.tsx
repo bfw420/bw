@@ -1,17 +1,14 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Leaf, 
-  Wheat, 
-  Home, 
-  Heart, 
-  Brain, 
-  GraduationCap, 
-  Scale, 
-  Users, 
-  Recycle, 
-  Zap, 
-  Eye, 
-  Globe 
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Leaf,
+  Wheat,
+  Home,
+  Heart,
+  Brain,
+  GraduationCap,
+  Scale,
+  Users,
+  Recycle
 } from "lucide-react";
 
 const politicalGoals = [

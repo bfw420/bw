@@ -114,24 +114,28 @@ export default function ContactForm() {
       // Send to webhook
       const response = await fetch("https://n8n.jaxius.net/webhook/6cffe9fc-d8f8-4fdd-8a0d-0b9f94ecadc5", {
         method: "POST",
-        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(webhookData),
       });
 
-      // With 'no-cors', we can't read the response, so we optimistically assume success.
-      triggerConfetti();
-      alert("Thank you! Your message has been sent successfully.");
-      reset();
-      // Generate new captcha
-      const generateNewCaptcha = () => {
-        const a = Math.floor(Math.random() * 10) + 1;
-        const b = Math.floor(Math.random() * 10) + 1;
-        return { a, b, answer: a + b };
-      };
-      setCaptchaQuestion(generateNewCaptcha());
+      console.log('Webhook response status:', response.status);
+      
+      if (response.ok || response.status === 0) {
+        triggerConfetti();
+        alert("Thank you! Your message has been sent successfully.");
+        reset();
+        // Generate new captcha
+        const generateNewCaptcha = () => {
+          const a = Math.floor(Math.random() * 10) + 1;
+          const b = Math.floor(Math.random() * 10) + 1;
+          return { a, b, answer: a + b };
+        };
+        setCaptchaQuestion(generateNewCaptcha());
+      } else {
+        throw new Error(`Webhook failed with status: ${response.status}`);
+      }
     } catch (error) {
       console.error("Error sending message:", error);
       alert("Sorry, there was an error sending your message. Please try again later.");
