@@ -52,12 +52,12 @@ export default function WellnessSection() {
           {wellnessPillars.map((pillar, index) => {
             const IconComponent = pillar.icon;
             return (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
+              <Card key={index} className="text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
                 <CardHeader className="pb-4">
-                  <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <IconComponent className="w-8 h-8 text-primary" />
+                  <div className="w-24 h-24 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors duration-300">
+                    <IconComponent className="w-12 h-12 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <CardTitle className="text-lg font-semibold text-gray-900">
+                  <CardTitle className="text-lg font-semibold text-gray-900 group-hover:text-primary transition-colors duration-300">
                     {pillar.title}
                   </CardTitle>
                 </CardHeader>

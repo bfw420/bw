@@ -17,63 +17,39 @@ import {
 const politicalGoals = [
   {
     title: "Legalise and regulate cannabis for state revenue",
-    icon: Leaf,
-    description: "Create a regulated cannabis market that generates revenue and reduces crime."
+    icon: Leaf
   },
   {
     title: "Develop hemp as a sustainable multi-billion-dollar industry",
-    icon: Wheat,
-    description: "Unlock hemp's potential for textiles, building materials, and food production."
+    icon: Wheat
   },
   {
     title: "Build affordable housing and prevent homelessness",
-    icon: Home,
-    description: "Ensure every Western Australian has access to safe, affordable housing."
+    icon: Home
   },
   {
     title: "Ensure universal healthcare access and equity",
-    icon: Heart,
-    description: "Healthcare is a human right, not a privilege based on wealth."
+    icon: Heart
   },
   {
     title: "Expand community-based mental health support",
-    icon: Brain,
-    description: "Invest in mental health services within our communities."
+    icon: Brain
   },
   {
     title: "Reskill workforce for emerging industries",
-    icon: GraduationCap,
-    description: "Prepare workers for the jobs of tomorrow through education and training."
+    icon: GraduationCap
   },
   {
     title: "Establish restorative justice instead of punishment",
-    icon: Scale,
-    description: "Focus on rehabilitation and healing rather than retribution."
+    icon: Scale
   },
   {
     title: "Strengthen Indigenous rights, health, and opportunities",
-    icon: Users,
-    description: "Support Aboriginal and Torres Strait Islander communities with respect and dignity."
+    icon: Users
   },
   {
     title: "Commit to zero waste by 2040 and Net Zero by 2050",
-    icon: Recycle,
-    description: "Take urgent action on climate change and environmental sustainability."
-  },
-  {
-    title: "Invest heavily in renewable energy",
-    icon: Zap,
-    description: "Transition to clean energy sources for a sustainable future."
-  },
-  {
-    title: "Reform political donations and lobbying transparency",
-    icon: Eye,
-    description: "Increase transparency and accountability in government decision-making."
-  },
-  {
-    title: "Reduce dependency on US foreign policy",
-    icon: Globe,
-    description: "Develop independent foreign policy that serves Australian interests."
+    icon: Recycle
   }
 ];
 
@@ -94,22 +70,17 @@ export default function PoliticalGoalsSection() {
           {politicalGoals.map((goal, index) => {
             const IconComponent = goal.icon;
             return (
-              <Card key={index} className="h-full hover:shadow-lg transition-shadow duration-300 border-l-4 border-l-primary">
+              <Card key={index} className="h-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-l-4 border-l-primary group">
                 <CardHeader className="pb-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <IconComponent className="w-6 h-6 text-primary" />
+                  <div className="flex items-center space-x-4">
+                    <div className="w-20 h-20 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
+                      <IconComponent className="w-12 h-12 text-primary group-hover:scale-110 transition-transform duration-300" />
                     </div>
-                    <CardTitle className="text-lg font-semibold text-gray-900 leading-tight">
+                    <CardTitle className="text-lg font-semibold text-gray-900 leading-tight group-hover:text-primary transition-colors duration-300">
                       {goal.title}
                     </CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {goal.description}
-                  </p>
-                </CardContent>
               </Card>
             );
           })}
@@ -117,11 +88,11 @@ export default function PoliticalGoalsSection() {
 
         <div className="text-center mt-12">
           <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-6">
-            These goals represent my commitment to evidence-based policy that puts people and planet first. 
+            These goals represent my commitment to evidence-based policy that puts people and planet first.
             As both a doctor and politician, I believe in practical solutions that improve lives.
           </p>
-          <div className="bg-accent/10 rounded-lg p-6 max-w-3xl mx-auto">
-            <p className="text-accent font-semibold text-lg mb-2">
+          <div className="bg-primary/5 rounded-lg p-6 max-w-3xl mx-auto border border-primary/20">
+            <p className="text-primary font-semibold text-lg mb-2">
               Ready to make change happen?
             </p>
             <p className="text-gray-700">

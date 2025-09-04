@@ -46,6 +46,7 @@ const footerLinks = [
   { name: "Political Goals", href: "#goals" },
   { name: "How to Help", href: "#help" },
   { name: "Contact", href: "#contact" },
+  { name: "Wikipedia", href: "https://en.wikipedia.org/wiki/Brian_Walker_(politician)" },
   { name: "Privacy Policy", href: "/privacy" },
   { name: "Copyright", href: "/copyright" },
 ];
@@ -110,29 +111,29 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-gray-700 pt-8">
           {/* Authorization */}
-          <div className="mb-6">
-            <p className="text-sm text-gray-400 leading-relaxed">
-              <strong>Authorised by:</strong> Dr Brian Walker, Legalise Cannabis WA Party, 
+          <div className="mb-4">
+            <p className="text-xs text-gray-400 leading-relaxed">
+              <strong>Authorised by:</strong> Dr Brian Walker, Legalise Cannabis WA Party,
               2 Parliament Place, West Perth, WA 6005
             </p>
           </div>
 
           {/* Disclaimer */}
-          <div className="mb-6">
-            <p className="text-sm text-gray-400 leading-relaxed">
-              <strong>Disclaimer:</strong> The content provided by Dr Brian Walker, and any linked materials, 
-              are not intended and should not be construed as medical advice. If the reader or any other person 
-              has a medical concern, he or she should consult a licensed physician or appropriately-credentialed 
+          <div className="mb-4">
+            <p className="text-xs text-gray-400 leading-relaxed">
+              <strong>Disclaimer:</strong> The content provided by Dr Brian Walker, and any linked materials,
+              are not intended and should not be construed as medical advice. If the reader or any other person
+              has a medical concern, he or she should consult a licensed physician or appropriately-credentialed
               health care worker in your community in all matters relating to your health.
             </p>
           </div>
 
           {/* Acknowledgment */}
-          <div className="mb-6">
-            <p className="text-sm text-gray-400 leading-relaxed">
-              The Office of the Hon Dr Brian Walker MLC acknowledge the Traditional Custodians of Country 
-              throughout Australia and their continuing connection to land, waters and community. We pay our 
-              respect to all Aboriginal and Torres Strait Islanders and their cultures; and to Elders past, 
+          <div className="mb-4">
+            <p className="text-xs text-gray-400 leading-relaxed">
+              The Office of the Hon Dr Brian Walker MLC acknowledge the Traditional Custodians of Country
+              throughout Australia and their continuing connection to land, waters and community. We pay our
+              respect to all Aboriginal and Torres Strait Islanders and their cultures; and to Elders past,
               present and emerging.
             </p>
           </div>

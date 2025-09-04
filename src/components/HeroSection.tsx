@@ -5,12 +5,12 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const heroImages = [
-  "/images/hero1.svg",
-  "/images/hero2.svg",
-  "/images/hero3.svg",
-  "/images/hero4.svg",
-  "/images/hero5.svg"
+const heroGradients = [
+  "bg-gradient-to-br from-primary to-accent",
+  "bg-gradient-to-br from-accent to-primary",
+  "bg-gradient-to-r from-primary via-accent to-primary",
+  "bg-gradient-to-l from-accent via-primary to-accent",
+  "bg-gradient-to-tr from-primary/90 to-accent/90"
 ];
 
 export default function HeroSection() {
@@ -18,41 +18,33 @@ export default function HeroSection() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+      setCurrentSlide((prev) => (prev + 1) % heroGradients.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    setCurrentSlide((prev) => (prev + 1) % heroGradients.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length);
+    setCurrentSlide((prev) => (prev - 1 + heroGradients.length) % heroGradients.length);
   };
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Slideshow */}
       <div className="absolute inset-0 z-0">
-        {heroImages.map((image, index) => (
+        {heroGradients.map((gradient, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ${
               index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <Image
-              src={image}
-              alt={`Hero image ${index + 1}`}
-              fill
-              className="object-cover"
-              priority={index === 0}
-            />
-          </div>
+            } ${gradient}`}
+          />
         ))}
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        {/* Subtle overlay for text readability */}
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
       {/* Navigation Arrows */}
@@ -77,10 +69,16 @@ export default function HeroSection() {
 
       {/* Centered Content */}
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-        {/* Legislative Council Logo Placeholder */}
+        {/* Legislative Council Logo */}
         <div className="mb-8">
-          <div className="w-32 h-32 mx-auto bg-white/20 rounded-full flex items-center justify-center mb-4">
-            <span className="text-white text-sm font-medium">WA Legislative Council</span>
+          <div className="w-40 h-40 mx-auto mb-4">
+            <Image
+              src="/images/CouncilLogo.png"
+              alt="WA Legislative Council"
+              width={160}
+              height={160}
+              className="mx-auto"
+            />
           </div>
         </div>
 
@@ -131,7 +129,7 @@ export default function HeroSection() {
 
       {/* Slide Indicators */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
-        {heroImages.map((_, index) => (
+        {heroGradients.map((_, index) => (
           <button
             key={index}
             className={`w-3 h-3 rounded-full transition-all ${

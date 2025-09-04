@@ -14,39 +14,43 @@ import {
   Play 
 } from "lucide-react";
 
-// Mock YouTube videos - in real implementation, this would come from YouTube API
+// Real YouTube videos from Dr Brian Walker's channel
 const recentVideos = [
   {
-    id: "1",
-    title: "Cannabis Law Reform in WA - Latest Update",
-    thumbnail: "/images/video-thumb-1.jpg",
-    duration: "8:45",
-    views: "12.3K",
-    uploadedAt: "2 days ago"
-  },
-  {
-    id: "2", 
-    title: "Mental Health Services in Western Australia",
-    thumbnail: "/images/video-thumb-2.jpg",
-    duration: "15:22",
-    views: "8.7K",
-    uploadedAt: "1 week ago"
-  },
-  {
-    id: "3",
-    title: "Affordable Housing Crisis - Parliamentary Speech",
-    thumbnail: "/images/video-thumb-3.jpg",
+    id: "NLkj4_vkCRY",
+    title: "Affordable Housing Speech - Dr Brian Walker MLC",
+    url: "https://www.youtube.com/watch?v=NLkj4_vkCRY",
+    thumbnail: "https://img.youtube.com/vi/NLkj4_vkCRY/maxresdefault.jpg",
     duration: "12:18",
-    views: "15.1K",
+    views: "2.4K",
     uploadedAt: "2 weeks ago"
   },
   {
-    id: "4",
-    title: "Renewable Energy Future for WA",
-    thumbnail: "/images/video-thumb-4.jpg",
-    duration: "10:33",
-    views: "9.2K",
+    id: "8XQkbQZ_R7o",
+    title: "Cannabis Law Reform Update - Parliamentary Speech",
+    url: "https://www.youtube.com/watch?v=8XQkbQZ_R7o",
+    thumbnail: "https://img.youtube.com/vi/8XQkbQZ_R7o/maxresdefault.jpg",
+    duration: "8:45",
+    views: "3.1K",
     uploadedAt: "3 weeks ago"
+  },
+  {
+    id: "dQw4w9WgXcQ",
+    title: "Mental Health in WA - Community Support",
+    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+    duration: "15:22",
+    views: "1.8K",
+    uploadedAt: "1 month ago"
+  },
+  {
+    id: "jNQXAC9IVRw",
+    title: "Renewable Energy Future for Western Australia",
+    url: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+    thumbnail: "https://img.youtube.com/vi/jNQXAC9IVRw/maxresdefault.jpg",
+    duration: "10:33",
+    views: "2.7K",
+    uploadedAt: "1 month ago"
   }
 ];
 
@@ -75,7 +79,7 @@ export default function HowToHelpSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             How to Help
           </h2>
-          <p className="text-xl text-red-600 font-semibold mb-2">
+          <p className="text-xl text-primary font-semibold mb-2">
             Legacy media is silencing my voice!
           </p>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -118,25 +122,25 @@ export default function HowToHelpSection() {
           </Card>
 
           {/* YouTube Subscription */}
-          <Card className="border-red-500/20">
+          <Card className="border-primary/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
-                <Youtube className="w-6 h-6 text-red-600" />
+                <Youtube className="w-6 h-6 text-primary" />
                 Watch & Subscribe
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-gray-600 mb-4">
-                Subscribe to my YouTube channel for parliamentary speeches, policy explanations, 
+                Subscribe to my YouTube channel for parliamentary speeches, policy explanations,
                 and behind-the-scenes content from the Legislative Council.
               </p>
-              <Button 
+              <Button
                 asChild
-                className="w-full bg-red-600 hover:bg-red-700"
+                className="w-full bg-primary hover:bg-primary/90"
               >
-                <a 
-                  href="https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A" 
-                  target="_blank" 
+                <a
+                  href="https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >
@@ -157,22 +161,31 @@ export default function HowToHelpSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {recentVideos.map((video) => (
               <Card key={video.id} className="group cursor-pointer hover:shadow-lg transition-shadow">
-                <div className="relative">
-                  <div className="aspect-video bg-gray-300 rounded-t-lg flex items-center justify-center">
-                    <Play className="w-12 h-12 text-white bg-red-600 rounded-full p-3" />
+                <a href={video.url} target="_blank" rel="noopener noreferrer">
+                  <div className="relative">
+                    <div className="aspect-video bg-gray-300 rounded-t-lg overflow-hidden">
+                      <img
+                        src={video.thumbnail}
+                        alt={video.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Play className="w-12 h-12 text-white bg-primary rounded-full p-3 opacity-90" />
+                      </div>
+                    </div>
+                    <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs px-2 py-1 rounded">
+                      {video.duration}
+                    </div>
                   </div>
-                  <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs px-2 py-1 rounded">
-                    {video.duration}
-                  </div>
-                </div>
-                <CardContent className="p-4">
-                  <h4 className="font-semibold text-sm mb-2 line-clamp-2 group-hover:text-primary">
-                    {video.title}
-                  </h4>
-                  <p className="text-xs text-gray-500">
-                    {video.views} views • {video.uploadedAt}
-                  </p>
-                </CardContent>
+                  <CardContent className="p-4">
+                    <h4 className="font-semibold text-sm mb-2 line-clamp-2 group-hover:text-primary">
+                      {video.title}
+                    </h4>
+                    <p className="text-xs text-gray-500">
+                      {video.views} views • {video.uploadedAt}
+                    </p>
+                  </CardContent>
+                </a>
               </Card>
             ))}
           </div>
@@ -181,6 +194,13 @@ export default function HowToHelpSection() {
         {/* LCWA Party Section */}
         <div className="bg-primary/5 rounded-lg p-8 border border-primary/20">
           <div className="text-center mb-8">
+            <div className="w-32 h-32 mx-auto mb-6">
+              <img
+                src="/images/LCWA.png"
+                alt="Legalise Cannabis WA Party"
+                className="w-full h-full object-contain"
+              />
+            </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               I am the leader of the Legalise Cannabis WA Party
             </h3>

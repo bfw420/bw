@@ -228,7 +228,7 @@ export default function ContactForm() {
                       placeholder="Your first name"
                     />
                     {errors.firstName && (
-                      <p className="text-red-500 text-sm mt-1">{errors.firstName.message}</p>
+                      <p className="text-primary text-sm mt-1">{errors.firstName.message}</p>
                     )}
                   </div>
                   <div>
@@ -239,7 +239,7 @@ export default function ContactForm() {
                       placeholder="Your last name"
                     />
                     {errors.lastName && (
-                      <p className="text-red-500 text-sm mt-1">{errors.lastName.message}</p>
+                      <p className="text-primary text-sm mt-1">{errors.lastName.message}</p>
                     )}
                   </div>
                 </div>
@@ -253,7 +253,7 @@ export default function ContactForm() {
                     placeholder="your.email@example.com"
                   />
                   {errors.email && (
-                    <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                    <p className="text-primary text-sm mt-1">{errors.email.message}</p>
                   )}
                 </div>
 
@@ -300,7 +300,7 @@ export default function ContactForm() {
                     rows={5}
                   />
                   {errors.message && (
-                    <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+                    <p className="text-primary text-sm mt-1">{errors.message.message}</p>
                   )}
                 </div>
 
@@ -335,7 +335,7 @@ export default function ContactForm() {
                     disabled={!isMounted}
                   />
                   {errors.captcha && (
-                    <p className="text-red-500 text-sm mt-1">{errors.captcha.message}</p>
+                    <p className="text-primary text-sm mt-1">{errors.captcha.message}</p>
                   )}
                 </div>
 
