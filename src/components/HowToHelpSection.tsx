@@ -1,58 +1,78 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Mail,
-  Play
+  Play,
+  Loader2
 } from "lucide-react";
 
-// Real YouTube videos from Dr Brian Walker's channel
-const recentVideos = [
-  {
-    id: "NLkj4_vkCRY",
-    title: "Affordable Housing Speech - Dr Brian Walker MLC",
-    url: "https://www.youtube.com/watch?v=NLkj4_vkCRY",
-    thumbnail: "https://img.youtube.com/vi/NLkj4_vkCRY/maxresdefault.jpg",
-    duration: "12:18",
-    views: "2.4K",
-    uploadedAt: "2 weeks ago"
-  },
-  {
-    id: "8XQkbQZ_R7o",
-    title: "Cannabis Law Reform Update - Parliamentary Speech",
-    url: "https://www.youtube.com/watch?v=8XQkbQZ_R7o",
-    thumbnail: "https://img.youtube.com/vi/8XQkbQZ_R7o/maxresdefault.jpg",
-    duration: "8:45",
-    views: "3.1K",
-    uploadedAt: "3 weeks ago"
-  },
-  {
-    id: "2g0R7MI_twM",
-    title: "Mental Health in WA - Community Support",
-    url: "https://www.youtube.com/watch?v=2g0R7MI_twM",
-    thumbnail: "https://img.youtube.com/vi/2g0R7MI_twM/maxresdefault.jpg",
-    duration: "15:22",
-    views: "1.8K",
-    uploadedAt: "1 month ago"
-  },
-  {
-    id: "jNQXAC9IVRw",
-    title: "Renewable Energy Future for Western Australia",
-    url: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
-    thumbnail: "https://img.youtube.com/vi/jNQXAC9IVRw/maxresdefault.jpg",
-    duration: "10:33",
-    views: "2.7K",
-    uploadedAt: "1 month ago"
-  }
-];
+interface YouTubeVideo {
+  id: string;
+  title: string;
+  url: string;
+  thumbnail: string;
+  publishedAt: string;
+  description: string;
+}
 
 export default function HowToHelpSection() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [videos, setVideos] = useState<YouTubeVideo[]>([]);
+  const [videosLoading, setVideosLoading] = useState(true);
+  const [videosError, setVideosError] = useState<string | null>(null);
+
+  // Fetch YouTube videos on component mount
+  useEffect(() => {
+    const fetchVideos = async () => {
+      try {
+        setVideosLoading(true);
+        const response = await fetch('/api/youtube');
+        const data = await response.json();
+        
+        if (data.success) {
+          setVideos(data.videos);
+        } else {
+          // Use fallback videos if API fails
+          setVideos(data.videos);
+          setVideosError(data.error || 'Failed to load latest videos');
+        }
+      } catch (error) {
+        console.error('Error fetching YouTube videos:', error);
+        setVideosError('Failed to load videos');
+        // Set empty array if complete failure
+        setVideos([]);
+      } finally {
+        setVideosLoading(false);
+      }
+    };
+
+    fetchVideos();
+  }, []);
+
+  // Format date for display
+  const formatDate = (dateString: string) => {
+    try {
+      const date = new Date(dateString);
+      const now = new Date();
+      const diffTime = Math.abs(now.getTime() - date.getTime());
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      
+      if (diffDays === 1) return '1 day ago';
+      if (diffDays < 7) return `${diffDays} days ago`;
+      if (diffDays < 14) return '1 week ago';
+      if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
+      if (diffDays < 60) return '1 month ago';
+      return `${Math.floor(diffDays / 30)} months ago`;
+    } catch {
+      return 'Recently';
+    }
+  };
 
   const handleNewsletterSignup = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -114,41 +134,77 @@ export default function HowToHelpSection() {
           <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
             Latest YouTube Videos
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {recentVideos.map((video) => (
-              <Card key={video.id} className="group cursor-pointer hover:shadow-lg transition-shadow">
-                <a href={video.url} target="_blank" rel="noopener noreferrer">
-                  <div className="relative">
-                    <div className="aspect-video bg-gray-300 rounded-t-lg overflow-hidden">
-                      <img
-                        src={video.thumbnail}
-                        alt={video.title}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src = '/images/hero1.jpg'; // fallback image
-                        }}
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Play className="w-12 h-12 text-white bg-[#00653b] rounded-full p-3 opacity-90" />
+          
+          {videosError && (
+            <div className="text-center mb-4">
+              <p className="text-sm text-amber-600 bg-amber-50 p-3 rounded-lg inline-block">
+                {videosError}
+              </p>
+            </div>
+          )}
+          
+          {videosLoading ? (
+            <div className="flex justify-center items-center py-12">
+              <Loader2 className="w-8 h-8 animate-spin text-[#00653b]" />
+              <span className="ml-2 text-gray-600">Loading latest videos...</span>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {videos.map((video: YouTubeVideo) => (
+                <Card key={video.id} className="group cursor-pointer hover:shadow-lg transition-shadow">
+                  <a href={video.url} target="_blank" rel="noopener noreferrer">
+                    <div className="relative">
+                      <div className="aspect-video bg-gray-300 rounded-t-lg overflow-hidden">
+                        <img
+                          src={video.thumbnail}
+                          alt={video.title}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = '/images/hero1.jpg'; // fallback image
+                          }}
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <Play className="w-12 h-12 text-white bg-[#00653b] rounded-full p-3 opacity-90" />
+                        </div>
                       </div>
                     </div>
-                    <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs px-2 py-1 rounded">
-                      {video.duration}
-                    </div>
-                  </div>
-                  <CardContent className="p-4">
-                    <h4 className="font-semibold text-sm mb-2 line-clamp-2 group-hover:text-[#00653b]">
-                      {video.title}
-                    </h4>
-                    <p className="text-xs text-gray-500">
-                      {video.views} views • {video.uploadedAt}
-                    </p>
-                  </CardContent>
+                    <CardContent className="p-4">
+                      <h4 className="font-semibold text-sm mb-2 line-clamp-2 group-hover:text-[#00653b]">
+                        {video.title}
+                      </h4>
+                      <p className="text-xs text-gray-500 mb-1">
+                        {formatDate(video.publishedAt)}
+                      </p>
+                      {video.description && (
+                        <p className="text-xs text-gray-400 line-clamp-2">
+                          {video.description}
+                        </p>
+                      )}
+                    </CardContent>
+                  </a>
+                </Card>
+              ))}
+            </div>
+          )}
+          
+          {!videosLoading && videos.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-gray-500">No videos available at the moment.</p>
+              <Button
+                asChild
+                className="mt-4 bg-[#00653b] hover:bg-[#00653b]/90"
+              >
+                <a
+                  href="https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit YouTube Channel
                 </a>
-              </Card>
-            ))}
-          </div>
+              </Button>
+            </div>
+          )}
         </div>
 
         {/* LCWA Party Section */}
