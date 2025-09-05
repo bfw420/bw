@@ -74,26 +74,26 @@ export default function HowToHelpSection() {
   };
 
   return (
-    <section id="help" className="py-16 bg-gray-50">
+    <section id="help" className="py-16 bg-gradient-to-br from-[#6cc24a]/5 to-[#00653b]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#00653b] mb-4">
             How to Help
           </h2>
-          <p className="text-xl text-primary font-semibold mb-2">
+          <p className="text-xl text-[#6cc24a] font-bold mb-2">
             Legacy media is silencing my voice!
           </p>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Here&apos;s how you can help amplify our message and create real change
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Newsletter Signup */}
-          <Card className="border-primary/20">
+          <Card className="border-[#00653b]/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
-                <Mail className="w-6 h-6 text-primary" />
+                <Mail className="w-6 h-6 text-[#00653b]" />
                 Stay Informed
               </CardTitle>
             </CardHeader>
@@ -113,7 +113,7 @@ export default function HowToHelpSection() {
                 />
                 <Button 
                   type="submit" 
-                  className="w-full bg-primary hover:bg-primary/90"
+                  className="w-full bg-[#00653b] hover:bg-[#00653b]/90"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Subscribing..." : "Subscribe to Newsletter"}
@@ -123,10 +123,10 @@ export default function HowToHelpSection() {
           </Card>
 
           {/* YouTube Subscription */}
-          <Card className="border-primary/20">
+          <Card className="border-[#00653b]/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
-                <Youtube className="w-6 h-6 text-primary" />
+                <Youtube className="w-6 h-6 text-[#00653b]" />
                 Watch & Subscribe
               </CardTitle>
             </CardHeader>
@@ -137,7 +137,7 @@ export default function HowToHelpSection() {
               </p>
               <Button
                 asChild
-                className="w-full bg-primary hover:bg-primary/90"
+                className="w-full bg-[#00653b] hover:bg-[#00653b]/90"
               >
                 <a
                   href="https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A"
@@ -175,7 +175,7 @@ export default function HowToHelpSection() {
                         }}
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <Play className="w-12 h-12 text-white bg-primary rounded-full p-3 opacity-90" />
+                        <Play className="w-12 h-12 text-white bg-[#00653b] rounded-full p-3 opacity-90" />
                       </div>
                     </div>
                     <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs px-2 py-1 rounded">
@@ -183,7 +183,7 @@ export default function HowToHelpSection() {
                     </div>
                   </div>
                   <CardContent className="p-4">
-                    <h4 className="font-semibold text-sm mb-2 line-clamp-2 group-hover:text-primary">
+                    <h4 className="font-semibold text-sm mb-2 line-clamp-2 group-hover:text-[#00653b]">
                       {video.title}
                     </h4>
                     <p className="text-xs text-gray-500">
@@ -197,7 +197,7 @@ export default function HowToHelpSection() {
         </div>
 
         {/* LCWA Party Section */}
-        <div className="bg-primary/5 rounded-lg p-8 border border-primary/20">
+        <div className="bg-gradient-to-br from-[#00653b]/10 to-[#6cc24a]/10 rounded-lg p-8 border-2 border-[#00653b]/30">
           <div className="text-center mb-8">
             <div className="w-32 h-32 mx-auto mb-6">
               <Image
@@ -219,7 +219,7 @@ export default function HowToHelpSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card className="text-center">
               <CardHeader>
-                <Users className="w-8 h-8 text-primary mx-auto mb-2" />
+                <Users className="w-8 h-8 text-[#00653b] mx-auto mb-2" />
                 <CardTitle className="text-lg">Join Us</CardTitle>
               </CardHeader>
               <CardContent>
@@ -229,7 +229,7 @@ export default function HowToHelpSection() {
                 <Button 
                   asChild 
                   variant="outline" 
-                  className="w-full border-primary text-primary hover:bg-primary hover:text-white"
+                  className="w-full border-[#00653b] text-[#00653b] hover:bg-[#00653b] hover:text-white"
                 >
                   <a 
                     href="https://www.lcwaparty.org.au/?utm_source=brianwalker&utm_medium=website&utm_campaign=join" 
@@ -244,7 +244,7 @@ export default function HowToHelpSection() {
 
             <Card className="text-center">
               <CardHeader>
-                <Heart className="w-8 h-8 text-primary mx-auto mb-2" />
+                <Heart className="w-8 h-8 text-[#00653b] mx-auto mb-2" />
                 <CardTitle className="text-lg">Donate</CardTitle>
               </CardHeader>
               <CardContent>
@@ -253,7 +253,7 @@ export default function HowToHelpSection() {
                 </p>
                 <Button 
                   asChild 
-                  className="w-full bg-primary hover:bg-primary/90"
+                  className="w-full bg-[#00653b] hover:bg-[#00653b]/90"
                 >
                   <a 
                     href="https://www.lcwaparty.org.au/donate?utm_source=brianwalker&utm_medium=website&utm_campaign=donate" 
@@ -268,7 +268,7 @@ export default function HowToHelpSection() {
 
             <Card className="text-center">
               <CardHeader>
-                <Handshake className="w-8 h-8 text-primary mx-auto mb-2" />
+                <Handshake className="w-8 h-8 text-[#00653b] mx-auto mb-2" />
                 <CardTitle className="text-lg">Volunteer</CardTitle>
               </CardHeader>
               <CardContent>
@@ -278,7 +278,7 @@ export default function HowToHelpSection() {
                 <Button 
                   asChild 
                   variant="outline" 
-                  className="w-full border-primary text-primary hover:bg-primary hover:text-white"
+                  className="w-full border-[#00653b] text-[#00653b] hover:bg-[#00653b] hover:text-white"
                 >
                   <a 
                     href="https://www.lcwaparty.org.au/volunteer?utm_source=brianwalker&utm_medium=website&utm_campaign=volunteer" 

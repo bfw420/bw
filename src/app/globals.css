@@ -1,6 +1,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@theme {
+  --color-primary: #00653b;
+  --color-accent: #6cc24a;
+  --color-primary-foreground: #ffffff;
+  --color-accent-foreground: #ffffff;
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);

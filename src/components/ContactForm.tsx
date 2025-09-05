@@ -146,13 +146,13 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-16 bg-white">
+    <section id="contact" className="py-16 bg-gradient-to-br from-[#00653b]/5 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#00653b] mb-4">
             Contact Me
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Get in touch with Dr Brian Walker for medical consultations or political matters
           </p>
         </div>
@@ -166,9 +166,9 @@ export default function ContactForm() {
               </h3>
             </div>
 
-            <Card className="border-primary/20">
+            <Card className="border-[#00653b]/20">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-primary">
+                <CardTitle className="flex items-center gap-3 text-[#00653b]">
                   <Mail className="w-5 h-5" />
                   Political Office
                 </CardTitle>
@@ -182,9 +182,9 @@ export default function ContactForm() {
               </CardContent>
             </Card>
 
-            <Card className="border-accent/20">
+            <Card className="border-[#6cc24a]/20">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-accent">
+                <CardTitle className="flex items-center gap-3 text-[#6cc24a]">
                   <Phone className="w-5 h-5" />
                   Medical Practice
                 </CardTitle>
@@ -231,7 +231,7 @@ export default function ContactForm() {
                       placeholder="Your first name"
                     />
                     {errors.firstName && (
-                      <p className="text-primary text-sm mt-1">{errors.firstName.message}</p>
+                      <p className="text-[#00653b] text-sm mt-1">{errors.firstName.message}</p>
                     )}
                   </div>
                   <div>
@@ -242,7 +242,7 @@ export default function ContactForm() {
                       placeholder="Your last name"
                     />
                     {errors.lastName && (
-                      <p className="text-primary text-sm mt-1">{errors.lastName.message}</p>
+                      <p className="text-[#00653b] text-sm mt-1">{errors.lastName.message}</p>
                     )}
                   </div>
                 </div>
@@ -256,7 +256,7 @@ export default function ContactForm() {
                     placeholder="your.email@example.com"
                   />
                   {errors.email && (
-                    <p className="text-primary text-sm mt-1">{errors.email.message}</p>
+                    <p className="text-[#00653b] text-sm mt-1">{errors.email.message}</p>
                   )}
                 </div>
 
@@ -303,7 +303,7 @@ export default function ContactForm() {
                     rows={5}
                   />
                   {errors.message && (
-                    <p className="text-primary text-sm mt-1">{errors.message.message}</p>
+                    <p className="text-[#00653b] text-sm mt-1">{errors.message.message}</p>
                   )}
                 </div>
 
@@ -338,13 +338,13 @@ export default function ContactForm() {
                     disabled={!isMounted}
                   />
                   {errors.captcha && (
-                    <p className="text-primary text-sm mt-1">{errors.captcha.message}</p>
+                    <p className="text-[#00653b] text-sm mt-1">{errors.captcha.message}</p>
                   )}
                 </div>
 
                 <Button 
                   type="submit" 
-                  className="w-full bg-primary hover:bg-primary/90"
+                  className="w-full bg-[#00653b] hover:bg-[#00653b]/90"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (

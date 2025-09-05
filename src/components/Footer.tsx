@@ -53,12 +53,12 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-white py-12">
+    <footer className="bg-[#00653b] text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-primary">
+            <h3 className="text-xl font-bold text-white">
               Dr Brian Walker MLC
             </h3>
             <p className="text-gray-300">
@@ -76,7 +76,7 @@ export default function Footer() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-300 hover:text-primary transition-colors text-sm"
+                  className="text-gray-300 hover:text-[#6cc24a] transition-colors text-sm"
                 >
                   {link.name}
                 </Link>
@@ -96,7 +96,7 @@ export default function Footer() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-300 hover:text-primary transition-colors"
+                    className="flex items-center gap-2 text-gray-300 hover:text-[#6cc24a] transition-colors"
                     aria-label={`Follow on ${social.name}`}
                   >
                     <IconComponent className="w-5 h-5" />

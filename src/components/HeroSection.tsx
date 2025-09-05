@@ -6,11 +6,11 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const heroGradients = [
-  "bg-gradient-to-br from-primary to-accent",
-  "bg-gradient-to-br from-accent to-primary",
-  "bg-gradient-to-r from-primary via-accent to-primary",
-  "bg-gradient-to-l from-accent via-primary to-accent",
-  "bg-gradient-to-tr from-primary/90 to-accent/90"
+  "bg-gradient-to-br from-[#00653b] to-[#6cc24a]",
+  "bg-gradient-to-br from-[#6cc24a] to-[#00653b]",
+  "bg-gradient-to-r from-[#00653b] via-[#6cc24a] to-[#00653b]",
+  "bg-gradient-to-l from-[#6cc24a] via-[#00653b] to-[#6cc24a]",
+  "bg-gradient-to-tr from-[#00653b]/90 to-[#6cc24a]/90"
 ];
 
 export default function HeroSection() {
@@ -83,23 +83,23 @@ export default function HeroSection() {
         </div>
 
         {/* Title and Subtitles */}
-        <h1 className="text-5xl md:text-7xl font-bold mb-4">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
           Hon Dr Brian Walker MLC
         </h1>
         
-        <h2 className="text-2xl md:text-3xl mb-2 text-gray-200">
+        <h2 className="text-lg md:text-xl lg:text-2xl mb-2 text-gray-200">
           Member of the Legislative Council for Western Australia
         </h2>
         
-        <h3 className="text-xl md:text-2xl mb-2 text-gray-200">
+        <h3 className="text-base md:text-lg lg:text-xl mb-2 text-gray-200">
           General Practitioner in Claremont
         </h3>
         
-        <h4 className="text-lg md:text-xl mb-6 text-gray-300">
+        <h4 className="text-sm md:text-base lg:text-lg mb-6 text-gray-300">
           MB, ChB MRCGP, RACGP
         </h4>
         
-        <p className="text-xl md:text-2xl mb-8 text-gray-100 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg md:text-xl mb-8 text-gray-100 max-w-3xl mx-auto leading-relaxed">
           I&apos;m a doctor and a politician trying to make this world a better place for our grandchildren - Join me.
         </p>
       </div>

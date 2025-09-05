@@ -14,7 +14,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold text-primary">
+            <Link href="/" className="text-xl font-bold text-[#00653b]">
               Dr Brian Walker MLC
             </Link>
           </div>
@@ -22,24 +22,24 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <Link href="#about" className="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium">
+              <Link href="#about" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
                 About
               </Link>
-              <Link href="#wellness" className="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium">
+              <Link href="#wellness" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
                 Wellness
               </Link>
-              <Link href="#goals" className="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium">
+              <Link href="#goals" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
                 Political Goals
               </Link>
-              <Link href="#help" className="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium">
+              <Link href="#help" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
                 How to Help
               </Link>
-              <Link href="#contact" className="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium">
+              <Link href="#contact" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
                 Contact
               </Link>
-              <Button asChild className="bg-primary hover:bg-primary/90">
+              <Button asChild className="bg-[#00653b] hover:bg-[#00653b]/90 text-white">
                 <Link href="https://www.lcwaparty.org.au/" target="_blank" rel="noopener noreferrer">
-                  Join LCWA
+                  Party
                 </Link>
               </Button>
             </div>
@@ -64,43 +64,43 @@ export default function Navigation() {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
               <Link
                 href="#about"
-                className="text-gray-600 hover:text-primary block px-3 py-2 text-base font-medium"
+                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
               <Link
                 href="#wellness"
-                className="text-gray-600 hover:text-primary block px-3 py-2 text-base font-medium"
+                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Wellness
               </Link>
               <Link
                 href="#goals"
-                className="text-gray-600 hover:text-primary block px-3 py-2 text-base font-medium"
+                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Political Goals
               </Link>
               <Link
                 href="#help"
-                className="text-gray-600 hover:text-primary block px-3 py-2 text-base font-medium"
+                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 How to Help
               </Link>
               <Link
                 href="#contact"
-                className="text-gray-600 hover:text-primary block px-3 py-2 text-base font-medium"
+                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </Link>
               <div className="px-3 py-2">
-                <Button asChild className="w-full bg-primary hover:bg-primary/90">
+                <Button asChild className="w-full bg-[#00653b] hover:bg-[#00653b]/90 text-white">
                   <Link href="https://www.lcwaparty.org.au/" target="_blank" rel="noopener noreferrer">
-                    Join LCWA
+                    Party
                   </Link>
                 </Button>
               </div>
