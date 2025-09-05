@@ -7,8 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Mail,
-  Play,
-  Loader2
+  Loader2,
+  UserPlus
 } from "lucide-react";
 
 interface YouTubeVideo {
@@ -129,11 +129,29 @@ export default function HowToHelpSection() {
           </div>
         </div>
 
-        {/* YouTube Videos Carousel */}
+        {/* YouTube Videos Section */}
         <div className="mb-12">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-            Latest YouTube Videos
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+            Latest Videos
           </h3>
+          
+          {/* Follow Me Button */}
+          <div className="text-center mb-6">
+            <Button
+              asChild
+              className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full font-medium"
+            >
+              <a
+                href="https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A?sub_confirmation=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <UserPlus className="w-4 h-4" />
+                Follow Me on YouTube
+              </a>
+            </Button>
+          </div>
           
           {videosError && (
             <div className="text-center mb-4">
@@ -149,41 +167,36 @@ export default function HowToHelpSection() {
               <span className="ml-2 text-gray-600">Loading latest videos...</span>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {videos.map((video: YouTubeVideo) => (
-                <Card key={video.id} className="group cursor-pointer hover:shadow-lg transition-shadow">
+                <div key={video.id} className="group cursor-pointer">
                   <a href={video.url} target="_blank" rel="noopener noreferrer">
-                    <div className="relative">
-                      <div className="aspect-video bg-gray-300 rounded-t-lg overflow-hidden">
-                        <img
-                          src={video.thumbnail}
-                          alt={video.title}
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.src = '/images/hero1.jpg'; // fallback image
-                          }}
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <Play className="w-12 h-12 text-white bg-[#00653b] rounded-full p-3 opacity-90" />
+                    <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                      <div className="relative">
+                        <div className="aspect-video bg-gray-200 overflow-hidden">
+                          <Image
+                            src={video.thumbnail}
+                            alt={video.title}
+                            width={320}
+                            height={180}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                            onError={() => {
+                              // Fallback handled by Next.js Image component
+                            }}
+                          />
                         </div>
                       </div>
-                    </div>
-                    <CardContent className="p-4">
-                      <h4 className="font-semibold text-sm mb-2 line-clamp-2 group-hover:text-[#00653b]">
-                        {video.title}
-                      </h4>
-                      <p className="text-xs text-gray-500 mb-1">
-                        {formatDate(video.publishedAt)}
-                      </p>
-                      {video.description && (
-                        <p className="text-xs text-gray-400 line-clamp-2">
-                          {video.description}
+                      <div className="p-3">
+                        <h4 className="font-medium text-sm text-gray-900 mb-1 line-clamp-1 group-hover:text-red-600 transition-colors">
+                          {video.title}
+                        </h4>
+                        <p className="text-xs text-gray-600">
+                          {formatDate(video.publishedAt)}
                         </p>
-                      )}
-                    </CardContent>
+                      </div>
+                    </div>
                   </a>
-                </Card>
+                </div>
               ))}
             </div>
           )}
@@ -193,7 +206,7 @@ export default function HowToHelpSection() {
               <p className="text-gray-500">No videos available at the moment.</p>
               <Button
                 asChild
-                className="mt-4 bg-[#00653b] hover:bg-[#00653b]/90"
+                className="mt-4 bg-red-600 hover:bg-red-700"
               >
                 <a
                   href="https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A"

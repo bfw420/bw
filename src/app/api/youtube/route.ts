@@ -11,6 +11,7 @@ interface YouTubeVideo {
   thumbnail: string;
   publishedAt: string;
   description: string;
+  priority?: number;
 }
 
 export async function GET() {
@@ -35,10 +36,10 @@ export async function GET() {
     const entryMatches = xmlText.match(/<entry>[\s\S]*?<\/entry>/g);
     
     if (entryMatches) {
-      for (let i = 0; i < Math.min(5, entryMatches.length); i++) {
+      for (let i = 0; i < Math.min(20, entryMatches.length) && videos.length < 4; i++) {
         const entry = entryMatches[i];
         
-        // Extract video ID
+        // Extract video ID and other data
         const idMatch = entry.match(/<yt:videoId>(.*?)<\/yt:videoId>/);
         const titleMatch = entry.match(/<title>(.*?)<\/title>/);
         const publishedMatch = entry.match(/<published>(.*?)<\/published>/);
@@ -50,22 +51,31 @@ export async function GET() {
           const publishedAt = publishedMatch[1];
           const description = descriptionMatch ? descriptionMatch[1].replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"') : '';
           
-          videos.push({
-            id: videoId,
-            title,
-            url: `https://www.youtube.com/watch?v=${videoId}`,
-            thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
-            publishedAt,
-            description: description.substring(0, 150) + (description.length > 150 ? '...' : '')
-          });
+          // Filter out YouTube Shorts by checking title and description for common short indicators
+          const isLikelyShort = title.toLowerCase().includes('#shorts') ||
+                              description.toLowerCase().includes('#shorts') ||
+                              title.toLowerCase().includes('short') ||
+                              title.length < 25; // Very short titles are often shorts
+          
+          // Only add if it's likely a long-form video
+          if (!isLikelyShort) {
+            videos.push({
+              id: videoId,
+              title,
+              url: `https://www.youtube.com/watch?v=${videoId}`,
+              thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+              publishedAt,
+              description: description.substring(0, 150) + (description.length > 150 ? '...' : '')
+            });
+          }
         }
       }
     }
 
-    return NextResponse.json({ 
-      success: true, 
+    return NextResponse.json({
+      success: true,
       videos,
-      total: videos.length 
+      total: videos.length
     });
 
   } catch (error) {
@@ -75,7 +85,7 @@ export async function GET() {
     const fallbackVideos: YouTubeVideo[] = [
       {
         id: 'fallback1',
-        title: 'Parliamentary Speech - Dr Brian Walker MLC',
+        title: 'Cannabis Law Reform: Parliamentary Speech - Dr Brian Walker MLC',
         url: 'https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A',
         thumbnail: '/images/hero1.jpg',
         publishedAt: new Date().toISOString(),
@@ -83,40 +93,32 @@ export async function GET() {
       },
       {
         id: 'fallback2',
-        title: 'Community Update - Cannabis Law Reform',
-        url: 'https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A',
-        thumbnail: '/images/hero2.svg',
-        publishedAt: new Date().toISOString(),
-        description: 'Updates on cannabis law reform progress'
-      },
-      {
-        id: 'fallback3',
-        title: 'Mental Health in Western Australia',
+        title: 'Mental Health Crisis in Western Australia - Full Interview',
         url: 'https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A',
         thumbnail: '/images/hero3.svg',
         publishedAt: new Date().toISOString(),
-        description: 'Discussion on mental health support'
+        description: 'Interview discussing mental health support systems'
       },
       {
-        id: 'fallback4',
-        title: 'Renewable Energy Future',
+        id: 'fallback3',
+        title: 'Renewable Energy Future for WA - Parliamentary Debate',
         url: 'https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A',
         thumbnail: '/images/hero4.svg',
         publishedAt: new Date().toISOString(),
-        description: 'Vision for renewable energy in WA'
+        description: 'Debate on renewable energy policy'
       },
       {
-        id: 'fallback5',
-        title: 'Affordable Housing Solutions',
+        id: 'fallback4',
+        title: 'Housing Affordability Solutions - Community Address',
         url: 'https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A',
         thumbnail: '/images/hero5.svg',
         publishedAt: new Date().toISOString(),
-        description: 'Addressing housing affordability crisis'
+        description: 'Community address on housing crisis solutions'
       }
     ];
 
-    return NextResponse.json({ 
-      success: false, 
+    return NextResponse.json({
+      success: false,
       videos: fallbackVideos,
       total: fallbackVideos.length,
       error: 'Failed to fetch RSS feed, showing fallback content'
