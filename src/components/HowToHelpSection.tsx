@@ -88,70 +88,30 @@ export default function HowToHelpSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          {/* Newsletter Signup */}
-          <Card className="border-[#00653b]/20">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3">
-                <Mail className="w-6 h-6 text-[#00653b]" />
-                Stay Informed
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-600 mb-4">
-                Get the latest news and updates directly from Dr Brian Walker. 
-                Be the first to know about new policies, parliamentary updates, and community events.
-              </p>
-              <form onSubmit={handleNewsletterSignup} className="space-y-4">
-                <Input
-                  type="email"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="w-full"
-                />
-                <Button 
-                  type="submit" 
-                  className="w-full bg-[#00653b] hover:bg-[#00653b]/90"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Subscribing..." : "Subscribe to Newsletter"}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-
-          {/* YouTube Subscription */}
-          <Card className="border-[#00653b]/20">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3">
-                <Youtube className="w-6 h-6 text-[#00653b]" />
-                Watch & Subscribe
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-600 mb-4">
-                Subscribe to my YouTube channel for parliamentary speeches, policy explanations,
-                and behind-the-scenes content from the Legislative Council.
-              </p>
+        {/* Newsletter Signup */}
+        <div className="max-w-2xl mx-auto mb-12 text-center">
+          <div className="bg-gradient-to-br from-[#00653b]/5 to-[#6cc24a]/5 p-8 rounded-2xl border border-[#00653b]/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <Mail className="w-12 h-12 text-[#00653b] mx-auto mb-4" />
+            <h3 className="text-2xl font-bold text-[#00653b] mb-2">Stay Informed</h3>
+            <p className="text-gray-700 mb-6">Get the latest updates directly from Dr Brian Walker</p>
+            <form onSubmit={handleNewsletterSignup} className="flex flex-col sm:flex-row gap-4">
+              <Input
+                type="email"
+                placeholder="Enter your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="flex-1 h-14 text-lg px-6 rounded-full border-2 border-[#00653b]/20 focus:border-[#00653b]"
+              />
               <Button
-                asChild
-                className="w-full bg-[#00653b] hover:bg-[#00653b]/90"
+                type="submit"
+                className="h-14 px-8 bg-[#00653b] hover:bg-[#00653b]/90 text-lg font-semibold rounded-full whitespace-nowrap"
+                disabled={isSubmitting}
               >
-                <a
-                  href="https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  <Youtube className="w-4 h-4" />
-                  Subscribe on YouTube
-                  <ExternalLink className="w-4 h-4" />
-                </a>
+                {isSubmitting ? "Subscribing..." : "Subscribe"}
               </Button>
-            </CardContent>
-          </Card>
+            </form>
+          </div>
         </div>
 
         {/* YouTube Videos Carousel */}
@@ -199,12 +159,12 @@ export default function HowToHelpSection() {
         {/* LCWA Party Section */}
         <div className="bg-gradient-to-br from-[#00653b]/10 to-[#6cc24a]/10 rounded-lg p-8 border-2 border-[#00653b]/30">
           <div className="text-center mb-8">
-            <div className="w-32 h-32 mx-auto mb-6">
+            <div className="w-48 h-48 mx-auto mb-6">
               <Image
                 src="/images/LCWA.png"
                 alt="Legalise Cannabis WA Party"
-                width={128}
-                height={128}
+                width={192}
+                height={192}
                 className="object-contain"
               />
             </div>
@@ -216,80 +176,45 @@ export default function HowToHelpSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="text-center">
-              <CardHeader>
-                <Users className="w-8 h-8 text-[#00653b] mx-auto mb-2" />
-                <CardTitle className="text-lg">Join Us</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-600 mb-4">
-                  Become a member and help shape policy
-                </p>
-                <Button 
-                  asChild 
-                  variant="outline" 
-                  className="w-full border-[#00653b] text-[#00653b] hover:bg-[#00653b] hover:text-white"
-                >
-                  <a 
-                    href="https://www.lcwaparty.org.au/?utm_source=brianwalker&utm_medium=website&utm_campaign=join" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    Join the Party
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button
+              asChild
+              className="bg-[#00653b] hover:bg-[#00653b]/90"
+            >
+              <a
+                href="https://www.lcwaparty.org.au/?utm_source=brianwalker&utm_medium=website&utm_campaign=join"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Join
+              </a>
+            </Button>
 
-            <Card className="text-center">
-              <CardHeader>
-                <Heart className="w-8 h-8 text-[#00653b] mx-auto mb-2" />
-                <CardTitle className="text-lg">Donate</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-600 mb-4">
-                  Support our campaigns and initiatives
-                </p>
-                <Button 
-                  asChild 
-                  className="w-full bg-[#00653b] hover:bg-[#00653b]/90"
-                >
-                  <a 
-                    href="https://www.lcwaparty.org.au/donate?utm_source=brianwalker&utm_medium=website&utm_campaign=donate" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    Make a Donation
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
+            <Button
+              asChild
+              className="bg-[#00653b] hover:bg-[#00653b]/90"
+            >
+              <a
+                href="https://www.lcwaparty.org.au/donate?utm_source=brianwalker&utm_medium=website&utm_campaign=donate"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Donate
+              </a>
+            </Button>
 
-            <Card className="text-center">
-              <CardHeader>
-                <Handshake className="w-8 h-8 text-[#00653b] mx-auto mb-2" />
-                <CardTitle className="text-lg">Volunteer</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-600 mb-4">
-                  Get involved in community activities
-                </p>
-                <Button 
-                  asChild 
-                  variant="outline" 
-                  className="w-full border-[#00653b] text-[#00653b] hover:bg-[#00653b] hover:text-white"
-                >
-                  <a 
-                    href="https://www.lcwaparty.org.au/volunteer?utm_source=brianwalker&utm_medium=website&utm_campaign=volunteer" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    Volunteer
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
+            <Button
+              asChild
+              className="bg-[#00653b] hover:bg-[#00653b]/90"
+            >
+              <a
+                href="https://www.lcwaparty.org.au/volunteer?utm_source=brianwalker&utm_medium=website&utm_campaign=volunteer"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Volunteer
+              </a>
+            </Button>
           </div>
         </div>
       </div>

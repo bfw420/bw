@@ -10,10 +10,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  Building2,
+  Heart,
+  MapPin,
   Send,
   Loader2
 } from "lucide-react";
@@ -157,68 +157,45 @@ export default function ContactForm() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-                Contact Information
-              </h3>
+        {/* Contact Information */}
+        <div className="mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-[#00653b]/10">
+              <Building2 className="w-8 h-8 text-[#00653b] mx-auto mb-4" />
+              <h4 className="font-semibold text-[#00653b] mb-2">Political Office</h4>
+              <p className="text-sm text-gray-600 mb-2">Legislative Council of WA</p>
+              <p className="text-sm font-medium">brian.walker.mlc@mp.wa.gov.au</p>
             </div>
 
-            <Card className="border-[#00653b]/20">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-[#00653b]">
-                  <Mail className="w-5 h-5" />
-                  Political Office
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-2">Legislative Council of Western Australia</p>
-                <p className="text-sm text-gray-500 mb-3">
-                  For political matters, policy questions, and parliamentary business
-                </p>
-                <p className="font-medium">brian.walker.mlc@mp.wa.gov.au</p>
-              </CardContent>
-            </Card>
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-[#6cc24a]/10">
+              <Heart className="w-8 h-8 text-[#6cc24a] mx-auto mb-4" />
+              <h4 className="font-semibold text-[#6cc24a] mb-2">Medical Practice</h4>
+              <p className="text-sm text-gray-600 mb-2">Next Practice Health - Claremont</p>
+              <p className="text-sm font-medium">claremont@nextpracticehealth.com</p>
+            </div>
 
-            <Card className="border-[#6cc24a]/20">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-[#6cc24a]">
-                  <Phone className="w-5 h-5" />
-                  Medical Practice
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-2">Next Practice Health - Claremont</p>
-                <p className="text-sm text-gray-500 mb-3">
-                  For medical consultations and health-related inquiries
-                </p>
-                <p className="font-medium">claremont@nextpracticehealth.com</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5" />
-                  Office Address
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  2 Parliament Place<br />
-                  West Perth, WA 6005<br />
-                  Australia
-                </p>
-              </CardContent>
-            </Card>
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-200">
+              <MapPin className="w-8 h-8 text-gray-600 mx-auto mb-4" />
+              <h4 className="font-semibold text-gray-700 mb-2">Office Address</h4>
+              <a
+                href="https://maps.google.com/?q=2+Parliament+Place,+West+Perth,+WA+6005,+Australia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-gray-600 hover:text-[#00653b] transition-colors"
+              >
+                Office of Dr Brian Walker<br />
+                2 Parliament Place<br />
+                West Perth, WA 6005
+              </a>
+            </div>
           </div>
+        </div>
 
-          {/* Contact Form */}
-          <Card>
+        {/* Contact Form */}
+        <div className="max-w-2xl mx-auto">
+          <Card className="shadow-lg">
             <CardHeader>
-              <CardTitle>Send a Message</CardTitle>
+              <CardTitle className="text-center text-2xl">Send a Message</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -300,7 +277,8 @@ export default function ContactForm() {
                     id="message"
                     {...register("message")}
                     placeholder="Please write your message here..."
-                    rows={5}
+                    rows={8}
+                    className="min-h-[200px]"
                   />
                   {errors.message && (
                     <p className="text-[#00653b] text-sm mt-1">{errors.message.message}</p>

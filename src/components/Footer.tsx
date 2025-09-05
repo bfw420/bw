@@ -61,11 +61,17 @@ export default function Footer() {
             <h3 className="text-xl font-bold text-white">
               Dr Brian Walker MLC
             </h3>
-            <p className="text-gray-300">
-              Member of the Legislative Council for Western Australia<br />
-              General Practitioner in Claremont<br />
-              Leader of the Legalise Cannabis WA Party
-            </p>
+            <div className="text-gray-300 space-y-1">
+              <a href="#about" className="block hover:text-white transition-colors">
+                Member of the Legislative Council for WA
+              </a>
+              <a href="#about" className="block hover:text-white transition-colors">
+                General Practitioner in Claremont
+              </a>
+              <a href="https://www.lcwaparty.org.au/" target="_blank" rel="noopener noreferrer" className="block hover:text-white transition-colors">
+                Leader of the Legalise Cannabis WA Party
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -76,7 +82,7 @@ export default function Footer() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-300 hover:text-[#6cc24a] transition-colors text-sm"
+                  className="text-gray-300 hover:text-white transition-colors text-sm"
                 >
                   {link.name}
                 </Link>
@@ -96,7 +102,7 @@ export default function Footer() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-300 hover:text-[#6cc24a] transition-colors"
+                    className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
                     aria-label={`Follow on ${social.name}`}
                   >
                     <IconComponent className="w-5 h-5" />

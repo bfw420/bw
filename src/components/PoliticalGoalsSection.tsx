@@ -54,48 +54,37 @@ export default function PoliticalGoalsSection() {
   return (
     <section id="goals" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#00653b] mb-4">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#00653b] mb-3">
             My Political Goals
           </h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            These are the key policy areas I&apos;m working on to create a better future for Western Australia
+          <p className="text-base text-gray-700 max-w-2xl mx-auto">
+            Key policy areas I&apos;m working on for Western Australia
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {politicalGoals.map((goal, index) => {
             const IconComponent = goal.icon;
             return (
-              <Card key={index} className="h-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-l-4 border-l-[#00653b] group">
-                <CardHeader className="pb-4">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-20 h-20 bg-[#00653b]/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#00653b]/20 transition-colors duration-300">
-                      <IconComponent className="w-12 h-12 text-[#00653b] group-hover:scale-110 transition-transform duration-300" />
-                    </div>
-                    <CardTitle className="text-lg font-semibold text-gray-900 leading-tight group-hover:text-[#00653b] transition-colors duration-300">
-                      {goal.title}
-                    </CardTitle>
+              <div key={index} className="p-4 bg-white rounded-lg border border-[#00653b]/10 hover:border-[#00653b]/30 transition-colors duration-300 group">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 bg-[#00653b]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <IconComponent className="w-6 h-6 text-[#00653b]" />
                   </div>
-                </CardHeader>
-              </Card>
+                  <p className="text-sm font-medium text-gray-900 leading-tight">
+                    {goal.title}
+                  </p>
+                </div>
+              </div>
             );
           })}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-6">
+        <div className="text-center mt-8">
+          <p className="text-base text-gray-700 max-w-3xl mx-auto">
             These goals represent my commitment to evidence-based policy that puts people and planet first.
-            As both a doctor and politician, I believe in practical solutions that improve lives.
           </p>
-          <div className="bg-gradient-to-r from-[#00653b]/10 to-[#6cc24a]/10 rounded-lg p-8 max-w-3xl mx-auto border-2 border-[#00653b]/30">
-            <p className="text-[#00653b] font-bold text-xl mb-3">
-              Ready to make change happen?
-            </p>
-            <p className="text-gray-800 text-lg">
-              Join the Legalise Cannabis WA Party and help us build a progressive, sustainable future for our state.
-            </p>
-          </div>
         </div>
       </div>
     </section>

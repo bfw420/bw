@@ -34,12 +34,12 @@ export default function Navigation() {
               <Link href="#help" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
                 How to Help
               </Link>
-              <Link href="#contact" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
-                Contact
+              <Link href="https://www.lcwaparty.org.au/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
+                Party
               </Link>
               <Button asChild className="bg-[#00653b] hover:bg-[#00653b]/90 text-white">
-                <Link href="https://www.lcwaparty.org.au/" target="_blank" rel="noopener noreferrer">
-                  Party
+                <Link href="#contact">
+                  Contact
                 </Link>
               </Button>
             </div>
@@ -91,16 +91,18 @@ export default function Navigation() {
                 How to Help
               </Link>
               <Link
-                href="#contact"
+                href="https://www.lcwaparty.org.au/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact
+                Party
               </Link>
               <div className="px-3 py-2">
                 <Button asChild className="w-full bg-[#00653b] hover:bg-[#00653b]/90 text-white">
-                  <Link href="https://www.lcwaparty.org.au/" target="_blank" rel="noopener noreferrer">
-                    Party
+                  <Link href="#contact">
+                    Contact
                   </Link>
                 </Button>
               </div>
