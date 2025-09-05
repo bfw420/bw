@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -14,7 +15,14 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold text-[#00653b]">
+            <Link href="/" className="flex items-center gap-3 text-xl font-bold text-[#00653b]">
+              <Image
+                src="/favicon-nav.svg"
+                alt="Dr Brian Walker MLC"
+                width={32}
+                height={32}
+                className="w-8 h-8"
+              />
               Dr Brian Walker MLC
             </Link>
           </div>

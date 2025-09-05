@@ -153,30 +153,17 @@ export default function ContactForm() {
             Contact Me
           </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            Get in touch with Dr Brian Walker for medical consultations or political matters
+            Choose the appropriate contact method below
           </p>
         </div>
 
         {/* Contact Information */}
         <div className="mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-[#00653b]/10">
               <Building2 className="w-8 h-8 text-[#00653b] mx-auto mb-4" />
               <h4 className="font-semibold text-[#00653b] mb-2">Political Office</h4>
-              <p className="text-sm text-gray-600 mb-2">Legislative Council of WA</p>
-              <p className="text-sm font-medium">brian.walker.mlc@mp.wa.gov.au</p>
-            </div>
-
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-[#6cc24a]/10">
-              <Heart className="w-8 h-8 text-[#6cc24a] mx-auto mb-4" />
-              <h4 className="font-semibold text-[#6cc24a] mb-2">Medical Practice</h4>
-              <p className="text-sm text-gray-600 mb-2">Next Practice Health - Claremont</p>
-              <p className="text-sm font-medium">claremont@nextpracticehealth.com</p>
-            </div>
-
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-200">
-              <MapPin className="w-8 h-8 text-gray-600 mx-auto mb-4" />
-              <h4 className="font-semibold text-gray-700 mb-2">Office Address</h4>
+              <p className="text-sm font-medium mb-2">brian.walker.mlc@mp.wa.gov.au</p>
               <a
                 href="https://maps.google.com/?q=2+Parliament+Place,+West+Perth,+WA+6005,+Australia"
                 target="_blank"
@@ -186,6 +173,22 @@ export default function ContactForm() {
                 Office of Dr Brian Walker<br />
                 2 Parliament Place<br />
                 West Perth, WA 6005
+              </a>
+            </div>
+
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-[#6cc24a]/10">
+              <Heart className="w-8 h-8 text-[#6cc24a] mx-auto mb-4" />
+              <h4 className="font-semibold text-[#6cc24a] mb-2">Medical Practice</h4>
+              <p className="text-sm font-medium mb-2">claremont@nextpracticehealth.com</p>
+              <a
+                href="https://maps.google.com/?q=3+Airlie+St,+Claremont+WA+6010,+Australia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-gray-600 hover:text-[#6cc24a] transition-colors"
+              >
+                Next Practice Health<br />
+                3 Airlie St<br />
+                Claremont WA 6010
               </a>
             </div>
           </div>

@@ -223,12 +223,12 @@ export default function HowToHelpSection() {
         {/* LCWA Party Section */}
         <div className="bg-gradient-to-br from-[#00653b]/10 to-[#6cc24a]/10 rounded-lg p-8 border-2 border-[#00653b]/30">
           <div className="text-center mb-8">
-            <div className="w-48 h-48 mx-auto mb-6">
+            <div className="w-64 h-64 mx-auto mb-6">
               <Image
                 src="/images/LCWA.png"
                 alt="Legalise Cannabis WA Party"
-                width={192}
-                height={192}
+                width={256}
+                height={256}
                 className="object-contain"
               />
             </div>

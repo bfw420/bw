@@ -1,10 +1,12 @@
+"use client";
+
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Heart, 
-  Brain, 
-  Users, 
-  Sparkles, 
-  DollarSign 
+import {
+  Heart,
+  Brain,
+  Users,
+  Sparkles,
+  DollarSign
 } from "lucide-react";
 
 const wellnessPillars = [
@@ -52,16 +54,92 @@ export default function WellnessSection() {
           {wellnessPillars.map((pillar, index) => {
             const IconComponent = pillar.icon;
             return (
-              <Card key={index} className="text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer">
-                <CardHeader className="pb-4">
-                  <div className="w-24 h-24 mx-auto bg-[#00653b]/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#00653b] transition-all duration-300 group-hover:scale-110">
-                    <IconComponent className="w-12 h-12 text-[#00653b] group-hover:text-white group-hover:scale-125 transition-all duration-300" />
+              <div
+                key={index}
+                className="text-center bg-white rounded-lg border border-gray-200 shadow-sm cursor-pointer"
+                style={{
+                  transition: 'all 0.2s ease-out'
+                }}
+                onMouseEnter={(e) => {
+                  const card = e.currentTarget;
+                  const iconContainer = card.querySelector('.icon-container') as HTMLElement;
+                  const iconElement = card.querySelector('.icon-element') as HTMLElement;
+                  const titleText = card.querySelector('.title-text') as HTMLElement;
+                  
+                  // Animate card
+                  card.style.transform = 'translateY(-12px) scale(1.05)';
+                  card.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
+                  card.style.borderColor = '#00653b';
+                  
+                  // Animate icon container
+                  if (iconContainer) {
+                    iconContainer.style.backgroundColor = '#00653b';
+                    iconContainer.style.transform = 'scale(1.25)';
+                    iconContainer.style.boxShadow = '0 10px 25px rgba(0, 101, 59, 0.3)';
+                  }
+                  
+                  // Animate icon
+                  if (iconElement) {
+                    iconElement.style.color = 'white';
+                    iconElement.style.transform = 'scale(1.1)';
+                  }
+                  
+                  // Animate title
+                  if (titleText) {
+                    titleText.style.color = '#00653b';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  const card = e.currentTarget;
+                  const iconContainer = card.querySelector('.icon-container') as HTMLElement;
+                  const iconElement = card.querySelector('.icon-element') as HTMLElement;
+                  const titleText = card.querySelector('.title-text') as HTMLElement;
+                  
+                  // Reset card
+                  card.style.transform = 'translateY(0) scale(1)';
+                  card.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.1)';
+                  card.style.borderColor = '#e5e7eb';
+                  
+                  // Reset icon container
+                  if (iconContainer) {
+                    iconContainer.style.backgroundColor = 'rgba(0, 101, 59, 0.1)';
+                    iconContainer.style.transform = 'scale(1)';
+                    iconContainer.style.boxShadow = 'none';
+                  }
+                  
+                  // Reset icon
+                  if (iconElement) {
+                    iconElement.style.color = '#00653b';
+                    iconElement.style.transform = 'scale(1)';
+                  }
+                  
+                  // Reset title
+                  if (titleText) {
+                    titleText.style.color = '#111827';
+                  }
+                }}
+              >
+                <div className="p-6 pb-4">
+                  <div
+                    className="icon-container w-24 h-24 mx-auto bg-[#00653b]/10 rounded-full flex items-center justify-center mb-4"
+                    style={{
+                      transition: 'all 0.2s ease-out'
+                    }}
+                  >
+                    <IconComponent
+                      className="icon-element w-12 h-12 text-[#00653b]"
+                      style={{
+                        transition: 'all 0.2s ease-out'
+                      }}
+                    />
                   </div>
-                  <CardTitle className="text-lg font-semibold text-gray-900 group-hover:text-[#00653b] transition-colors duration-300">
+                  <h3 className="title-text text-lg font-semibold text-gray-900" style={{
+                    transition: 'color 0.2s ease-out'
+                  }}>
                     {pillar.title}
-                  </CardTitle>
-                </CardHeader>
-              </Card>
+                  </h3>
+                </div>
+              </div>
             );
           })}
         </div>

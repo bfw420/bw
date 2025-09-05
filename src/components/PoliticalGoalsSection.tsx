@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Leaf,
   Wheat,
@@ -66,12 +68,95 @@ export default function PoliticalGoalsSection() {
           {politicalGoals.map((goal, index) => {
             const IconComponent = goal.icon;
             return (
-              <div key={index} className="p-4 bg-white rounded-lg border border-[#00653b]/10 hover:border-[#00653b]/30 transition-colors duration-300 group">
+              <div
+                key={index}
+                className="p-4 bg-white rounded-lg border border-[#00653b]/10 shadow-sm cursor-pointer"
+                style={{
+                  transition: 'all 0.2s ease-out'
+                }}
+                onMouseEnter={(e) => {
+                  const card = e.currentTarget;
+                  const iconContainer = card.querySelector('.goal-icon-container') as HTMLElement;
+                  const iconElement = card.querySelector('.goal-icon-element') as HTMLElement;
+                  const titleText = card.querySelector('.goal-title-text') as HTMLElement;
+                  
+                  // Animate card
+                  card.style.transform = 'translateY(-8px) scale(1.02)';
+                  card.style.boxShadow = '0 20px 40px -12px rgba(0, 0, 0, 0.2)';
+                  card.style.borderColor = '#00653b';
+                  card.style.background = 'linear-gradient(to right, white, rgba(0, 101, 59, 0.03))';
+                  
+                  // Animate icon container
+                  if (iconContainer) {
+                    iconContainer.style.backgroundColor = '#00653b';
+                    iconContainer.style.transform = 'scale(1.15)';
+                    iconContainer.style.boxShadow = '0 8px 20px rgba(0, 101, 59, 0.25)';
+                  }
+                  
+                  // Animate icon
+                  if (iconElement) {
+                    iconElement.style.color = 'white';
+                    iconElement.style.transform = 'scale(1.1)';
+                  }
+                  
+                  // Animate title
+                  if (titleText) {
+                    titleText.style.color = '#00653b';
+                    titleText.style.fontWeight = 'bold';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  const card = e.currentTarget;
+                  const iconContainer = card.querySelector('.goal-icon-container') as HTMLElement;
+                  const iconElement = card.querySelector('.goal-icon-element') as HTMLElement;
+                  const titleText = card.querySelector('.goal-title-text') as HTMLElement;
+                  
+                  // Reset card
+                  card.style.transform = 'translateY(0) scale(1)';
+                  card.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.1)';
+                  card.style.borderColor = 'rgba(0, 101, 59, 0.1)';
+                  card.style.background = 'white';
+                  
+                  // Reset icon container
+                  if (iconContainer) {
+                    iconContainer.style.backgroundColor = 'rgba(0, 101, 59, 0.1)';
+                    iconContainer.style.transform = 'scale(1)';
+                    iconContainer.style.boxShadow = 'none';
+                  }
+                  
+                  // Reset icon
+                  if (iconElement) {
+                    iconElement.style.color = '#00653b';
+                    iconElement.style.transform = 'scale(1)';
+                  }
+                  
+                  // Reset title
+                  if (titleText) {
+                    titleText.style.color = '#111827';
+                    titleText.style.fontWeight = '500';
+                  }
+                }}
+              >
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-[#00653b]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <IconComponent className="w-6 h-6 text-[#00653b]" />
+                  <div
+                    className="goal-icon-container w-12 h-12 bg-[#00653b]/10 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{
+                      transition: 'all 0.2s ease-out'
+                    }}
+                  >
+                    <IconComponent
+                      className="goal-icon-element w-6 h-6 text-[#00653b]"
+                      style={{
+                        transition: 'all 0.2s ease-out'
+                      }}
+                    />
                   </div>
-                  <p className="text-sm font-medium text-gray-900 leading-tight">
+                  <p
+                    className="goal-title-text text-sm font-medium text-gray-900 leading-tight"
+                    style={{
+                      transition: 'all 0.2s ease-out'
+                    }}
+                  >
                     {goal.title}
                   </p>
                 </div>

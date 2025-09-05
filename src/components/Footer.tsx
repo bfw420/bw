@@ -61,14 +61,14 @@ export default function Footer() {
             <h3 className="text-xl font-bold text-white">
               Dr Brian Walker MLC
             </h3>
-            <div className="text-gray-300 space-y-1">
-              <a href="#about" className="block hover:text-white transition-colors">
+            <div className="text-white space-y-1">
+              <a href="#about" className="block hover:text-[#6cc24a] transition-colors underline hover:no-underline">
                 Member of the Legislative Council for WA
               </a>
-              <a href="#about" className="block hover:text-white transition-colors">
+              <a href="#about" className="block hover:text-[#6cc24a] transition-colors underline hover:no-underline">
                 General Practitioner in Claremont
               </a>
-              <a href="https://www.lcwaparty.org.au/" target="_blank" rel="noopener noreferrer" className="block hover:text-white transition-colors">
+              <a href="https://www.lcwaparty.org.au/" target="_blank" rel="noopener noreferrer" className="block hover:text-[#6cc24a] transition-colors underline hover:no-underline">
                 Leader of the Legalise Cannabis WA Party
               </a>
             </div>
