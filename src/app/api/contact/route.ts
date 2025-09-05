@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
     try {
       responseText = await response.text();
       console.log('Webhook response body:', responseText);
-    } catch (e) {
+    } catch {
       console.log('Could not read response body');
     }
 

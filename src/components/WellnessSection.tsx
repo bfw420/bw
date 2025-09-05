@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
   Heart, 
   Brain, 
@@ -41,7 +41,7 @@ export default function WellnessSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-[#00653b] mb-4">
-            I'm a doctor and a politician trying to make this world a better place for our grandchildren - Join me.
+            I&apos;m a doctor and a politician trying to make this world a better place for our grandchildren - Join me.
           </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             I care about the 5 pillars of wellness that form the foundation of a healthy society
