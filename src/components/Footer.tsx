@@ -1,10 +1,12 @@
+"use client";
+
 import Link from "next/link";
-import { 
-  Facebook, 
-  Instagram, 
-  Youtube, 
-  Twitter, 
-  ExternalLink 
+import {
+  Facebook,
+  Instagram,
+  Youtube,
+  Twitter,
+  ExternalLink
 } from "lucide-react";
 
 const socialLinks = [
@@ -46,6 +48,12 @@ const footerLinks = [
   { name: "Political Goals", href: "#goals" },
   { name: "How to Help", href: "#help" },
   { name: "Contact", href: "#contact" },
+  { name: "Party", href: "https://www.lcwaparty.org.au/" },
+  { name: "Donate", href: "https://www.lcwaparty.org.au/donate" },
+  { name: "Parliament", href: "https://www.parliament.wa.gov.au/parliament/memblist.nsf/WAllMembersFlat/Walker,%20Brian%20Francis?opendocument" },
+  { name: "Media", href: "#media" },
+  { name: "Speeches", href: "#speeches" },
+  { name: "Downloads", href: "#downloads" },
   { name: "Wikipedia", href: "https://en.wikipedia.org/wiki/Brian_Walker_(politician)" },
   { name: "Privacy Policy", href: "/privacy" },
   { name: "Copyright", href: "/copyright" },
@@ -61,14 +69,34 @@ export default function Footer() {
             <h3 className="text-xl font-bold text-white">
               Dr Brian Walker MLC
             </h3>
-            <div className="text-white space-y-1">
-              <a href="#about" className="block hover:text-[#6cc24a] transition-colors underline hover:no-underline">
+            <div className="space-y-1">
+              <a
+                href="#about"
+                className="block transition-colors footer-link"
+                style={{ color: '#d1d5db' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#6cc24a'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#d1d5db'; }}
+              >
                 Member of the Legislative Council for WA
               </a>
-              <a href="#about" className="block hover:text-[#6cc24a] transition-colors underline hover:no-underline">
+              <a
+                href="#about"
+                className="block transition-colors footer-link"
+                style={{ color: '#d1d5db' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#6cc24a'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#d1d5db'; }}
+              >
                 General Practitioner in Claremont
               </a>
-              <a href="https://www.lcwaparty.org.au/" target="_blank" rel="noopener noreferrer" className="block hover:text-[#6cc24a] transition-colors underline hover:no-underline">
+              <a
+                href="https://www.lcwaparty.org.au/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block transition-colors footer-link"
+                style={{ color: '#d1d5db' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#6cc24a'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#d1d5db'; }}
+              >
                 Leader of the Legalise Cannabis WA Party
               </a>
             </div>
@@ -82,7 +110,16 @@ export default function Footer() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
+                  className="text-gray-300 transition-colors text-sm footer-link"
+                  style={{
+                    color: '#d1d5db'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#6cc24a';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = '#d1d5db';
+                  }}
                 >
                   {link.name}
                 </Link>
@@ -102,8 +139,17 @@ export default function Footer() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                    className="flex items-center gap-2 transition-colors footer-link"
                     aria-label={`Follow on ${social.name}`}
+                    style={{
+                      color: '#d1d5db'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = '#6cc24a';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = '#d1d5db';
+                    }}
                   >
                     <IconComponent className="w-5 h-5" />
                     <span className="text-sm">{social.name}</span>

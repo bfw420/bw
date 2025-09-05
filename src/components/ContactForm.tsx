@@ -11,8 +11,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-  Building2,
-  Heart,
+  Landmark,
+  Cross,
   MapPin,
   Send,
   Loader2
@@ -146,203 +146,255 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-16 bg-gradient-to-br from-[#00653b]/5 to-white">
+    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#00653b] mb-4">
-            Contact Me
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#00653b] mb-6">
+            Get In Touch
           </h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            Choose the appropriate contact method below
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Whether you need political assistance or medical care, I&apos;m here to help.
           </p>
         </div>
 
-        {/* Contact Information */}
-        <div className="mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-[#00653b]/10">
-              <Building2 className="w-8 h-8 text-[#00653b] mx-auto mb-4" />
-              <h4 className="font-semibold text-[#00653b] mb-2">Political Office</h4>
-              <p className="text-sm font-medium mb-2">brian.walker.mlc@mp.wa.gov.au</p>
-              <a
-                href="https://maps.google.com/?q=2+Parliament+Place,+West+Perth,+WA+6005,+Australia"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-gray-600 hover:text-[#00653b] transition-colors"
-              >
-                Office of Dr Brian Walker<br />
-                2 Parliament Place<br />
-                West Perth, WA 6005
-              </a>
+        {/* Contact Information Cards */}
+        <div className="mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="group bg-white rounded-2xl p-8 shadow-lg border-2 border-[#00653b]/10 hover:border-[#00653b]/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-[#00653b]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#00653b] transition-colors duration-300">
+                  <Landmark className="w-8 h-8 text-[#00653b] group-hover:text-white transition-colors duration-300" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#00653b] mb-3">Political Office</h3>
+                <p className="text-lg font-semibold text-gray-900 mb-2">brian.walker.mlc@mp.wa.gov.au</p>
+                <div className="text-gray-600 leading-relaxed">
+                  <p className="font-medium mb-1">Office of Dr Brian Walker</p>
+                  <p>2 Parliament Place, West Perth, WA 6005</p>
+                </div>
+                <a
+                  href="https://maps.google.com/?q=2+Parliament+Place,+West+Perth,+WA+6005,+Australia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 text-[#00653b] hover:text-[#6cc24a] font-medium transition-colors duration-200"
+                >
+                  View on Maps →
+                </a>
+              </div>
             </div>
 
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-[#6cc24a]/10">
-              <Heart className="w-8 h-8 text-[#6cc24a] mx-auto mb-4" />
-              <h4 className="font-semibold text-[#6cc24a] mb-2">Medical Practice</h4>
-              <p className="text-sm font-medium mb-2">claremont@nextpracticehealth.com</p>
-              <a
-                href="https://maps.google.com/?q=3+Airlie+St,+Claremont+WA+6010,+Australia"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-gray-600 hover:text-[#6cc24a] transition-colors"
-              >
-                Next Practice Health<br />
-                3 Airlie St<br />
-                Claremont WA 6010
-              </a>
+            <div className="group bg-white rounded-2xl p-8 shadow-lg border-2 border-[#6cc24a]/10 hover:border-[#6cc24a]/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-[#6cc24a]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#6cc24a] transition-colors duration-300">
+                  <Cross className="w-8 h-8 text-[#6cc24a] group-hover:text-white transition-colors duration-300" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#6cc24a] mb-3">Medical Practice</h3>
+                <p className="text-lg font-semibold text-gray-900 mb-2">claremont@nextpracticehealth.com</p>
+                <div className="text-gray-600 leading-relaxed">
+                  <p className="font-medium mb-1">Next Practice Health</p>
+                  <p>3 Airlie St, Claremont WA 6010</p>
+                </div>
+                <a
+                  href="https://maps.google.com/?q=3+Airlie+St,+Claremont+WA+6010,+Australia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 text-[#6cc24a] hover:text-[#00653b] font-medium transition-colors duration-200"
+                >
+                  View on Maps →
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Contact Form */}
-        <div className="max-w-2xl mx-auto">
-          <Card className="shadow-lg">
-            <CardHeader>
-              <CardTitle className="text-center text-2xl">Send a Message</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="firstName">First Name *</Label>
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
+            <div className="bg-gradient-to-r from-[#00653b] to-[#6cc24a] px-8 py-6">
+              <h3 className="text-3xl font-bold text-white text-center">Send me a Message</h3>
+              <p className="text-center text-white/90 mt-2">I&apos;ll get back to you as soon as possible</p>
+            </div>
+            
+            <div className="p-8 md:p-12">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+                {/* Name Fields */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="firstName" className="text-base font-medium text-gray-700">First Name *</Label>
                     <Input
                       id="firstName"
                       {...register("firstName")}
-                      placeholder="Your first name"
+                      placeholder="Enter your first name"
+                      className="h-12 text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl transition-colors"
                     />
                     {errors.firstName && (
-                      <p className="text-[#00653b] text-sm mt-1">{errors.firstName.message}</p>
+                      <p className="text-red-500 text-sm mt-1">{errors.firstName.message}</p>
                     )}
                   </div>
-                  <div>
-                    <Label htmlFor="lastName">Last Name *</Label>
+                  <div className="space-y-2">
+                    <Label htmlFor="lastName" className="text-base font-medium text-gray-700">Last Name *</Label>
                     <Input
                       id="lastName"
                       {...register("lastName")}
-                      placeholder="Your last name"
+                      placeholder="Enter your last name"
+                      className="h-12 text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl transition-colors"
                     />
                     {errors.lastName && (
-                      <p className="text-[#00653b] text-sm mt-1">{errors.lastName.message}</p>
+                      <p className="text-red-500 text-sm mt-1">{errors.lastName.message}</p>
                     )}
                   </div>
                 </div>
 
-                <div>
-                  <Label htmlFor="email">Email Address *</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    {...register("email")}
-                    placeholder="your.email@example.com"
-                  />
-                  {errors.email && (
-                    <p className="text-[#00653b] text-sm mt-1">{errors.email.message}</p>
-                  )}
+                {/* Contact Fields */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-base font-medium text-gray-700">Email Address *</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      {...register("email")}
+                      placeholder="your.email@example.com"
+                      className="h-12 text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl transition-colors"
+                    />
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="mobile" className="text-base font-medium text-gray-700">Mobile Number</Label>
+                    <Input
+                      id="mobile"
+                      type="tel"
+                      {...register("mobile")}
+                      placeholder="Your mobile number (optional)"
+                      className="h-12 text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl transition-colors"
+                    />
+                  </div>
                 </div>
 
-                <div>
-                  <Label htmlFor="mobile">Mobile Number</Label>
-                  <Input
-                    id="mobile"
-                    type="tel"
-                    {...register("mobile")}
-                    placeholder="Your mobile number (optional)"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="contactType">Contact Type *</Label>
-                  <div className="mt-2 space-y-2">
-                    <label className="flex items-center">
+                {/* Contact Type */}
+                <div className="space-y-4">
+                  <Label className="text-base font-medium text-gray-700">Contact Type *</Label>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <label className="flex items-center p-4 bg-gray-50 rounded-xl border-2 border-transparent hover:border-[#00653b]/20 cursor-pointer transition-colors">
                       <input
                         type="radio"
                         value="political"
                         {...register("contactType")}
-                        className="mr-2"
+                        className="w-5 h-5 text-[#00653b] mr-4"
                       />
-                      <span>Political Office - Legislative Council matters</span>
+                      <div>
+                        <span className="font-medium text-gray-900">Political Office</span>
+                        <p className="text-sm text-gray-600">Legislative Council matters</p>
+                      </div>
                     </label>
-                    <label className="flex items-center">
+                    <label className="flex items-center p-4 bg-gray-50 rounded-xl border-2 border-transparent hover:border-[#6cc24a]/20 cursor-pointer transition-colors">
                       <input
                         type="radio"
                         value="medical"
                         {...register("contactType")}
-                        className="mr-2"
+                        className="w-5 h-5 text-[#6cc24a] mr-4"
                       />
-                      <span>Medical Practice - Health consultations</span>
+                      <div>
+                        <span className="font-medium text-gray-900">Medical Practice</span>
+                        <p className="text-sm text-gray-600">Health consultations</p>
+                      </div>
                     </label>
                   </div>
                 </div>
 
-                <div>
-                  <Label htmlFor="message">Message *</Label>
+                {/* Message */}
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-base font-medium text-gray-700">Message *</Label>
                   <Textarea
                     id="message"
                     {...register("message")}
                     placeholder="Please write your message here..."
-                    rows={8}
-                    className="min-h-[200px]"
+                    rows={6}
+                    className="text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl resize-none transition-colors"
                   />
                   {errors.message && (
-                    <p className="text-[#00653b] text-sm mt-1">{errors.message.message}</p>
+                    <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
                   )}
                 </div>
 
-                <div className="space-y-3">
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      {...register("subscribeNewsletter")}
-                      className="mr-2"
-                    />
-                    <span className="text-sm">Subscribe to my newsletter</span>
-                  </label>
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      {...register("wantToVolunteer")}
-                      className="mr-2"
-                    />
-                    <span className="text-sm">I want to volunteer</span>
-                  </label>
+                {/* Checkboxes */}
+                <div className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <label className="flex items-center p-4 bg-gray-50 rounded-xl cursor-pointer hover:bg-gray-100 transition-colors">
+                      <input
+                        type="checkbox"
+                        {...register("subscribeNewsletter")}
+                        className="w-5 h-5 text-[#00653b] mr-4 rounded"
+                      />
+                      <span className="font-medium text-gray-900">Subscribe to newsletter</span>
+                    </label>
+                    <label className="flex items-center p-4 bg-gray-50 rounded-xl cursor-pointer hover:bg-gray-100 transition-colors">
+                      <input
+                        type="checkbox"
+                        {...register("wantToVolunteer")}
+                        className="w-5 h-5 text-[#00653b] mr-4 rounded"
+                      />
+                      <span className="font-medium text-gray-900">I want to volunteer</span>
+                    </label>
+                  </div>
                 </div>
 
-                <div>
-                  <Label htmlFor="captcha">
-                    Simple Math: What is {isMounted ? captchaQuestion.a : "?"} + {isMounted ? captchaQuestion.b : "?"}? *
+                {/* Captcha */}
+                <div className="space-y-2">
+                  <Label htmlFor="captcha" className="text-base font-medium text-gray-700">
+                    Security Check: What is {isMounted ? captchaQuestion.a : "?"} + {isMounted ? captchaQuestion.b : "?"}? *
                   </Label>
                   <Input
                     id="captcha"
                     type="number"
                     {...register("captcha")}
-                    placeholder="Enter the answer"
+                    placeholder="Answer"
                     disabled={!isMounted}
+                    className="h-12 text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl transition-colors max-w-32"
                   />
                   {errors.captcha && (
-                    <p className="text-[#00653b] text-sm mt-1">{errors.captcha.message}</p>
+                    <p className="text-red-500 text-sm mt-1">{errors.captcha.message}</p>
                   )}
                 </div>
 
-                <Button 
-                  type="submit" 
-                  className="w-full bg-[#00653b] hover:bg-[#00653b]/90"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Sending Message...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="mr-2 h-4 w-4" />
-                      Send Message
-                    </>
-                  )}
-                </Button>
+                {/* Submit Button */}
+                <div className="pt-4">
+                  <Button
+                    type="submit"
+                    className="w-full h-14 text-lg font-semibold bg-gradient-to-r from-[#00653b] to-[#6cc24a] hover:from-[#00653b]/90 hover:to-[#6cc24a]/90 rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-[1.02] disabled:hover:scale-100 disabled:hover:shadow-none"
+                    disabled={isSubmitting}
+                    style={{
+                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isSubmitting) {
+                        e.currentTarget.style.transform = 'scale(1.02) translateY(-2px)';
+                        e.currentTarget.style.boxShadow = '0 20px 40px -8px rgba(0, 101, 59, 0.3)';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isSubmitting) {
+                        e.currentTarget.style.transform = 'scale(1) translateY(0)';
+                        e.currentTarget.style.boxShadow = '0 4px 8px -2px rgba(0, 101, 59, 0.1)';
+                      }
+                    }}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-3 h-5 w-5 animate-spin" />
+                        Sending Message...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="mr-3 h-5 w-5" />
+                        Send Message
+                      </>
+                    )}
+                  </Button>
+                </div>
               </form>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
     </section>

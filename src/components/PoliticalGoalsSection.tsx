@@ -4,7 +4,7 @@ import {
   Leaf,
   Wheat,
   Home,
-  Heart,
+  Cross,
   Brain,
   GraduationCap,
   Scale,
@@ -27,7 +27,7 @@ const politicalGoals = [
   },
   {
     title: "Ensure universal healthcare access and equity",
-    icon: Heart
+    icon: Cross
   },
   {
     title: "Expand community-based mental health support",

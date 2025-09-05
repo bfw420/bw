@@ -93,7 +93,8 @@
     text-decoration: none;
   }
   
-  a:hover {
+  /* Only apply hover color to main content links, not footer */
+  main a:hover:not(.footer-link) {
     color: var(--primary);
   }
   

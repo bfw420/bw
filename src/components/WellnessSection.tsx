@@ -2,7 +2,7 @@
 
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-  Heart,
+  Cross,
   Brain,
   Users,
   Sparkles,
@@ -12,7 +12,7 @@ import {
 const wellnessPillars = [
   {
     title: "Physical Wellness",
-    icon: Heart,
+    icon: Cross,
     description: "Maintaining a healthy body through exercise, nutrition, and medical care."
   },
   {
@@ -43,10 +43,10 @@ export default function WellnessSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-[#00653b] mb-4">
-            I&apos;m a doctor and a politician trying to make this world a better place for our grandchildren - Join me.
+            I stand for wellness
           </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            I care about the 5 pillars of wellness that form the foundation of a healthy society
+            The 5 pillars of wellness that form the foundation of a healthy society:
           </p>
         </div>
 
@@ -146,8 +146,7 @@ export default function WellnessSection() {
 
         <div className="text-center mt-12">
           <p className="text-lg text-gray-700 max-w-4xl mx-auto">
-            These five pillars guide my approach to policy-making and my commitment to creating 
-            a society where every person can thrive in all aspects of their life.
+            As a doctor and a politician, I'm trying to make this world a better place for our grandchildren - Join me.
           </p>
         </div>
       </div>
