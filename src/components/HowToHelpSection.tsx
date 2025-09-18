@@ -77,14 +77,33 @@ export default function HowToHelpSection() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // In real implementation, this would call your newsletter API
-    console.log("Newsletter signup:", email);
-    alert("Thank you for subscribing to the newsletter!");
-    setEmail("");
-    setIsSubmitting(false);
+    try {
+      // Send email to the newsletter webhook
+      const response = await fetch("https://n8n.jaxius.net/webhook/804071e0-3cb7-4df5-b90e-9e370218f439", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          subscriptionType: "newsletter",
+          source: "website",
+          subscribedAt: new Date().toISOString()
+        }),
+      });
+
+      if (response.ok) {
+        alert("Thank you for subscribing to the newsletter!");
+        setEmail("");
+      } else {
+        throw new Error("Failed to subscribe");
+      }
+    } catch (error) {
+      console.error("Newsletter signup error:", error);
+      alert("Sorry, there was an error subscribing to the newsletter. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

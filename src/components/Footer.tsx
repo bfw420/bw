@@ -71,7 +71,9 @@ export default function Footer() {
             </h3>
             <div className="space-y-1">
               <a
-                href="#about"
+                href="https://www.parliament.wa.gov.au/Parliament/Memblist.nsf/Member+Lookup+LC+Current/Walker,+Hon+Dr+Brian?opendocument"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block transition-colors footer-link"
                 style={{ color: '#d1d5db' }}
                 onMouseEnter={(e) => { e.currentTarget.style.color = '#6cc24a'; }}
@@ -80,7 +82,9 @@ export default function Footer() {
                 Member of the Legislative Council for WA
               </a>
               <a
-                href="#about"
+                href="https://claremont.nextpracticehealth.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block transition-colors footer-link"
                 style={{ color: '#d1d5db' }}
                 onMouseEnter={(e) => { e.currentTarget.style.color = '#6cc24a'; }}

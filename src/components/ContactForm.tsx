@@ -307,7 +307,7 @@ export default function ContactForm() {
                     id="message"
                     {...register("message")}
                     placeholder="Please write your message here..."
-                    rows={6}
+                    rows={8}
                     className="text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl resize-none transition-colors"
                   />
                   {errors.message && (
