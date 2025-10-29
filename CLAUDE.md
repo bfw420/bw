@@ -121,6 +121,13 @@ src/
 - Hover animations with `hover:-translate-y-1` pattern
 - Gradient backgrounds: `from-[#00653b] to-[#6cc24a]`
 
+### Footer Social Media Icons
+- Custom SVG icon components for Patreon, Bluesky, and TikTok (lucide-react doesn't include these)
+- PatreonIcon: Circle with "P" logo
+- BlueskyIcon: Butterfly logo
+- TikTokIcon: Musical note logo
+- All icons sized at `w-5 h-5` with `fill="currentColor"` for color inheritance
+
 ### Client-Side Requirements
 - Navigation menu state
 - HeroSection slideshow
@@ -142,6 +149,14 @@ All interactive components use `"use client"` directive.
 - **YouTube Channel**: `UCCIGBIf3b385BV5d48Y1U2A`
 - **Party Website**: `https://www.lcwaparty.org.au/`
 
+### Social Media Links
+- **Facebook**: `https://www.facebook.com/BrianWalkerMLC/`
+- **Instagram**: `https://www.instagram.com/brianwalkermlc/`
+- **Patreon**: `https://www.patreon.com/cw/DrBrianWalkerMLC`
+- **Bluesky**: `https://bsky.app/profile/bfw.bsky.social`
+- **X (Twitter)**: `https://x.com/BrianWalkerMLC`
+- **TikTok**: `https://www.tiktok.com/@brianwalkermlcs`
+
 ## Development Notes
 
 - Turbopack is enabled for faster builds and dev server
@@ -149,3 +164,6 @@ All interactive components use `"use client"` directive.
 - Custom link styling prevents blue browser defaults
 - Focus states use primary brand color
 - Form uses controlled components via react-hook-form
+
+### Known Warnings
+- **Hydration Mismatch**: Browser extensions (like Dashlane password manager) may add attributes (`data-dashlane-rid`, etc.) to form inputs, causing hydration warnings in development. This is not a code issue and doesn't affect functionality. Users can disable extensions on localhost if desired.
