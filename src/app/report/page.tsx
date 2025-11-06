@@ -126,11 +126,11 @@ export default function ReportPage() {
               </p>
 
               <p>
-                The associated gains from legalisation open the way for a substantial funding increase in priority sectors such as health and education. With an estimated $1.25b in additional government revenue over the forward estimates (2023-28, based on a modest 25% taxation model, and 1.5% annual growth), the real question is why haven't Treasury taken a serious look at this already?
+                The associated gains from legalisation open the way for a substantial funding increase in priority sectors such as health and education. With an estimated $1.25b in additional government revenue over the forward estimates (2023-28, based on a modest 25% taxation model, and 1.5% annual growth), the real question is why haven&apos;t Treasury taken a serious look at this already?
               </p>
 
               <p>
-                The government's reluctance might stem from fears around the potential societal and health risks associated with relaxed cannabis legislation, and decades of negative messaging; the report acknowledges those concerns. It goes on to provide insights into estimating the size of both the black market and the legal market for cannabis, while considering changes in price and consumption. Furthermore, it explores potential licensing and tax revenue from alternative tax regimes while considering likely savings from the costs of criminal justice system.
+                The government&apos;s reluctance might stem from fears around the potential societal and health risks associated with relaxed cannabis legislation, and decades of negative messaging; the report acknowledges those concerns. It goes on to provide insights into estimating the size of both the black market and the legal market for cannabis, while considering changes in price and consumption. Furthermore, it explores potential licensing and tax revenue from alternative tax regimes while considering likely savings from the costs of criminal justice system.
               </p>
 
               <p>

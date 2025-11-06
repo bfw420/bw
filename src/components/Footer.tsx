@@ -5,8 +5,7 @@ import {
   Facebook,
   Instagram,
   Youtube,
-  Twitter,
-  ExternalLink
+  Twitter
 } from "lucide-react";
 
 // Custom social media icons
