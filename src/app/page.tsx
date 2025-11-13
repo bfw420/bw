@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import WellnessSection from "@/components/WellnessSection";
+import StatsSection from "@/components/StatsSection";
 import PoliticalGoalsSection from "@/components/PoliticalGoalsSection";
 import HowToHelpSection from "@/components/HowToHelpSection";
 import EconomicReportSection from "@/components/EconomicReportSection";
@@ -13,6 +14,7 @@ export default function Home() {
       <Navigation />
       <main id="main-content">
         <HeroSection />
+        <StatsSection />
         <WellnessSection />
         <PoliticalGoalsSection />
         <HowToHelpSection />
