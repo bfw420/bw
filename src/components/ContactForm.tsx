@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import confetti from "canvas-confetti";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -21,11 +20,12 @@ const contactSchema = z.object({
   lastName: z.string().min(1, "Last name is required"),
   email: z.string().email("Please enter a valid email address"),
   mobile: z.string().optional(),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  message: z.string().min(10, "Message must be at least 10 characters").max(5000, "Message is too long"),
   subscribeNewsletter: z.boolean().default(false),
   wantToVolunteer: z.boolean().default(false),
   contactType: z.enum(["medical", "political"]),
-  captcha: z.string().min(1, "Please complete the captcha")
+  captcha: z.string().min(1, "Please complete the captcha"),
+  website: z.string().optional() // Honeypot field
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -58,45 +58,25 @@ export default function ContactForm() {
       contactType: "political" as const,
       subscribeNewsletter: false,
       wantToVolunteer: false,
-      captcha: ""
+      captcha: "",
+      website: "" // Honeypot field - should always be empty
     }
   });
 
   const { register, handleSubmit, formState: { errors }, reset } = form;
 
 
-  const triggerConfetti = () => {
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 }
-    });
-  };
-
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
 
     try {
-      // Validate captcha
-      if (parseInt(data.captcha) !== captchaQuestion.answer) {
-        alert("Incorrect captcha answer. Please try again.");
-        const generateNewCaptcha = () => {
-          const a = Math.floor(Math.random() * 10) + 1;
-          const b = Math.floor(Math.random() * 10) + 1;
-          return { a, b, answer: a + b };
-        };
-        setCaptchaQuestion(generateNewCaptcha());
-        setIsSubmitting(false);
-        return;
-      }
-
       // Determine recipient email
-      const recipientEmail = data.contactType === "medical" 
-        ? "claremont@nextpracticehealth.com" 
+      const recipientEmail = data.contactType === "medical"
+        ? "claremont@nextpracticehealth.com"
         : "brian.walker.mlc@mp.wa.gov.au";
 
-      // Prepare webhook payload
-      const webhookData = {
+      // Prepare API payload with server-side validation fields
+      const apiData = {
         firstName: data.firstName,
         lastName: data.lastName,
         email: data.email,
@@ -106,24 +86,24 @@ export default function ContactForm() {
         wantToVolunteer: data.wantToVolunteer,
         contactType: data.contactType,
         recipientEmail: recipientEmail,
-        submittedAt: new Date().toISOString()
+        website: data.website, // Honeypot field
+        captchaAnswer: data.captcha,
+        captchaExpected: captchaQuestion.answer.toString()
       };
 
-      // Send to our API route which forwards to the webhook
+      // Send to API route with server-side validation
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(webhookData),
+        body: JSON.stringify(apiData),
       });
 
       const result = await response.json();
-      console.log('API response:', result);
-      
+
       if (response.ok && result.success) {
-        triggerConfetti();
-        alert("Thank you! Your message has been sent successfully.");
+        alert("Thank you! Your message has been sent successfully. I'll respond within 48 hours for urgent matters, or 5 business days for general inquiries.");
         reset();
         // Generate new captcha
         const generateNewCaptcha = () => {
@@ -133,7 +113,17 @@ export default function ContactForm() {
         };
         setCaptchaQuestion(generateNewCaptcha());
       } else {
-        throw new Error(result.message || `API failed with status: ${response.status}`);
+        // Handle specific error messages from server
+        alert(result.message || "Sorry, there was an error sending your message. Please try again later.");
+        if (result.message?.includes('captcha')) {
+          // Reset captcha on captcha error
+          const generateNewCaptcha = () => {
+            const a = Math.floor(Math.random() * 10) + 1;
+            const b = Math.floor(Math.random() * 10) + 1;
+            return { a, b, answer: a + b };
+          };
+          setCaptchaQuestion(generateNewCaptcha());
+        }
       }
     } catch (error) {
       console.error("Error sending message:", error);
@@ -353,6 +343,18 @@ export default function ContactForm() {
                   {errors.captcha && (
                     <p className="text-red-500 text-sm mt-1">{errors.captcha.message}</p>
                   )}
+                </div>
+
+                {/* Honeypot field - hidden from users but visible to bots */}
+                <div className="hidden" aria-hidden="true">
+                  <label htmlFor="website">Website (leave blank)</label>
+                  <Input
+                    id="website"
+                    type="text"
+                    {...register("website")}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
                 </div>
 
                 {/* Submit Button */}
