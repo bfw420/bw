@@ -95,15 +95,15 @@ export default function HeroSection() {
         <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4 mb-6 text-sm md:text-base max-w-3xl mx-auto">
           <div className="flex items-center gap-1.5">
             <span className="text-[#6cc24a] text-lg">✓</span>
-            <span>MLC since 2021</span>
+            <span>Member of Legislative Council since 2021</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="text-[#6cc24a] text-lg">✓</span>
-            <span>GP in Claremont</span>
+            <span>Practicing GP in Claremont</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="text-[#6cc24a] text-lg">✓</span>
-            <span>Leader, Legalise Cannabis WA</span>
+            <span>Leader of the Legalise Cannabis WA Party</span>
           </div>
         </div>
 
