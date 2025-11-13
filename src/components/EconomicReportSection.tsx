@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FileText, TrendingUp, DollarSign } from "lucide-react";
@@ -20,7 +22,20 @@ export default function EconomicReportSection() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            <div className="group bg-white rounded-2xl p-6 shadow-md border border-[#00653b]/20 hover:shadow-xl hover:-translate-y-1 hover:border-[#00653b] transition-all duration-300 cursor-pointer">
+            <div
+              className="group bg-white rounded-2xl p-6 shadow-md border border-[#00653b]/20 cursor-pointer"
+              style={{ transition: 'all 0.3s ease-out' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+                e.currentTarget.style.borderColor = '#00653b';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+                e.currentTarget.style.borderColor = 'rgba(0, 101, 59, 0.2)';
+              }}
+            >
               <div className="flex items-center gap-3 mb-3">
                 <div className="p-2 bg-[#6cc24a]/10 rounded-lg group-hover:bg-[#6cc24a] transition-all duration-300">
                   <DollarSign className="w-6 h-6 text-[#6cc24a] group-hover:text-white transition-colors duration-300" />
@@ -32,7 +47,20 @@ export default function EconomicReportSection() {
               </p>
             </div>
 
-            <div className="group bg-white rounded-2xl p-6 shadow-md border border-[#00653b]/20 hover:shadow-xl hover:-translate-y-1 hover:border-[#00653b] transition-all duration-300 cursor-pointer">
+            <div
+              className="group bg-white rounded-2xl p-6 shadow-md border border-[#00653b]/20 cursor-pointer"
+              style={{ transition: 'all 0.3s ease-out' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+                e.currentTarget.style.borderColor = '#00653b';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+                e.currentTarget.style.borderColor = 'rgba(0, 101, 59, 0.2)';
+              }}
+            >
               <div className="flex items-center gap-3 mb-3">
                 <div className="p-2 bg-[#6cc24a]/10 rounded-lg group-hover:bg-[#6cc24a] transition-all duration-300">
                   <TrendingUp className="w-6 h-6 text-[#6cc24a] group-hover:text-white transition-colors duration-300" />
@@ -44,7 +72,20 @@ export default function EconomicReportSection() {
               </p>
             </div>
 
-            <div className="group bg-white rounded-2xl p-6 shadow-md border border-[#00653b]/20 hover:shadow-xl hover:-translate-y-1 hover:border-[#00653b] transition-all duration-300 cursor-pointer">
+            <div
+              className="group bg-white rounded-2xl p-6 shadow-md border border-[#00653b]/20 cursor-pointer"
+              style={{ transition: 'all 0.3s ease-out' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+                e.currentTarget.style.borderColor = '#00653b';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+                e.currentTarget.style.borderColor = 'rgba(0, 101, 59, 0.2)';
+              }}
+            >
               <div className="flex items-center gap-3 mb-3">
                 <div className="p-2 bg-[#6cc24a]/10 rounded-lg group-hover:bg-[#6cc24a] transition-all duration-300">
                   <FileText className="w-6 h-6 text-[#6cc24a] group-hover:text-white transition-colors duration-300" />

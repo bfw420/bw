@@ -1,13 +1,9 @@
-import type { Metadata } from "next";
+"use client";
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Download, Image as ImageIcon, FileText, Folder } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Downloads | Dr Brian Walker MLC",
-  description: "Download media resources including headshots, logos, and biographical information for Dr Brian Walker MLC.",
-};
 
 export default function DownloadsPage() {
   return (
@@ -65,7 +61,20 @@ export default function DownloadsPage() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-[#00653b]/10 hover:border-[#00653b]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer">
+              <div
+                className="bg-white rounded-2xl p-6 shadow-lg border-2 border-[#00653b]/10 cursor-pointer"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 101, 59, 0.3)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 101, 59, 0.1)';
+                }}
+              >
                 <div className="flex flex-col items-center text-center">
                   <div className="p-3 bg-[#00653b]/10 rounded-lg mb-4">
                     <ImageIcon className="w-8 h-8 text-[#00653b]" />
@@ -77,7 +86,20 @@ export default function DownloadsPage() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-[#00653b]/10 hover:border-[#00653b]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer">
+              <div
+                className="bg-white rounded-2xl p-6 shadow-lg border-2 border-[#00653b]/10 cursor-pointer"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 101, 59, 0.3)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 101, 59, 0.1)';
+                }}
+              >
                 <div className="flex flex-col items-center text-center">
                   <div className="p-3 bg-[#6cc24a]/10 rounded-lg mb-4">
                     <ImageIcon className="w-8 h-8 text-[#6cc24a]" />
@@ -89,7 +111,20 @@ export default function DownloadsPage() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-[#00653b]/10 hover:border-[#00653b]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer">
+              <div
+                className="bg-white rounded-2xl p-6 shadow-lg border-2 border-[#00653b]/10 cursor-pointer"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 101, 59, 0.3)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 101, 59, 0.1)';
+                }}
+              >
                 <div className="flex flex-col items-center text-center">
                   <div className="p-3 bg-[#00653b]/10 rounded-lg mb-4">
                     <FileText className="w-8 h-8 text-[#00653b]" />

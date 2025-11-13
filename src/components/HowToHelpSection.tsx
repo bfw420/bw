@@ -311,7 +311,16 @@ export default function HowToHelpSection() {
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 asChild
-                className="bg-[#00653b] hover:bg-[#00653b]/90 text-white px-8 py-3 rounded-full font-bold text-lg transition-all duration-200 hover:scale-105 shadow-lg"
+                className="bg-[#00653b] text-white px-8 py-3 rounded-full font-bold text-lg shadow-lg"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                  e.currentTarget.style.backgroundColor = 'rgba(0, 101, 59, 0.9)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.backgroundColor = '#00653b';
+                }}
               >
                 <a
                   href="https://www.lcwaparty.org.au/?utm_source=brianwalker&utm_medium=website&utm_campaign=join"
@@ -324,7 +333,16 @@ export default function HowToHelpSection() {
 
               <Button
                 asChild
-                className="bg-[#6cc24a] hover:bg-[#6cc24a]/90 text-white px-8 py-3 rounded-full font-bold text-lg transition-all duration-200 hover:scale-105 shadow-lg"
+                className="bg-[#6cc24a] text-white px-8 py-3 rounded-full font-bold text-lg shadow-lg"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                  e.currentTarget.style.backgroundColor = 'rgba(108, 194, 74, 0.9)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.backgroundColor = '#6cc24a';
+                }}
               >
                 <a
                   href="https://www.lcwaparty.org.au/donate?utm_source=brianwalker&utm_medium=website&utm_campaign=donate"
@@ -337,7 +355,16 @@ export default function HowToHelpSection() {
 
               <Button
                 asChild
-                className="bg-gray-700 hover:bg-gray-800 text-white px-8 py-3 rounded-full font-bold text-lg transition-all duration-200 hover:scale-105 shadow-lg"
+                className="bg-gray-700 text-white px-8 py-3 rounded-full font-bold text-lg shadow-lg"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                  e.currentTarget.style.backgroundColor = 'rgb(31, 41, 55)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.backgroundColor = 'rgb(55, 65, 81)';
+                }}
               >
                 <a
                   href="https://www.lcwaparty.org.au/volunteer?utm_source=brianwalker&utm_medium=website&utm_campaign=volunteer"

@@ -79,7 +79,18 @@ export default function PoliticalGoalsSection() {
             return (
               <div
                 key={index}
-                className="group p-6 bg-white rounded-xl border-2 border-[#00653b]/10 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-[#00653b] cursor-pointer"
+                className="group p-6 bg-white rounded-xl border-2 border-[#00653b]/10 shadow-md cursor-pointer"
+                style={{ transition: 'all 0.3s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+                  e.currentTarget.style.borderColor = '#00653b';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 101, 59, 0.1)';
+                }}
               >
                 <div className="text-center">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#00653b]/10 to-[#6cc24a]/10 rounded-xl mb-4 group-hover:from-[#00653b] group-hover:to-[#6cc24a] transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">

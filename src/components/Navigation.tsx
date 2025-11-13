@@ -45,7 +45,19 @@ export default function Navigation() {
               <Link href="https://www.lcwaparty.org.au/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium transition-colors duration-200">
                 Party
               </Link>
-              <Button asChild className="bg-[#00653b] hover:bg-[#00653b]/90 text-white hover:scale-105 transition-all duration-200">
+              <Button
+                asChild
+                className="bg-[#00653b] text-white"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                  e.currentTarget.style.backgroundColor = 'rgba(0, 101, 59, 0.9)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.backgroundColor = '#00653b';
+                }}
+              >
                 <Link href="#contact">
                   Contact
                 </Link>
@@ -108,7 +120,19 @@ export default function Navigation() {
                 Party
               </Link>
               <div className="px-3 py-2">
-                <Button asChild className="w-full bg-[#00653b] hover:bg-[#00653b]/90 text-white hover:scale-105 transition-all duration-200">
+                <Button
+                  asChild
+                  className="w-full bg-[#00653b] text-white"
+                  style={{ transition: 'all 0.2s ease-out' }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.05)';
+                    e.currentTarget.style.backgroundColor = 'rgba(0, 101, 59, 0.9)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.backgroundColor = '#00653b';
+                  }}
+                >
                   <Link href="#contact">
                     Contact
                   </Link>

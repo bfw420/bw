@@ -1,13 +1,8 @@
-import { Metadata } from 'next';
+"use client";
+
 import { FileDown, BookOpen, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-
-export const metadata: Metadata = {
-  title: 'The Missing Budget Paper | Hon Dr Brian Walker MLC',
-  description: 'An Economic Case to Legalise Cannabis in Western Australia - A comprehensive academic research report by Dr Farhad Mohammad, UWA Business School',
-  keywords: 'cannabis legalization, economic analysis, Western Australia, budget paper, Dr Brian Walker, cannabis reform',
-};
 
 export default function ReportPage() {
   const pdfUrl = 'https://www.dropbox.com/s/nco9utrm1h5a5yq/An%20Economic%20Case%20to%20Legalise%20Cannabis%20in%20Western%20Australia%202023.pdf?dl=1';
@@ -64,7 +59,18 @@ export default function ReportPage() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer">
+            <div
+              className="text-center p-6 bg-white rounded-lg shadow-md cursor-pointer"
+              style={{ transition: 'all 0.2s ease-out' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+              }}
+            >
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#00653b] to-[#6cc24a] rounded-full mb-4">
                 <TrendingUp className="w-8 h-8 text-white" />
               </div>
@@ -73,7 +79,18 @@ export default function ReportPage() {
               <p className="text-sm text-gray-500 mt-1">(2023-28 forward estimates)</p>
             </div>
 
-            <div className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer">
+            <div
+              className="text-center p-6 bg-white rounded-lg shadow-md cursor-pointer"
+              style={{ transition: 'all 0.2s ease-out' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+              }}
+            >
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#00653b] to-[#6cc24a] rounded-full mb-4">
                 <BookOpen className="w-8 h-8 text-white" />
               </div>
@@ -82,7 +99,18 @@ export default function ReportPage() {
               <p className="text-sm text-gray-500 mt-1">Academic economic analysis</p>
             </div>
 
-            <div className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer">
+            <div
+              className="text-center p-6 bg-white rounded-lg shadow-md cursor-pointer"
+              style={{ transition: 'all 0.2s ease-out' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+              }}
+            >
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#00653b] to-[#6cc24a] rounded-full mb-4">
                 <FileDown className="w-8 h-8 text-white" />
               </div>

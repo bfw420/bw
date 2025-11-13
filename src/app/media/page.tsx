@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Newspaper, Calendar, FileText } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Media Releases | Dr Brian Walker MLC",
-  description: "Latest media releases and news from Hon Dr Brian Walker MLC, Member of the Legislative Council for Western Australia.",
-};
 
 export default function MediaPage() {
   return (
@@ -42,7 +38,20 @@ export default function MediaPage() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mt-12">
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 hover:border-[#00653b]/30 transition-all duration-200 cursor-pointer">
+              <div
+                className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 cursor-pointer"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 101, 59, 0.3)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)';
+                  e.currentTarget.style.borderColor = 'rgba(229, 231, 235, 1)';
+                }}
+              >
                 <Calendar className="w-8 h-8 text-[#00653b] mb-3" />
                 <h3 className="font-bold text-lg text-gray-900 mb-2">Stay Updated</h3>
                 <p className="text-gray-600 text-sm">
@@ -50,7 +59,20 @@ export default function MediaPage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 hover:border-[#6cc24a]/30 transition-all duration-200 cursor-pointer">
+              <div
+                className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 cursor-pointer"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                  e.currentTarget.style.borderColor = 'rgba(108, 194, 74, 0.3)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)';
+                  e.currentTarget.style.borderColor = 'rgba(229, 231, 235, 1)';
+                }}
+              >
                 <Newspaper className="w-8 h-8 text-[#6cc24a] mb-3" />
                 <h3 className="font-bold text-lg text-gray-900 mb-2">Follow on Social Media</h3>
                 <p className="text-gray-600 text-sm">
