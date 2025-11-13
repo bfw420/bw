@@ -166,13 +166,38 @@ export default function Footer() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex flex-col items-center gap-2 transition-all duration-300"
+                    className="flex flex-col items-center gap-2"
                     aria-label={`Follow on ${social.name}`}
+                    style={{ transition: 'all 0.3s ease-out' }}
+                    onMouseEnter={(e) => {
+                      const icon = e.currentTarget.querySelector('.social-icon') as HTMLElement;
+                      const text = e.currentTarget.querySelector('.social-text') as HTMLElement;
+                      if (icon) {
+                        icon.style.backgroundColor = '#6cc24a';
+                        icon.style.transform = 'scale(1.1)';
+                        icon.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+                      }
+                      if (text) {
+                        text.style.color = '#6cc24a';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      const icon = e.currentTarget.querySelector('.social-icon') as HTMLElement;
+                      const text = e.currentTarget.querySelector('.social-text') as HTMLElement;
+                      if (icon) {
+                        icon.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                        icon.style.transform = 'scale(1)';
+                        icon.style.boxShadow = 'none';
+                      }
+                      if (text) {
+                        text.style.color = 'rgba(255, 255, 255, 0.7)';
+                      }
+                    }}
                   >
-                    <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-[#6cc24a] group-hover:scale-110 transition-all duration-300 group-hover:shadow-lg">
+                    <div className="social-icon w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center" style={{ transition: 'all 0.3s ease-out' }}>
                       <IconComponent className="w-7 h-7 text-white" />
                     </div>
-                    <span className="text-xs text-white/70 group-hover:text-[#6cc24a] transition-colors duration-300 font-medium text-center">
+                    <span className="social-text text-xs text-white/70 font-medium text-center" style={{ transition: 'all 0.3s ease-out' }}>
                       {social.name}
                     </span>
                   </a>

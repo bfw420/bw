@@ -43,7 +43,18 @@ export default function ReportPage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-white text-[#00653b] hover:bg-white/90 font-semibold text-lg px-8 py-6 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200"
+                className="bg-white text-[#00653b] font-semibold text-lg px-8 py-6 shadow-xl"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+                  e.currentTarget.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.backgroundColor = 'white';
+                  e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+                }}
               >
                 <a href={pdfUrl} target="_blank" rel="noopener noreferrer">
                   <FileDown className="w-5 h-5 mr-2" />
@@ -191,7 +202,18 @@ export default function ReportPage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-white text-[#00653b] hover:bg-white/90 font-semibold text-lg px-8 py-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+                className="bg-white text-[#00653b] font-semibold text-lg px-8 py-6 shadow-lg"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+                  e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.backgroundColor = 'white';
+                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                }}
               >
                 <a href={pdfUrl} target="_blank" rel="noopener noreferrer">
                   <FileDown className="w-5 h-5 mr-2" />

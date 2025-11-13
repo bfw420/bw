@@ -159,8 +159,19 @@ export default function HowToHelpSection() {
                     />
                     <Button
                       type="submit"
-                      className="h-14 px-8 bg-white text-[#00653b] hover:bg-gray-100 text-lg font-bold rounded-xl whitespace-nowrap transition-all duration-200 hover:scale-105"
+                      className="h-14 px-8 bg-white text-[#00653b] text-lg font-bold rounded-xl whitespace-nowrap"
                       disabled={isSubmitting}
+                      style={{ transition: 'all 0.2s ease-out' }}
+                      onMouseEnter={(e) => {
+                        if (!isSubmitting) {
+                          e.currentTarget.style.transform = 'scale(1.05)';
+                          e.currentTarget.style.backgroundColor = 'rgb(243, 244, 246)';
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'scale(1)';
+                        e.currentTarget.style.backgroundColor = 'white';
+                      }}
                     >
                       {isSubmitting ? "Subscribing..." : "Subscribe Now"}
                     </Button>
@@ -189,7 +200,18 @@ export default function HowToHelpSection() {
                 href="https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A?sub_confirmation=1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 bg-[#cc0000] hover:bg-[#ff0000] text-white px-6 py-3 rounded-sm font-semibold text-sm uppercase tracking-wide transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center gap-2 bg-[#cc0000] text-white px-6 py-3 rounded-sm font-semibold text-sm uppercase tracking-wide shadow-lg"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                  e.currentTarget.style.backgroundColor = '#ff0000';
+                  e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.backgroundColor = '#cc0000';
+                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                }}
               >
                 <UserPlus className="w-5 h-5" />
                 <span>Subscribe</span>
@@ -218,7 +240,14 @@ export default function HowToHelpSection() {
                   href={video.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group cursor-pointer block hover:-translate-y-1 transition-all duration-200"
+                  className="group cursor-pointer block"
+                  style={{ transition: 'all 0.2s ease-out' }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-4px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
                 >
                   <div className="transition-all duration-200">
                     {/* Thumbnail */}

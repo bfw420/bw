@@ -74,7 +74,18 @@ export default function SubscriberCounter() {
   }
 
   return (
-    <div className="inline-flex items-center gap-3 bg-white px-5 py-3 rounded-sm shadow-md border border-gray-200 hover:shadow-lg transition-all duration-200 hover:scale-105">
+    <div
+      className="inline-flex items-center gap-3 bg-white px-5 py-3 rounded-sm shadow-md border border-gray-200"
+      style={{ transition: 'all 0.2s ease-out' }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = 'scale(1.05)';
+        e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = 'scale(1)';
+        e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+      }}
+    >
       <div className="flex items-center justify-center w-10 h-10 bg-[#cc0000] rounded-sm">
         <Play className="w-5 h-5 text-white fill-white ml-0.5" />
       </div>

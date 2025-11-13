@@ -102,7 +102,16 @@ export default function EconomicReportSection() {
             <Button
               asChild
               size="lg"
-              className="bg-[#00653b] hover:bg-[#00653b]/90 text-white px-8 py-3 rounded-full font-bold text-lg transition-all duration-200 hover:scale-105 shadow-lg"
+              className="bg-[#00653b] text-white px-8 py-3 rounded-full font-bold text-lg shadow-lg"
+              style={{ transition: 'all 0.2s ease-out' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.05)';
+                e.currentTarget.style.backgroundColor = 'rgba(0, 101, 59, 0.9)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+                e.currentTarget.style.backgroundColor = '#00653b';
+              }}
             >
               <Link href="/report">
                 Read the Full Report
