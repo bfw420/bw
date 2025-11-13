@@ -9,7 +9,8 @@ import SubscriberCounter from "@/components/SubscriberCounter";
 import {
   Mail,
   Loader2,
-  UserPlus
+  UserPlus,
+  Play
 } from "lucide-react";
 
 interface YouTubeVideo {
