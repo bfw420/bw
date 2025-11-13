@@ -31,7 +31,7 @@ npm run lint
 - **Forms**: react-hook-form + zod validation
 - **Icons**: lucide-react
 - **Animations**: canvas-confetti, tw-animate-css
-- **Analytics**: Google Analytics integration
+- **Analytics**: Google Analytics (G-R96M1RT9HC), Vercel Analytics
 - **Video**: react-youtube, YouTube RSS feed integration
 
 ## Architecture
@@ -55,9 +55,11 @@ The site is a single-page application with sections:
 
 2. **YouTube Integration**: `/api/youtube/route.ts` fetches from RSS feed, filters out shorts, returns 4 long-form videos with fallback data
 
-3. **Contact Form Webhook**: `/api/contact/route.ts` converts POST to GET request with URL params and forwards to n8n webhook
+3. **YouTube Subscriber Counter**: `/api/youtube/subscribers/route.ts` fetches live subscriber count via YouTube Data API v3, displays with animated tick-up counter above subscribe button
 
-4. **Custom Captcha**: Client-side math captcha to prevent spam
+4. **Contact Form Webhook**: `/api/contact/route.ts` converts POST to GET request with URL params and forwards to n8n webhook
+
+5. **Custom Captcha**: Client-side math captcha to prevent spam
 
 ### Color Scheme
 
@@ -77,7 +79,9 @@ src/
 │   ├── globals.css         # Tailwind + theme variables
 │   ├── api/
 │   │   ├── contact/        # Form submission webhook proxy
-│   │   └── youtube/        # RSS feed parser
+│   │   └── youtube/
+│   │       ├── route.ts    # RSS feed parser for videos
+│   │       └── subscribers/ # Subscriber count API
 │   ├── copyright/          # Copyright page
 │   └── privacy/            # Privacy policy page
 ├── components/
@@ -89,6 +93,7 @@ src/
 │   ├── ContactForm.tsx     # Main contact form
 │   ├── Footer.tsx          # Social links & newsletter
 │   ├── GoogleAnalytics.tsx # GA4 integration
+│   ├── SubscriberCounter.tsx # YouTube subscriber counter
 │   └── ui/                 # shadcn components
 └── lib/
     └── utils.ts            # Tailwind merge utility
@@ -97,9 +102,13 @@ src/
 ## Important Implementation Details
 
 ### YouTube API Notes
-- Uses RSS feed instead of YouTube Data API (no API key required)
-- Filters shorts by title length, `#shorts` tag, and description
-- Has fallback video data if RSS fetch fails
+- **Video Feed**: Uses RSS feed instead of YouTube Data API (no API key required)
+  - Filters shorts by title length, `#shorts` tag, and description
+  - Has fallback video data if RSS fetch fails
+- **Subscriber Counter**: Uses YouTube Data API v3 (requires `YOUTUBE_API_KEY` environment variable)
+  - Fetches live subscriber count with 1-hour cache
+  - Displays animated tick-up counter above subscribe button
+  - Gracefully hides if API key not configured or API fails
 - Channel ID: `UCCIGBIf3b385BV5d48Y1U2A`
 
 ### Contact Form Flow
@@ -141,11 +150,21 @@ All interactive components use `"use client"` directive.
 - `next.config.ts`: Image remote patterns
 - `components.json`: shadcn/ui configuration (New York style, RSC enabled)
 - `tsconfig.json`: Path aliases (`@/*` → `src/*`)
+- `.env.local.example`: Template for required environment variables
+
+## Environment Variables
+
+Required environment variables (create `.env.local` file):
+- `YOUTUBE_API_KEY`: YouTube Data API v3 key for subscriber counter
+  - Get from: https://console.cloud.google.com/apis/credentials
+  - Enable YouTube Data API v3 in Google Cloud Console
+  - Optional: subscriber counter will gracefully hide if not configured
 
 ## External Integrations
 
 - **n8n Webhook**: `https://n8n.jaxius.net/webhook/6cffe9fc-d8f8-4fdd-8a0d-0b9f94ecadc5`
-- **Google Analytics**: Measurement ID placeholder (`GA_MEASUREMENT_ID`)
+- **Google Analytics**: Measurement ID `G-R96M1RT9HC`
+- **Vercel Analytics**: Automatically enabled in production
 - **YouTube Channel**: `UCCIGBIf3b385BV5d48Y1U2A`
 - **Party Website**: `https://www.lcwaparty.org.au/`
 

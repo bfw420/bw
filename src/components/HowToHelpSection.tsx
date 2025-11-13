@@ -5,6 +5,7 @@ import Image from "next/image";
 import confetti from "canvas-confetti";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import SubscriberCounter from "@/components/SubscriberCounter";
 import {
   Mail,
   Loader2,
@@ -181,6 +182,7 @@ export default function HowToHelpSection() {
             <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
               Watch my latest videos on policy, health, and making Western Australia better for everyone
             </p>
+            <SubscriberCounter />
             <Button
               asChild
               className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-bold text-lg transition-all duration-200 hover:scale-105 shadow-lg"
