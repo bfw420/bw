@@ -30,11 +30,11 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <Link href="#about" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
+              <Link href="/about" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
                 About
               </Link>
-              <Link href="#wellness" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
-                Wellness
+              <Link href="/report" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
+                Economic Report
               </Link>
               <Link href="#goals" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
                 Political Goals
@@ -71,18 +71,18 @@ export default function Navigation() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
               <Link
-                href="#about"
+                href="/about"
                 className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
               <Link
-                href="#wellness"
+                href="/report"
                 className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Wellness
+                Economic Report
               </Link>
               <Link
                 href="#goals"

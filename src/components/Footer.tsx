@@ -66,17 +66,17 @@ const socialLinks = [
 ];
 
 const footerLinks = [
-  { name: "About", href: "#about" },
-  { name: "Wellness", href: "#wellness" },
+  { name: "About", href: "/about" },
+  { name: "Economic Report", href: "/report" },
   { name: "Political Goals", href: "#goals" },
   { name: "How to Help", href: "#help" },
   { name: "Contact", href: "#contact" },
   { name: "Party", href: "https://www.lcwaparty.org.au/" },
   { name: "Donate", href: "https://www.lcwaparty.org.au/donate" },
   { name: "Parliament", href: "https://www.parliament.wa.gov.au/parliament/memblist.nsf/WAllMembersFlat/Walker,%20Brian%20Francis?opendocument" },
-  { name: "Media", href: "#media" },
-  { name: "Speeches", href: "#speeches" },
-  { name: "Downloads", href: "#downloads" },
+  { name: "Media Releases", href: "/media" },
+  { name: "Speeches", href: "/speeches" },
+  { name: "Downloads", href: "/downloads" },
   { name: "Wikipedia", href: "https://en.wikipedia.org/wiki/Brian_Walker_(politician)" },
   { name: "Privacy Policy", href: "/privacy" },
   { name: "Copyright", href: "/copyright" },
