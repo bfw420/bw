@@ -145,7 +145,7 @@ export default function FormPage() {
             Contact Dr Brian Walker MLC
           </h1>
           <p className="text-gray-600">
-            Send a message to the political office
+            Send a message to my political office
           </p>
         </div>
 
@@ -236,7 +236,7 @@ export default function FormPage() {
                 id="message"
                 {...register("message")}
                 placeholder="Write your message here..."
-                rows={6}
+                rows={12}
                 className="border-2 border-gray-200 focus:border-[#00653b] rounded-lg resize-none"
               />
               {errors.message && (
@@ -308,6 +308,7 @@ export default function FormPage() {
         <div className="text-center mt-6 text-sm text-gray-600">
           <p>Office of Dr Brian Walker MLC</p>
           <p>2 Parliament Place, West Perth, WA 6005</p>
+          <p>brian.walker.mlc@mp.wa.gov.au</p>
         </div>
       </div>
     </div>
