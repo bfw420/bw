@@ -84,7 +84,7 @@ export default function HeroSection() {
 
         {/* Main Headline */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-          Dr Brian Walker - Your Doctor in Parliament
+          Your Doctor in Parliament
         </h1>
 
         <p className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-100">
@@ -92,18 +92,18 @@ export default function HeroSection() {
         </p>
 
         {/* Key Facts with Checkmarks */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-10 text-base md:text-lg">
-          <div className="flex items-center gap-2">
-            <span className="text-[#6cc24a] text-2xl">✓</span>
-            <span>Member of Legislative Council since 2021</span>
+        <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4 mb-6 text-sm md:text-base max-w-3xl mx-auto">
+          <div className="flex items-center gap-1.5">
+            <span className="text-[#6cc24a] text-lg">✓</span>
+            <span>MLC since 2021</span>
           </div>
-          <div className="flex items-center gap-2">
-            <span className="text-[#6cc24a] text-2xl">✓</span>
-            <span>Practicing GP in Claremont</span>
+          <div className="flex items-center gap-1.5">
+            <span className="text-[#6cc24a] text-lg">✓</span>
+            <span>GP in Claremont</span>
           </div>
-          <div className="flex items-center gap-2">
-            <span className="text-[#6cc24a] text-2xl">✓</span>
-            <span>Leader of the Legalise Cannabis WA Party</span>
+          <div className="flex items-center gap-1.5">
+            <span className="text-[#6cc24a] text-lg">✓</span>
+            <span>Leader, Legalise Cannabis WA</span>
           </div>
         </div>
 
