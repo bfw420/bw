@@ -62,9 +62,9 @@ export default function SubscriberCounter() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center gap-2 text-gray-600 mb-8">
-        <Loader2 className="w-5 h-5 animate-spin" />
-        <span className="text-sm">Loading subscribers...</span>
+      <div className="flex items-center justify-center gap-2 text-gray-600">
+        <Loader2 className="w-4 h-4 animate-spin" />
+        <span className="text-sm">Loading...</span>
       </div>
     );
   }
@@ -74,18 +74,16 @@ export default function SubscriberCounter() {
   }
 
   return (
-    <div className="mb-8">
-      <div className="inline-flex items-center gap-4 bg-white px-8 py-5 rounded-2xl shadow-2xl border-2 border-gray-100 hover:shadow-3xl transition-all duration-300 hover:scale-105">
-        <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-xl shadow-lg">
-          <Play className="w-8 h-8 text-white fill-white ml-1" />
+    <div className="inline-flex items-center gap-3 bg-white px-5 py-3 rounded-sm shadow-md border border-gray-200 hover:shadow-lg transition-all duration-200 hover:scale-105">
+      <div className="flex items-center justify-center w-10 h-10 bg-[#cc0000] rounded-sm">
+        <Play className="w-5 h-5 text-white fill-white ml-0.5" />
+      </div>
+      <div className="flex flex-col">
+        <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+          Subscribers
         </div>
-        <div className="flex flex-col">
-          <div className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">
-            YouTube Subscribers
-          </div>
-          <div className="text-4xl font-black text-gray-900 tabular-nums tracking-tight">
-            {formatNumber(displayCount)}
-          </div>
+        <div className="text-2xl font-bold text-gray-900 tabular-nums">
+          {formatNumber(displayCount)}
         </div>
       </div>
     </div>

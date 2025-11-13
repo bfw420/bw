@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -395,12 +396,12 @@ export default function FormPage() {
         {/* Footer */}
         <div className="text-center text-sm text-gray-600">
           <p>
-            <a
+            <Link
               href="/"
               className="hover:text-[#00653b] transition-colors"
             >
               Office of Dr Brian Walker MLC
-            </a>
+            </Link>
           </p>
           <p>
             <a

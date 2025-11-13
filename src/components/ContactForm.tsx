@@ -156,16 +156,16 @@ export default function ContactForm() {
         </div>
 
         {/* Contact Information Cards */}
-        <div className="mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="group bg-white rounded-2xl p-8 shadow-lg border-2 border-[#00653b]/10 hover:border-[#00653b]/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+        <div className="mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="group bg-white rounded-xl p-6 shadow-md border-2 border-[#00653b]/10 hover:border-[#00653b]/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <div className="text-center">
-                <div className="w-16 h-16 bg-[#00653b]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#00653b] transition-colors duration-300">
-                  <Landmark className="w-8 h-8 text-[#00653b] group-hover:text-white transition-colors duration-300" />
+                <div className="w-12 h-12 bg-[#00653b]/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-[#00653b] transition-colors duration-300">
+                  <Landmark className="w-6 h-6 text-[#00653b] group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="text-2xl font-bold text-[#00653b] mb-3">Political Office</h3>
-                <p className="text-lg font-semibold text-gray-900 mb-2">brian.walker.mlc@mp.wa.gov.au</p>
-                <div className="text-gray-600 leading-relaxed">
+                <h3 className="text-xl font-bold text-[#00653b] mb-2">Political Office</h3>
+                <p className="text-base font-semibold text-gray-900 mb-2">brian.walker.mlc@mp.wa.gov.au</p>
+                <div className="text-sm text-gray-600 leading-relaxed">
                   <p className="font-medium mb-1">Office of Dr Brian Walker</p>
                   <p>2 Parliament Place, West Perth, WA 6005</p>
                 </div>
@@ -173,21 +173,21 @@ export default function ContactForm() {
                   href="https://maps.google.com/?q=2+Parliament+Place,+West+Perth,+WA+6005,+Australia"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-4 text-[#00653b] hover:text-[#6cc24a] font-medium transition-colors duration-200"
+                  className="inline-block mt-3 text-sm text-[#00653b] hover:text-[#6cc24a] font-medium transition-colors duration-200"
                 >
                   View on Maps →
                 </a>
               </div>
             </div>
 
-            <div className="group bg-white rounded-2xl p-8 shadow-lg border-2 border-[#6cc24a]/10 hover:border-[#6cc24a]/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div className="group bg-white rounded-xl p-6 shadow-md border-2 border-[#6cc24a]/10 hover:border-[#6cc24a]/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <div className="text-center">
-                <div className="w-16 h-16 bg-[#6cc24a]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#6cc24a] transition-colors duration-300">
-                  <Cross className="w-8 h-8 text-[#6cc24a] group-hover:text-white transition-colors duration-300" />
+                <div className="w-12 h-12 bg-[#6cc24a]/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-[#6cc24a] transition-colors duration-300">
+                  <Cross className="w-6 h-6 text-[#6cc24a] group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="text-2xl font-bold text-[#6cc24a] mb-3">Medical Practice</h3>
-                <p className="text-lg font-semibold text-gray-900 mb-2">claremont@nextpracticehealth.com</p>
-                <div className="text-gray-600 leading-relaxed">
+                <h3 className="text-xl font-bold text-[#6cc24a] mb-2">Medical Practice</h3>
+                <p className="text-base font-semibold text-gray-900 mb-2">claremont@nextpracticehealth.com</p>
+                <div className="text-sm text-gray-600 leading-relaxed">
                   <p className="font-medium mb-1">Next Practice Health</p>
                   <p>3 Airlie St, Claremont WA 6010</p>
                 </div>
@@ -195,7 +195,7 @@ export default function ContactForm() {
                   href="https://maps.google.com/?q=3+Airlie+St,+Claremont+WA+6010,+Australia"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-4 text-[#6cc24a] hover:text-[#00653b] font-medium transition-colors duration-200"
+                  className="inline-block mt-3 text-sm text-[#6cc24a] hover:text-[#00653b] font-medium transition-colors duration-200"
                 >
                   View on Maps →
                 </a>

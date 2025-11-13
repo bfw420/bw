@@ -53,9 +53,9 @@ The site is a single-page application with sections:
    - Political: `brian.walker.mlc@mp.wa.gov.au`
    - Medical: `claremont@nextpracticehealth.com`
 
-2. **YouTube Integration**: `/api/youtube/route.ts` fetches from RSS feed, filters out shorts, returns 4 long-form videos with fallback data
+2. **YouTube Integration**: `/api/youtube/route.ts` fetches from RSS feed, filters out shorts, returns 4 long-form videos with fallback data. Videos displayed in YouTube-style cards with thumbnail, channel icon, title, and metadata
 
-3. **YouTube Subscriber Counter**: `/api/youtube/subscribers/route.ts` fetches live subscriber count via YouTube Data API v3, displays with animated tick-up counter in YouTube-styled card with play button icon above subscribe button
+3. **YouTube Subscriber Counter**: `/api/youtube/subscribers/route.ts` fetches live subscriber count via YouTube Data API v3, displays with animated tick-up counter in compact YouTube-styled card next to subscribe button with red YouTube play icon
 
 4. **Contact Form Webhook**: `/api/contact/route.ts` converts POST to GET request with URL params and forwards to n8n webhook
 
@@ -127,11 +127,15 @@ src/
 ### Styling Conventions
 - Use shadcn/ui components from `@/components/ui/`
 - Custom theme colors via CSS variables
-- Hover animations with `hover:-translate-y-2` and `hover:scale-105/110` patterns
+- **IMPORTANT: ALL cards and buttons MUST have hover animations and transitions**
+  - Cards: `hover:-translate-y-1` or `hover:-translate-y-2` with shadow changes
+  - Buttons: `hover:scale-105` or `hover:scale-110`
+  - Always include `transition-all duration-200` or `duration-300`
+  - Icons should animate on hover (scale, color change, or background change)
 - Gradient backgrounds: `from-[#00653b] to-[#6cc24a]`
-- YouTube-themed elements use red (#ef4444, #dc2626) with white accents
-- Political Goals: Large 20x20 icons, single-word titles (2xl), small descriptions below
-- Subscribe button: Red background, white icon in circle, uppercase text, pulse animation on hover
+- YouTube-themed elements use YouTube red (#cc0000, #ff0000) with white accents, rounded-sm corners
+- Political Goals: 16x16 icons, single-word titles (xl), small descriptions (xs) below
+- Subscribe button: YouTube red background, next to subscriber counter, Google/YouTube styling
 
 ### Footer Social Media Icons
 - Custom SVG icon components for Patreon, Bluesky, and TikTok (lucide-react doesn't include these)

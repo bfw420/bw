@@ -182,18 +182,18 @@ export default function HowToHelpSection() {
             <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
               Watch my latest videos on policy, health, and making Western Australia better for everyone
             </p>
-            <SubscriberCounter />
-            <a
-              href="https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A?sub_confirmation=1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-full font-bold text-xl transition-all duration-300 hover:scale-110 shadow-2xl hover:shadow-red-500/50 group"
-            >
-              <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full group-hover:animate-pulse">
-                <UserPlus className="w-5 h-5 text-red-600" />
-              </div>
-              <span>SUBSCRIBE</span>
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <SubscriberCounter />
+              <a
+                href="https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A?sub_confirmation=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 bg-[#cc0000] hover:bg-[#ff0000] text-white px-6 py-3 rounded-sm font-semibold text-sm uppercase tracking-wide transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                <UserPlus className="w-5 h-5" />
+                <span>Subscribe</span>
+              </a>
+            </div>
           </div>
           
           {videosError && (
@@ -210,34 +210,57 @@ export default function HowToHelpSection() {
               <span className="ml-3 text-xl text-gray-600">Loading latest videos...</span>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {videos.map((video: YouTubeVideo) => (
-                <div key={video.id} className="group cursor-pointer">
-                  <a href={video.url} target="_blank" rel="noopener noreferrer">
-                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                      <div className="relative overflow-hidden">
-                        <div className="aspect-video bg-gray-200">
-                          <Image
-                            src={video.thumbnail}
-                            alt={video.title}
-                            width={320}
-                            height={180}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                          />
-                        </div>
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                <a
+                  key={video.id}
+                  href={video.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group cursor-pointer"
+                >
+                  <div className="transition-all duration-200">
+                    {/* Thumbnail */}
+                    <div className="relative overflow-hidden rounded-xl bg-gray-200 mb-3">
+                      <div className="aspect-video">
+                        <Image
+                          src={video.thumbnail}
+                          alt={video.title}
+                          width={320}
+                          height={180}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                      <div className="p-4">
-                        <h4 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-red-600 transition-colors leading-tight">
+                      {/* Duration badge overlay - YouTube style */}
+                      <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs font-semibold px-1.5 py-0.5 rounded">
+                        Video
+                      </div>
+                      {/* Hover overlay */}
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-200"></div>
+                    </div>
+
+                    {/* Video Info */}
+                    <div className="flex gap-3">
+                      {/* Channel icon placeholder - YouTube style */}
+                      <div className="flex-shrink-0 w-9 h-9 bg-[#cc0000] rounded-full flex items-center justify-center">
+                        <Play className="w-4 h-4 text-white fill-white ml-0.5" />
+                      </div>
+
+                      {/* Title and metadata */}
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-semibold text-sm text-gray-900 line-clamp-2 leading-tight mb-1 group-hover:text-gray-600 transition-colors">
                           {video.title}
                         </h4>
-                        <p className="text-sm text-gray-500">
+                        <p className="text-xs text-gray-600">
+                          Dr Brian Walker MLC
+                        </p>
+                        <p className="text-xs text-gray-600">
                           {formatDate(video.publishedAt)}
                         </p>
                       </div>
                     </div>
-                  </a>
-                </div>
+                  </div>
+                </a>
               ))}
             </div>
           )}
