@@ -40,12 +40,14 @@ npm run lint
 
 The site is a single-page application with sections:
 - **Navigation**: Sticky header with mobile menu
-- **Hero**: Legislative Council logo with gradient slideshow
+- **Hero**: "Your Doctor in Parliament" headline with Legislative Council logo, gradient slideshow, compact checkmark facts, and dual CTAs
+- **Stats Section**: 4-stat infographic bar with glassmorphism design (40+ Years GP, 5 Years Parliament, 11+ Bills, 5,000+ Subscribers)
 - **Wellness Section**: YouTube video carousel from channel feed
 - **Political Goals**: Campaign objectives with large icons, single-word titles, and detailed descriptions
-- **How to Help**: Volunteer and support options with YouTube subscriber counter and subscribe button
+- **How to Help**: Newsletter signup with emotional copy, YouTube section with accountability messaging, subscriber counter and subscribe button
+- **Economic Report**: Featured report section
 - **Contact Form**: Dual-purpose form (political/medical) with webhook integration
-- **Footer**: Enhanced social media links with larger icons in grid layout
+- **Footer**: Enhanced social media links in grid layout, qualifications displayed close to name in accent green
 
 ### Key Features
 
@@ -86,12 +88,14 @@ src/
 │   └── privacy/            # Privacy policy page
 ├── components/
 │   ├── Navigation.tsx      # Sticky nav with mobile menu
-│   ├── HeroSection.tsx     # Gradient slideshow hero
+│   ├── HeroSection.tsx     # "Your Doctor in Parliament" hero with gradient slideshow
+│   ├── StatsSection.tsx    # Stats infographic bar with glassmorphism
 │   ├── WellnessSection.tsx # YouTube video carousel
 │   ├── PoliticalGoalsSection.tsx
-│   ├── HowToHelpSection.tsx
+│   ├── HowToHelpSection.tsx # Newsletter & YouTube sections with emotional copy
+│   ├── EconomicReportSection.tsx # Featured report
 │   ├── ContactForm.tsx     # Main contact form
-│   ├── Footer.tsx          # Social links & newsletter
+│   ├── Footer.tsx          # Social links, newsletter, qualifications
 │   ├── GoogleAnalytics.tsx # GA4 integration
 │   ├── SubscriberCounter.tsx # YouTube subscriber counter
 │   └── ui/                 # shadcn components
@@ -195,3 +199,43 @@ Required environment variables (create `.env.local` file):
 
 ### Known Warnings
 - **Hydration Mismatch**: Browser extensions (like Dashlane password manager) may add attributes (`data-dashlane-rid`, etc.) to form inputs, causing hydration warnings in development. This is not a code issue and doesn't affect functionality. Users can disable extensions on localhost if desired.
+
+## Recent Updates
+
+### Value Proposition Strategy Implementation (November 2025)
+Implemented comprehensive content strategy focusing on emotional connection and social proof:
+
+1. **Hero Section**:
+   - Simplified headline to "Your Doctor in Parliament" (removed secondary headline)
+   - Compact checkmark facts layout (flex-wrap, smaller gaps, text-sm/base)
+   - Two prominent CTA buttons: "Read My Plan for WA" and "Join the Movement"
+   - Full text retained: "Member of Legislative Council since 2021", "Practicing GP in Claremont", "Leader of the Legalise Cannabis WA Party"
+
+2. **Stats Section**:
+   - New StatsSection component with glassmorphism design
+   - 4 stats in gradient background with hover effects
+   - Positioned immediately after hero for maximum impact
+
+3. **About Page**:
+   - Added emotional "WHY I SERVE" section with personal narrative
+   - Story-driven approach connecting GP experience to parliamentary service
+
+4. **Newsletter Section**:
+   - Rewritten with emotional urgency: "DON'T LET THE MEDIA SILENCE THIS MOVEMENT"
+   - 4 specific benefits with arrow bullets
+   - Social proof testimonial added
+   - Button text: "Send Me the Real Story"
+
+5. **YouTube Section**:
+   - New headline: "WATCH ME HOLD POWER ACCOUNTABLE"
+   - Content description box with 4 video types
+
+6. **Metadata Enhancement**:
+   - Expanded keywords from 7 to 17
+   - Enhanced Open Graph and Twitter card tags
+   - Added robots meta for optimal indexing
+   - Locale specification for Australian targeting
+
+7. **Footer**:
+   - Qualifications (MB, ChB MRCGP, RACGP) moved closer to name
+   - Changed from gray to accent green (#6cc24a) for visual hierarchy
