@@ -75,11 +75,15 @@ No fluff. No spam. Just the truth about progressive policy in WA.
 [Button: Send Me the Real Story] [Button: Read Past Newsletters]
 
 💬 "The only politician who actually tells me what's going on." - Sarah M., Fremantle
+
+add more social proof
 ```
 
 ---
 
 ### **2. YouTube Section**
+
+add in a section like Instagram is. 
 
 WATCH ME HOLD POWER ACCOUNTABLE
 

@@ -92,6 +92,9 @@ export default function Footer() {
             <h3 className="text-xl font-bold text-white">
               Dr Brian Walker MLC
             </h3>
+            <p className="text-sm text-gray-300 italic">
+              MB, ChB MRCGP, RACGP
+            </p>
             <div className="space-y-1">
               <a
                 href="https://www.parliament.wa.gov.au/Parliament/Memblist.nsf/Member+Lookup+LC+Current/Walker,+Hon+Dr+Brian?opendocument"

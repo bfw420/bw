@@ -142,13 +142,52 @@ export default function HowToHelpSection() {
         <div className="mb-20">
           <div className="max-w-4xl mx-auto">
             <div className="bg-gradient-to-r from-[#00653b] to-[#6cc24a] rounded-3xl overflow-hidden shadow-2xl">
-              <div className="px-8 py-12 text-center text-white">
+              <div className="px-8 py-12 text-white">
                 <Mail className="w-16 h-16 mx-auto mb-6 opacity-90" />
-                <h3 className="text-3xl font-bold mb-4">Stay Informed</h3>
-                <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-                  Get the latest updates, policy insights, and behind-the-scenes content directly from Dr Brian Walker
+                <h3 className="text-3xl md:text-4xl font-bold mb-4 text-center">DON&apos;T LET THE MEDIA SILENCE THIS MOVEMENT</h3>
+
+                <div className="max-w-2xl mx-auto mb-8 space-y-3 text-center">
+                  <p className="text-lg opacity-95">
+                    Legacy media won&apos;t cover evidence-based cannabis reform.
+                  </p>
+                  <p className="text-lg opacity-95">
+                    They won&apos;t report on progressive healthcare policy.
+                  </p>
+                  <p className="text-lg opacity-95">
+                    They won&apos;t tell you what&apos;s really happening in Parliament.
+                  </p>
+                  <p className="text-xl font-bold mt-4">
+                    So I will.
+                  </p>
+                </div>
+
+                <div className="max-w-2xl mx-auto mb-8">
+                  <p className="text-lg font-semibold mb-4 text-center">Join 5,000+ Western Australians getting:</p>
+                  <div className="space-y-2 text-left">
+                    <div className="flex items-start gap-3">
+                      <span className="text-[#6cc24a] text-xl mt-1">→</span>
+                      <p className="text-base">Monthly policy updates (what I&apos;m fighting for and why)</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-[#6cc24a] text-xl mt-1">→</span>
+                      <p className="text-base">Parliamentary session recaps (how I voted and what happened)</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-[#6cc24a] text-xl mt-1">→</span>
+                      <p className="text-base">Exclusive research and reports (before the media gets them)</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-[#6cc24a] text-xl mt-1">→</span>
+                      <p className="text-base">Action alerts when I need your voice</p>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-center text-lg font-medium mb-6">
+                  No fluff. No spam. Just the truth about progressive policy in WA.
                 </p>
-                <form onSubmit={handleNewsletterSignup} className="max-w-2xl mx-auto">
+
+                <form onSubmit={handleNewsletterSignup} className="max-w-2xl mx-auto mb-6">
                   <div className="flex flex-col sm:flex-row gap-4 p-2 bg-white/10 backdrop-blur-sm rounded-2xl">
                     <Input
                       type="email"
@@ -174,13 +213,26 @@ export default function HowToHelpSection() {
                         e.currentTarget.style.backgroundColor = 'white';
                       }}
                     >
-                      {isSubmitting ? "Subscribing..." : "Subscribe Now"}
+                      {isSubmitting ? "Subscribing..." : "Send Me the Real Story"}
                     </Button>
                   </div>
                 </form>
-                <p className="text-sm opacity-75 mt-4">
-                  Join thousands of supporters • No spam, unsubscribe anytime
-                </p>
+
+                <div className="text-center">
+                  <Button
+                    asChild
+                    variant="ghost"
+                    className="text-white hover:bg-white/10 underline"
+                  >
+                    <a href="/newsletter">Read Past Newsletters</a>
+                  </Button>
+                </div>
+
+                <div className="mt-8 text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 max-w-2xl mx-auto">
+                  <p className="text-sm italic opacity-90">
+                    💬 &quot;The only politician who actually tells me what&apos;s going on.&quot; - Sarah M., Fremantle
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -189,12 +241,33 @@ export default function HowToHelpSection() {
         {/* YouTube Section */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Latest from YouTube
+            <h3 className="text-3xl md:text-4xl font-bold text-[#00653b] mb-4">
+              WATCH ME HOLD POWER ACCOUNTABLE
             </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-              Watch my latest videos on policy, health, and making Western Australia better for everyone
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-6">
+              Parliament sessions. Policy breakdowns. The fights the media won&apos;t show you.
             </p>
+            <div className="max-w-2xl mx-auto mb-8 text-left bg-gray-50 rounded-xl p-6 border-2 border-gray-200">
+              <p className="text-base font-semibold mb-3 text-gray-900">📺 New videos every week covering:</p>
+              <div className="space-y-2">
+                <div className="flex items-start gap-3">
+                  <span className="text-[#00653b] text-xl mt-1">→</span>
+                  <p className="text-gray-700">Parliamentary debates (the full context, not just soundbites)</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-[#6cc24a] text-xl mt-1">→</span>
+                  <p className="text-gray-700">Policy explainers (cannabis reform, healthcare, environment)</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-[#00653b] text-xl mt-1">→</span>
+                  <p className="text-gray-700">Community town halls (your questions, my answers)</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-[#6cc24a] text-xl mt-1">→</span>
+                  <p className="text-gray-700">Behind-the-scenes (how laws actually get made)</p>
+                </div>
+              </div>
+            </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <SubscriberCounter />
               <a

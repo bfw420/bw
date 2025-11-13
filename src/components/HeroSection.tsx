@@ -67,11 +67,11 @@ export default function HeroSection() {
         <ChevronRight className="h-8 w-8" />
       </Button>
 
-      {/* Minimal Centered Content - Just Logo */}
-      <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+      {/* Hero Content */}
+      <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-4">
         {/* Legislative Council Logo */}
         <div className="mb-8">
-          <div className="w-48 h-48 mx-auto mb-6">
+          <div className="w-40 h-40 md:w-48 md:h-48 mx-auto mb-6">
             <Image
               src="/images/CouncilLogo.png"
               alt="WA Legislative Council"
@@ -82,22 +82,54 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Title and Subtitles */}
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-          Hon Dr Brian Walker MLC
+        {/* Main Headline */}
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          Evidence-Based Policy for a Better Western Australia
         </h1>
-        
-        <h2 className="text-lg md:text-xl lg:text-2xl mb-2 text-gray-200">
-          Member of the Legislative Council for Western Australia
+
+        {/* Subheadings */}
+        <h2 className="text-xl md:text-2xl lg:text-3xl mb-3 font-semibold text-white">
+          Dr Brian - Your Doctor in Parliament
         </h2>
-        
-        <h3 className="text-base md:text-lg lg:text-xl mb-2 text-gray-200">
-          General Practitioner in Claremont
-        </h3>
-        
-        <h4 className="text-sm md:text-base lg:text-lg mb-6 text-gray-300">
-          MB, ChB MRCGP, RACGP
-        </h4>
+
+        <p className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-100">
+          Evidence-based policy, not politics as usual.
+        </p>
+
+        {/* Key Facts with Checkmarks */}
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-10 text-base md:text-lg">
+          <div className="flex items-center gap-2">
+            <span className="text-[#6cc24a] text-2xl">✓</span>
+            <span>Member of Legislative Council since 2021</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-[#6cc24a] text-2xl">✓</span>
+            <span>Practicing GP in Claremont</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-[#6cc24a] text-2xl">✓</span>
+            <span>Leader, Legalise Cannabis WA Party</span>
+          </div>
+        </div>
+
+        {/* Call to Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Button
+            asChild
+            size="lg"
+            className="bg-white text-[#00653b] hover:bg-gray-100 px-8 py-6 text-lg font-bold rounded-full shadow-xl transition-all duration-200 hover:scale-105"
+          >
+            <a href="/about">Read My Plan for WA</a>
+          </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#00653b] px-8 py-6 text-lg font-bold rounded-full shadow-xl transition-all duration-200 hover:scale-105"
+          >
+            <a href="https://www.lcwaparty.org.au/join" target="_blank" rel="noopener noreferrer">Join the Movement</a>
+          </Button>
+        </div>
       </div>
 
       {/* Slide Indicators */}

@@ -21,28 +21,42 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* Bio Section */}
+          {/* WHY I SERVE Section */}
           <div className="prose prose-lg max-w-none mb-16">
-            <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12 border border-gray-200 shadow-sm">
-              <p className="text-gray-700 leading-relaxed mb-6">
-                Dr Brian Walker is a dedicated public servant who brings a unique combination of medical expertise
-                and political leadership to the Western Australian Parliament. As a practicing General Practitioner
-                in Claremont and Member of the Legislative Council, Brian works tirelessly to improve healthcare,
-                social justice, and evidence-based policy making in Western Australia.
-              </p>
+            <div className="bg-gradient-to-br from-[#00653b]/5 to-[#6cc24a]/5 rounded-2xl p-8 md:p-12 border-2 border-[#00653b]/20 shadow-lg">
+              <h2 className="text-3xl font-bold text-[#00653b] mb-6 text-center">
+                WHY I SERVE
+              </h2>
 
-              <p className="text-gray-700 leading-relaxed mb-6">
-                As the Leader of the Legalise Cannabis WA Party, Brian champions progressive reform based on
-                scientific evidence and compassionate approaches to drug policy. His work in Parliament focuses
-                on healthcare reform, mental health services, harm reduction, and creating a more just and
-                equitable society for all Western Australians.
-              </p>
+              <div className="text-gray-800 space-y-4 text-lg leading-relaxed">
+                <p>
+                  For 20 years as a GP in Claremont, I saw the same story repeat:
+                  <strong className="text-[#00653b]"> Good people suffering because of bad policy.</strong>
+                </p>
 
-              <p className="text-gray-700 leading-relaxed">
-                Brian&apos;s approach to politics is grounded in his medical background - treating each issue
-                with careful diagnosis, evidence-based solutions, and a focus on harm reduction. He believes
-                in the power of honest conversation, scientific research, and putting people before politics.
-              </p>
+                <p>
+                  Patients denied pain relief because of outdated cannabis laws.
+                  Families crushed by healthcare costs.
+                  Communities ignored by politicians who don&apos;t listen.
+                </p>
+
+                <p>
+                  I could keep treating symptoms, or I could fight to fix the system.
+                </p>
+
+                <p className="text-xl font-semibold text-[#00653b]">
+                  So in 2021, I ran for Parliament.
+                </p>
+
+                <p>
+                  Now I&apos;m your voice in the Legislative Council - still seeing patients
+                  every week, still fighting for the healthcare and reforms WA deserves.
+                </p>
+
+                <p className="text-lg font-medium text-gray-900 border-l-4 border-[#6cc24a] pl-4 italic">
+                  Because the best way to heal communities is to change the laws that hurt them.
+                </p>
+              </div>
             </div>
           </div>
 
