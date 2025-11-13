@@ -43,7 +43,7 @@ export default function SpeechesPage() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12">
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 hover:border-[#00653b]/30 transition-all duration-200 cursor-pointer">
                 <Search className="w-8 h-8 text-[#00653b] mb-3 mx-auto" />
                 <h3 className="font-bold text-lg text-gray-900 mb-2">Search & Filter</h3>
                 <p className="text-gray-600 text-sm">
@@ -51,7 +51,7 @@ export default function SpeechesPage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 hover:border-[#6cc24a]/30 transition-all duration-200 cursor-pointer">
                 <FileText className="w-8 h-8 text-[#6cc24a] mb-3 mx-auto" />
                 <h3 className="font-bold text-lg text-gray-900 mb-2">Full Transcripts</h3>
                 <p className="text-gray-600 text-sm">
@@ -59,7 +59,7 @@ export default function SpeechesPage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 hover:border-[#00653b]/30 transition-all duration-200 cursor-pointer">
                 <MessageSquare className="w-8 h-8 text-[#00653b] mb-3 mx-auto" />
                 <h3 className="font-bold text-lg text-gray-900 mb-2">Key Issues</h3>
                 <p className="text-gray-600 text-sm">
@@ -101,7 +101,7 @@ export default function SpeechesPage() {
             </p>
             <Link
               href="/#help"
-              className="inline-block text-[#00653b] hover:text-[#6cc24a] font-semibold transition-colors"
+              className="inline-block text-[#00653b] hover:text-[#6cc24a] font-semibold transition-all duration-200 hover:scale-105"
             >
               Subscribe to Newsletter →
             </Link>

@@ -20,36 +20,36 @@ export default function EconomicReportSection() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            <div className="bg-white rounded-2xl p-6 shadow-md border border-[#00653b]/20">
+            <div className="group bg-white rounded-2xl p-6 shadow-md border border-[#00653b]/20 hover:shadow-xl hover:-translate-y-1 hover:border-[#00653b] transition-all duration-300 cursor-pointer">
               <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 bg-[#6cc24a]/10 rounded-lg">
-                  <DollarSign className="w-6 h-6 text-[#6cc24a]" />
+                <div className="p-2 bg-[#6cc24a]/10 rounded-lg group-hover:bg-[#6cc24a] transition-all duration-300">
+                  <DollarSign className="w-6 h-6 text-[#6cc24a] group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="font-bold text-lg text-gray-900">Economic Impact</h3>
+                <h3 className="font-bold text-lg text-gray-900 group-hover:text-[#00653b] transition-colors duration-300">Economic Impact</h3>
               </div>
               <p className="text-gray-600">
                 Detailed analysis of revenue potential, job creation, and economic stimulus for WA.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-md border border-[#00653b]/20">
+            <div className="group bg-white rounded-2xl p-6 shadow-md border border-[#00653b]/20 hover:shadow-xl hover:-translate-y-1 hover:border-[#00653b] transition-all duration-300 cursor-pointer">
               <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 bg-[#6cc24a]/10 rounded-lg">
-                  <TrendingUp className="w-6 h-6 text-[#6cc24a]" />
+                <div className="p-2 bg-[#6cc24a]/10 rounded-lg group-hover:bg-[#6cc24a] transition-all duration-300">
+                  <TrendingUp className="w-6 h-6 text-[#6cc24a] group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="font-bold text-lg text-gray-900">Market Analysis</h3>
+                <h3 className="font-bold text-lg text-gray-900 group-hover:text-[#00653b] transition-colors duration-300">Market Analysis</h3>
               </div>
               <p className="text-gray-600">
                 Expert research from UWA Business School examining current market conditions.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-md border border-[#00653b]/20">
+            <div className="group bg-white rounded-2xl p-6 shadow-md border border-[#00653b]/20 hover:shadow-xl hover:-translate-y-1 hover:border-[#00653b] transition-all duration-300 cursor-pointer">
               <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 bg-[#6cc24a]/10 rounded-lg">
-                  <FileText className="w-6 h-6 text-[#6cc24a]" />
+                <div className="p-2 bg-[#6cc24a]/10 rounded-lg group-hover:bg-[#6cc24a] transition-all duration-300">
+                  <FileText className="w-6 h-6 text-[#6cc24a] group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="font-bold text-lg text-gray-900">Evidence-Based</h3>
+                <h3 className="font-bold text-lg text-gray-900 group-hover:text-[#00653b] transition-colors duration-300">Evidence-Based</h3>
               </div>
               <p className="text-gray-600">
                 Authoritative academic evaluation backed by comprehensive data and research.

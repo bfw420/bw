@@ -42,7 +42,7 @@ export default function MediaPage() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mt-12">
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 hover:border-[#00653b]/30 transition-all duration-200 cursor-pointer">
                 <Calendar className="w-8 h-8 text-[#00653b] mb-3" />
                 <h3 className="font-bold text-lg text-gray-900 mb-2">Stay Updated</h3>
                 <p className="text-gray-600 text-sm">
@@ -50,7 +50,7 @@ export default function MediaPage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 hover:border-[#6cc24a]/30 transition-all duration-200 cursor-pointer">
                 <Newspaper className="w-8 h-8 text-[#6cc24a] mb-3" />
                 <h3 className="font-bold text-lg text-gray-900 mb-2">Follow on Social Media</h3>
                 <p className="text-gray-600 text-sm">

@@ -51,7 +51,7 @@ export default function HeroSection() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 z-20 text-white hover:bg-white/20"
+        className="absolute left-4 z-20 text-white hover:bg-white/20 hover:scale-110 transition-all duration-200"
         onClick={prevSlide}
         aria-label="Previous image"
       >
@@ -60,7 +60,7 @@ export default function HeroSection() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 z-20 text-white hover:bg-white/20"
+        className="absolute right-4 z-20 text-white hover:bg-white/20 hover:scale-110 transition-all duration-200"
         onClick={nextSlide}
         aria-label="Next image"
       >

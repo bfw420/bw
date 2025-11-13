@@ -64,7 +64,7 @@ export default function ReportPage() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow">
+            <div className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#00653b] to-[#6cc24a] rounded-full mb-4">
                 <TrendingUp className="w-8 h-8 text-white" />
               </div>
@@ -73,7 +73,7 @@ export default function ReportPage() {
               <p className="text-sm text-gray-500 mt-1">(2023-28 forward estimates)</p>
             </div>
 
-            <div className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow">
+            <div className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#00653b] to-[#6cc24a] rounded-full mb-4">
                 <BookOpen className="w-8 h-8 text-white" />
               </div>
@@ -82,7 +82,7 @@ export default function ReportPage() {
               <p className="text-sm text-gray-500 mt-1">Academic economic analysis</p>
             </div>
 
-            <div className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow">
+            <div className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#00653b] to-[#6cc24a] rounded-full mb-4">
                 <FileDown className="w-8 h-8 text-white" />
               </div>
@@ -180,7 +180,7 @@ export default function ReportPage() {
         <div className="container mx-auto px-4 text-center">
           <Link
             href="/"
-            className="inline-flex items-center text-[#00653b] hover:text-[#6cc24a] font-medium transition-colors"
+            className="inline-flex items-center text-[#00653b] hover:text-[#6cc24a] font-medium transition-all duration-200 hover:scale-105"
           >
             ← Back to Home
           </Link>

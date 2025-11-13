@@ -30,22 +30,22 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <Link href="/about" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
+              <Link href="/about" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium transition-colors duration-200">
                 About
               </Link>
-              <Link href="/report" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
+              <Link href="/report" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium transition-colors duration-200">
                 Economic Report
               </Link>
-              <Link href="#goals" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
+              <Link href="#goals" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium transition-colors duration-200">
                 Political Goals
               </Link>
-              <Link href="#help" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
+              <Link href="#help" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium transition-colors duration-200">
                 How to Help
               </Link>
-              <Link href="https://www.lcwaparty.org.au/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium">
+              <Link href="https://www.lcwaparty.org.au/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium transition-colors duration-200">
                 Party
               </Link>
-              <Button asChild className="bg-[#00653b] hover:bg-[#00653b]/90 text-white">
+              <Button asChild className="bg-[#00653b] hover:bg-[#00653b]/90 text-white hover:scale-105 transition-all duration-200">
                 <Link href="#contact">
                   Contact
                 </Link>
@@ -72,28 +72,28 @@ export default function Navigation() {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
               <Link
                 href="/about"
-                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium"
+                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
               <Link
                 href="/report"
-                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium"
+                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Economic Report
               </Link>
               <Link
                 href="#goals"
-                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium"
+                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Political Goals
               </Link>
               <Link
                 href="#help"
-                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium"
+                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 How to Help
@@ -102,13 +102,13 @@ export default function Navigation() {
                 href="https://www.lcwaparty.org.au/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium"
+                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Party
               </Link>
               <div className="px-3 py-2">
-                <Button asChild className="w-full bg-[#00653b] hover:bg-[#00653b]/90 text-white">
+                <Button asChild className="w-full bg-[#00653b] hover:bg-[#00653b]/90 text-white hover:scale-105 transition-all duration-200">
                   <Link href="#contact">
                     Contact
                   </Link>

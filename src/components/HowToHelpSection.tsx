@@ -218,7 +218,7 @@ export default function HowToHelpSection() {
                   href={video.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group cursor-pointer"
+                  className="group cursor-pointer block hover:-translate-y-1 transition-all duration-200"
                 >
                   <div className="transition-all duration-200">
                     {/* Thumbnail */}
@@ -271,7 +271,7 @@ export default function HowToHelpSection() {
               <p className="text-xl text-gray-500 mb-6">No videos available at the moment.</p>
               <Button
                 asChild
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-bold"
+                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-all duration-200 shadow-lg"
               >
                 <a
                   href="https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A"

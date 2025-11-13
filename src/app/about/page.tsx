@@ -57,7 +57,7 @@ export default function AboutPage() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-[#00653b]/10 hover:border-[#00653b]/30 transition-all duration-200">
+              <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-[#00653b]/10 hover:border-[#00653b]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-[#00653b]/10 rounded-lg">
                     <Stethoscope className="w-6 h-6 text-[#00653b]" />
@@ -72,7 +72,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-[#00653b]/10 hover:border-[#00653b]/30 transition-all duration-200">
+              <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-[#00653b]/10 hover:border-[#00653b]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-[#6cc24a]/10 rounded-lg">
                     <Leaf className="w-6 h-6 text-[#6cc24a]" />
@@ -87,7 +87,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-[#00653b]/10 hover:border-[#00653b]/30 transition-all duration-200">
+              <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-[#00653b]/10 hover:border-[#00653b]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-[#00653b]/10 rounded-lg">
                     <Heart className="w-6 h-6 text-[#00653b]" />
@@ -102,7 +102,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-[#00653b]/10 hover:border-[#00653b]/30 transition-all duration-200">
+              <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-[#00653b]/10 hover:border-[#00653b]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-[#6cc24a]/10 rounded-lg">
                     <GraduationCap className="w-6 h-6 text-[#6cc24a]" />

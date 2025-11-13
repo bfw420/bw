@@ -308,7 +308,7 @@ export default function FormPage() {
             {/* Submit Button */}
             <Button
               type="submit"
-              className="w-full h-12 text-base font-semibold bg-gradient-to-r from-[#00653b] to-[#6cc24a] hover:from-[#00653b]/90 hover:to-[#6cc24a]/90 rounded-lg transition-all duration-200 hover:shadow-lg"
+              className="w-full h-12 text-base font-semibold bg-gradient-to-r from-[#00653b] to-[#6cc24a] hover:from-[#00653b]/90 hover:to-[#6cc24a]/90 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-[1.02]"
               disabled={isSubmitting}
             >
               {isSubmitting ? (
@@ -332,7 +332,7 @@ export default function FormPage() {
             href="https://www.facebook.com/BrianWalkerMLC/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-[#00653b] transition-colors"
+            className="text-gray-500 hover:text-[#00653b] transition-all duration-200 hover:scale-125"
             aria-label="Facebook"
           >
             <Facebook className="w-4 h-4" />
@@ -341,7 +341,7 @@ export default function FormPage() {
             href="https://www.instagram.com/brianwalkermlc/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-[#00653b] transition-colors"
+            className="text-gray-500 hover:text-[#00653b] transition-all duration-200 hover:scale-125"
             aria-label="Instagram"
           >
             <Instagram className="w-4 h-4" />
@@ -350,7 +350,7 @@ export default function FormPage() {
             href="https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-[#00653b] transition-colors"
+            className="text-gray-500 hover:text-[#00653b] transition-all duration-200 hover:scale-125"
             aria-label="YouTube"
           >
             <Youtube className="w-4 h-4" />
@@ -359,7 +359,7 @@ export default function FormPage() {
             href="https://www.patreon.com/cw/DrBrianWalkerMLC"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-[#00653b] transition-colors"
+            className="text-gray-500 hover:text-[#00653b] transition-all duration-200 hover:scale-125"
             aria-label="Patreon"
           >
             <PatreonIcon />
@@ -368,7 +368,7 @@ export default function FormPage() {
             href="https://bsky.app/profile/bfw.bsky.social"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-[#00653b] transition-colors"
+            className="text-gray-500 hover:text-[#00653b] transition-all duration-200 hover:scale-125"
             aria-label="Bluesky"
           >
             <BlueskyIcon />
@@ -377,7 +377,7 @@ export default function FormPage() {
             href="https://x.com/BrianWalkerMLC"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-[#00653b] transition-colors"
+            className="text-gray-500 hover:text-[#00653b] transition-all duration-200 hover:scale-125"
             aria-label="X (Twitter)"
           >
             <Twitter className="w-4 h-4" />
@@ -386,7 +386,7 @@ export default function FormPage() {
             href="https://www.tiktok.com/@brianwalkermlc"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-[#00653b] transition-colors"
+            className="text-gray-500 hover:text-[#00653b] transition-all duration-200 hover:scale-125"
             aria-label="TikTok"
           >
             <TikTokIcon />
@@ -398,7 +398,7 @@ export default function FormPage() {
           <p>
             <Link
               href="/"
-              className="hover:text-[#00653b] transition-colors"
+              className="hover:text-[#00653b] transition-all duration-200 hover:scale-105 inline-block"
             >
               Office of Dr Brian Walker MLC
             </Link>
@@ -408,7 +408,7 @@ export default function FormPage() {
               href="https://maps.google.com/?q=2+Parliament+Place,+West+Perth,+WA+6005,+Australia"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#00653b] transition-colors"
+              className="hover:text-[#00653b] transition-all duration-200 hover:scale-105 inline-block"
             >
               2 Parliament Place, West Perth, WA 6005
             </a>
@@ -416,7 +416,7 @@ export default function FormPage() {
           <p>
             <a
               href="mailto:brian.walker.mlc@mp.wa.gov.au"
-              className="hover:text-[#00653b] transition-colors"
+              className="hover:text-[#00653b] transition-all duration-200 hover:scale-105 inline-block"
             >
               brian.walker.mlc@mp.wa.gov.au
             </a>
