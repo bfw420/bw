@@ -89,12 +89,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white">
-              Dr Brian Walker MLC
-            </h3>
-            <p className="text-sm text-gray-300 italic">
-              MB, ChB MRCGP, RACGP
-            </p>
+            <div className="space-y-1">
+              <h3 className="text-xl font-bold text-white">
+                Dr Brian Walker MLC
+              </h3>
+              <p className="text-sm text-[#6cc24a] italic font-medium">
+                MB, ChB MRCGP, RACGP
+              </p>
+            </div>
             <div className="space-y-1">
               <a
                 href="https://www.parliament.wa.gov.au/Parliament/Memblist.nsf/Member+Lookup+LC+Current/Walker,+Hon+Dr+Brian?opendocument"
