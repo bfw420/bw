@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -9,7 +10,26 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Send, Loader2, CheckCircle2 } from "lucide-react";
+import { Send, Loader2, CheckCircle2, Facebook, Instagram, Youtube, Twitter } from "lucide-react";
+
+// Custom social media icons
+const PatreonIcon = () => (
+  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.386.524c-4.764 0-8.64 3.876-8.64 8.64 0 4.75 3.876 8.613 8.64 8.613 4.75 0 8.614-3.864 8.614-8.613C24 4.4 20.136.524 15.386.524M.003 23.537h4.22V.524H.003"/>
+  </svg>
+);
+
+const BlueskyIcon = () => (
+  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.038.409-.056-2.36.335-5.365 1.166-5.608 3.713-.24 2.548 2.016 3.27 5.06 3.27 3.043 0 4.727-1.065 5.132-2.286.405 1.221 2.09 2.286 5.132 2.286 3.045 0 5.3-.722 5.06-3.27-.243-2.547-3.247-3.378-5.608-3.713.134.018.273.036.409.056 2.67.296 5.568-.628 6.383-3.364.246-.829.624-5.79.624-6.479 0-.688-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C16.046 4.747 13.087 8.686 12 10.8"/>
+  </svg>
+);
+
+const TikTokIcon = () => (
+  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1"/>
+  </svg>
+);
 
 const formSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -25,6 +45,7 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 export default function FormPage() {
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [captchaQuestion, setCaptchaQuestion] = useState({ a: 0, b: 0, answer: 0 });
@@ -121,10 +142,10 @@ export default function FormPage() {
         };
         setCaptchaQuestion(generateNewCaptcha());
 
-        // Reset success message after 5 seconds
+        // Redirect to home page after 10 seconds
         setTimeout(() => {
-          setIsSuccess(false);
-        }, 5000);
+          router.push('/');
+        }, 10000);
       } else {
         throw new Error(result.message || `API failed with status: ${response.status}`);
       }
@@ -304,8 +325,75 @@ export default function FormPage() {
           </form>
         </div>
 
+        {/* Social Media Icons */}
+        <div className="flex justify-center items-center gap-4 mt-6 mb-4">
+          <a
+            href="https://www.facebook.com/BrianWalkerMLC/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 hover:text-[#00653b] transition-colors"
+            aria-label="Facebook"
+          >
+            <Facebook className="w-4 h-4" />
+          </a>
+          <a
+            href="https://www.instagram.com/brianwalkermlc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 hover:text-[#00653b] transition-colors"
+            aria-label="Instagram"
+          >
+            <Instagram className="w-4 h-4" />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 hover:text-[#00653b] transition-colors"
+            aria-label="YouTube"
+          >
+            <Youtube className="w-4 h-4" />
+          </a>
+          <a
+            href="https://www.patreon.com/cw/DrBrianWalkerMLC"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 hover:text-[#00653b] transition-colors"
+            aria-label="Patreon"
+          >
+            <PatreonIcon />
+          </a>
+          <a
+            href="https://bsky.app/profile/bfw.bsky.social"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 hover:text-[#00653b] transition-colors"
+            aria-label="Bluesky"
+          >
+            <BlueskyIcon />
+          </a>
+          <a
+            href="https://x.com/BrianWalkerMLC"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 hover:text-[#00653b] transition-colors"
+            aria-label="X (Twitter)"
+          >
+            <Twitter className="w-4 h-4" />
+          </a>
+          <a
+            href="https://www.tiktok.com/@brianwalkermlcs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 hover:text-[#00653b] transition-colors"
+            aria-label="TikTok"
+          >
+            <TikTokIcon />
+          </a>
+        </div>
+
         {/* Footer */}
-        <div className="text-center mt-6 text-sm text-gray-600">
+        <div className="text-center text-sm text-gray-600">
           <p>Office of Dr Brian Walker MLC</p>
           <p>2 Parliament Place, West Perth, WA 6005</p>
           <p>brian.walker.mlc@mp.wa.gov.au</p>
