@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Users, Loader2 } from "lucide-react";
+import { Loader2, Play } from "lucide-react";
 
 export default function SubscriberCounter() {
   const [subscriberCount, setSubscriberCount] = useState<number | null>(null);
@@ -62,8 +62,8 @@ export default function SubscriberCounter() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center gap-2 text-gray-600 mb-6">
-        <Loader2 className="w-4 h-4 animate-spin" />
+      <div className="flex items-center justify-center gap-2 text-gray-600 mb-8">
+        <Loader2 className="w-5 h-5 animate-spin" />
         <span className="text-sm">Loading subscribers...</span>
       </div>
     );
@@ -74,15 +74,17 @@ export default function SubscriberCounter() {
   }
 
   return (
-    <div className="mb-6">
-      <div className="inline-flex items-center gap-3 bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 rounded-full shadow-lg">
-        <Users className="w-5 h-5" />
-        <div className="flex flex-col items-start">
-          <div className="text-2xl font-bold tabular-nums">
-            {formatNumber(displayCount)}
+    <div className="mb-8">
+      <div className="inline-flex items-center gap-4 bg-white px-8 py-5 rounded-2xl shadow-2xl border-2 border-gray-100 hover:shadow-3xl transition-all duration-300 hover:scale-105">
+        <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-xl shadow-lg">
+          <Play className="w-8 h-8 text-white fill-white ml-1" />
+        </div>
+        <div className="flex flex-col">
+          <div className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">
+            YouTube Subscribers
           </div>
-          <div className="text-xs opacity-90 -mt-1">
-            Subscribers
+          <div className="text-4xl font-black text-gray-900 tabular-nums tracking-tight">
+            {formatNumber(displayCount)}
           </div>
         </div>
       </div>

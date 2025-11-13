@@ -42,10 +42,10 @@ The site is a single-page application with sections:
 - **Navigation**: Sticky header with mobile menu
 - **Hero**: Legislative Council logo with gradient slideshow
 - **Wellness Section**: YouTube video carousel from channel feed
-- **Political Goals**: Campaign objectives
-- **How to Help**: Volunteer and support options
+- **Political Goals**: Campaign objectives with large icons, single-word titles, and detailed descriptions
+- **How to Help**: Volunteer and support options with YouTube subscriber counter and subscribe button
 - **Contact Form**: Dual-purpose form (political/medical) with webhook integration
-- **Footer**: Social links, newsletter signup
+- **Footer**: Enhanced social media links with larger icons in grid layout
 
 ### Key Features
 
@@ -55,7 +55,7 @@ The site is a single-page application with sections:
 
 2. **YouTube Integration**: `/api/youtube/route.ts` fetches from RSS feed, filters out shorts, returns 4 long-form videos with fallback data
 
-3. **YouTube Subscriber Counter**: `/api/youtube/subscribers/route.ts` fetches live subscriber count via YouTube Data API v3, displays with animated tick-up counter above subscribe button
+3. **YouTube Subscriber Counter**: `/api/youtube/subscribers/route.ts` fetches live subscriber count via YouTube Data API v3, displays with animated tick-up counter in YouTube-styled card with play button icon above subscribe button
 
 4. **Contact Form Webhook**: `/api/contact/route.ts` converts POST to GET request with URL params and forwards to n8n webhook
 
@@ -127,15 +127,20 @@ src/
 ### Styling Conventions
 - Use shadcn/ui components from `@/components/ui/`
 - Custom theme colors via CSS variables
-- Hover animations with `hover:-translate-y-1` pattern
+- Hover animations with `hover:-translate-y-2` and `hover:scale-105/110` patterns
 - Gradient backgrounds: `from-[#00653b] to-[#6cc24a]`
+- YouTube-themed elements use red (#ef4444, #dc2626) with white accents
+- Political Goals: Large 20x20 icons, single-word titles (2xl), small descriptions below
+- Subscribe button: Red background, white icon in circle, uppercase text, pulse animation on hover
 
 ### Footer Social Media Icons
 - Custom SVG icon components for Patreon, Bluesky, and TikTok (lucide-react doesn't include these)
 - PatreonIcon: Circle with "P" logo
 - BlueskyIcon: Butterfly logo
 - TikTokIcon: Musical note logo
-- All icons sized at `w-5 h-5` with `fill="currentColor"` for color inheritance
+- Footer displays icons in 4-column grid with 14x14 rounded boxes
+- Large icons (w-7 h-7) with hover scale and color change to accent green
+- Platform names displayed below icons in small text
 
 ### Client-Side Requirements
 - Navigation menu state

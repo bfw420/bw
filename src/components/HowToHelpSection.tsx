@@ -183,20 +183,17 @@ export default function HowToHelpSection() {
               Watch my latest videos on policy, health, and making Western Australia better for everyone
             </p>
             <SubscriberCounter />
-            <Button
-              asChild
-              className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-bold text-lg transition-all duration-200 hover:scale-105 shadow-lg"
+            <a
+              href="https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A?sub_confirmation=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-full font-bold text-xl transition-all duration-300 hover:scale-110 shadow-2xl hover:shadow-red-500/50 group"
             >
-              <a
-                href="https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A?sub_confirmation=1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3"
-              >
-                <UserPlus className="w-5 h-5" />
-                Subscribe on YouTube
-              </a>
-            </Button>
+              <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full group-hover:animate-pulse">
+                <UserPlus className="w-5 h-5 text-red-600" />
+              </div>
+              <span>SUBSCRIBE</span>
+            </a>
           </div>
           
           {videosError && (

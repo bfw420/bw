@@ -155,9 +155,9 @@ export default function Footer() {
           </div>
 
           {/* Social Media */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Follow Me</h4>
-            <div className="flex flex-wrap gap-4">
+          <div className="space-y-6">
+            <h4 className="text-xl font-bold text-white">Follow Me</h4>
+            <div className="grid grid-cols-4 gap-4">
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
                 return (
@@ -166,20 +166,15 @@ export default function Footer() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 transition-colors footer-link"
+                    className="group flex flex-col items-center gap-2 transition-all duration-300"
                     aria-label={`Follow on ${social.name}`}
-                    style={{
-                      color: '#d1d5db'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = '#6cc24a';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = '#d1d5db';
-                    }}
                   >
-                    <IconComponent className="w-5 h-5" />
-                    <span className="text-sm">{social.name}</span>
+                    <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-[#6cc24a] group-hover:scale-110 transition-all duration-300 group-hover:shadow-lg">
+                      <IconComponent className="w-7 h-7 text-white" />
+                    </div>
+                    <span className="text-xs text-white/70 group-hover:text-[#6cc24a] transition-colors duration-300 font-medium text-center">
+                      {social.name}
+                    </span>
                   </a>
                 );
               })}
