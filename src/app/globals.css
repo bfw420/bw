@@ -110,29 +110,4 @@
   button:focus {
     outline-color: var(--primary);
   }
-
-  /* Logo animations */
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    25% {
-      transform: translateY(-8px);
-    }
-    50% {
-      transform: translateY(-4px);
-    }
-    75% {
-      transform: translateY(-6px);
-    }
-  }
-
-  @keyframes shine {
-    0% {
-      background-position: 0% center;
-    }
-    100% {
-      background-position: 200% center;
-    }
-  }
 }

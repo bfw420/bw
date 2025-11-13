@@ -23,29 +23,24 @@ export default function Navigation() {
                 const logo = e.currentTarget.querySelector('.logo-image') as HTMLElement;
                 const text = e.currentTarget.querySelector('.logo-text') as HTMLElement;
                 if (logo) {
-                  logo.style.animation = 'bounce 0.6s ease-in-out';
+                  logo.style.transform = 'scale(1.1) rotate(5deg)';
+                  logo.style.filter = 'brightness(1.2)';
                 }
                 if (text) {
-                  text.style.background = 'linear-gradient(90deg, #00653b 0%, #6cc24a 50%, #00653b 100%)';
-                  text.style.backgroundSize = '200% auto';
-                  text.style.backgroundClip = 'text';
-                  text.style.webkitBackgroundClip = 'text';
-                  text.style.webkitTextFillColor = 'transparent';
-                  text.style.animation = 'shine 1.5s linear infinite';
+                  text.style.color = '#6cc24a';
+                  text.style.textShadow = '0 0 20px rgba(108, 194, 74, 0.5)';
                 }
               }}
               onMouseLeave={(e) => {
                 const logo = e.currentTarget.querySelector('.logo-image') as HTMLElement;
                 const text = e.currentTarget.querySelector('.logo-text') as HTMLElement;
                 if (logo) {
-                  logo.style.animation = '';
+                  logo.style.transform = 'scale(1) rotate(0deg)';
+                  logo.style.filter = 'brightness(1)';
                 }
                 if (text) {
-                  text.style.background = '';
-                  text.style.backgroundClip = '';
-                  text.style.webkitBackgroundClip = '';
-                  text.style.webkitTextFillColor = '';
-                  text.style.animation = '';
+                  text.style.color = '#00653b';
+                  text.style.textShadow = 'none';
                 }
               }}
             >
@@ -55,8 +50,9 @@ export default function Navigation() {
                 width={32}
                 height={32}
                 className="w-8 h-8 logo-image"
+                style={{ transition: 'all 0.3s ease-out' }}
               />
-              <span className="logo-text">Dr Brian Walker MLC</span>
+              <span className="logo-text" style={{ transition: 'all 0.3s ease-out' }}>Dr Brian Walker MLC</span>
             </Link>
           </div>
 

@@ -49,7 +49,7 @@ const politicalGoals = [
     icon: Scale
   },
   {
-    word: "Indigenous",
+    word: "Indigenous Rights",
     description: "Strengthen Indigenous rights, health, and opportunities",
     icon: Users
   },

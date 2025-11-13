@@ -210,7 +210,7 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-white/20 pt-8">
           {/* Authorization */}
-          <div className="mb-4">
+          <div className="mb-4 text-center">
             <p className="text-xs text-gray-400 leading-relaxed">
               <strong>Authorised by:</strong> Dr Brian Walker, Legalise Cannabis WA Party,
               2 Parliament Place, West Perth, WA 6005
@@ -218,7 +218,7 @@ export default function Footer() {
           </div>
 
           {/* Disclaimer */}
-          <div className="mb-4">
+          <div className="mb-4 text-center">
             <p className="text-xs text-gray-400 leading-relaxed">
               <strong>Disclaimer:</strong> The content provided by Dr Brian Walker, and any linked materials,
               are not intended and should not be construed as medical advice. If the reader or any other person
@@ -228,7 +228,7 @@ export default function Footer() {
           </div>
 
           {/* Acknowledgment */}
-          <div className="mb-4">
+          <div className="mb-4 text-center">
             <p className="text-xs text-gray-400 leading-relaxed">
               The Office of the Hon Dr Brian Walker MLC acknowledge the Traditional Custodians of Country
               throughout Australia and their continuing connection to land, waters and community. We pay our
