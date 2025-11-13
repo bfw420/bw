@@ -15,34 +15,129 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center gap-3 text-xl font-bold text-[#00653b]">
+            <Link
+              href="/"
+              className="flex items-center gap-3 text-xl font-bold text-[#00653b]"
+              style={{ transition: 'all 0.3s ease-out' }}
+              onMouseEnter={(e) => {
+                const logo = e.currentTarget.querySelector('.logo-image') as HTMLElement;
+                const text = e.currentTarget.querySelector('.logo-text') as HTMLElement;
+                if (logo) {
+                  logo.style.animation = 'bounce 0.6s ease-in-out';
+                }
+                if (text) {
+                  text.style.background = 'linear-gradient(90deg, #00653b 0%, #6cc24a 50%, #00653b 100%)';
+                  text.style.backgroundSize = '200% auto';
+                  text.style.backgroundClip = 'text';
+                  text.style.webkitBackgroundClip = 'text';
+                  text.style.webkitTextFillColor = 'transparent';
+                  text.style.animation = 'shine 1.5s linear infinite';
+                }
+              }}
+              onMouseLeave={(e) => {
+                const logo = e.currentTarget.querySelector('.logo-image') as HTMLElement;
+                const text = e.currentTarget.querySelector('.logo-text') as HTMLElement;
+                if (logo) {
+                  logo.style.animation = '';
+                }
+                if (text) {
+                  text.style.background = '';
+                  text.style.backgroundClip = '';
+                  text.style.webkitBackgroundClip = '';
+                  text.style.webkitTextFillColor = '';
+                  text.style.animation = '';
+                }
+              }}
+            >
               <Image
                 src="/favicon-nav.svg"
                 alt="Dr Brian Walker MLC"
                 width={32}
                 height={32}
-                className="w-8 h-8"
+                className="w-8 h-8 logo-image"
               />
-              Dr Brian Walker MLC
+              <span className="logo-text">Dr Brian Walker MLC</span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <Link href="/about" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium transition-colors duration-200">
+              <Link
+                href="/about"
+                className="text-gray-600 px-3 py-2 text-sm font-medium relative"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#00653b';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
                 About
               </Link>
-              <Link href="/report" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium transition-colors duration-200">
+              <Link
+                href="/report"
+                className="text-gray-600 px-3 py-2 text-sm font-medium relative"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#00653b';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
                 Economic Report
               </Link>
-              <Link href="#goals" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium transition-colors duration-200">
+              <Link
+                href="#goals"
+                className="text-gray-600 px-3 py-2 text-sm font-medium relative"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#00653b';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
                 Political Goals
               </Link>
-              <Link href="#help" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium transition-colors duration-200">
+              <Link
+                href="#help"
+                className="text-gray-600 px-3 py-2 text-sm font-medium relative"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#00653b';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
                 How to Help
               </Link>
-              <Link href="https://www.lcwaparty.org.au/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#00653b] px-3 py-2 text-sm font-medium transition-colors duration-200">
+              <Link
+                href="https://www.lcwaparty.org.au/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 px-3 py-2 text-sm font-medium relative"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#00653b';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
                 Party
               </Link>
               <Button
@@ -84,29 +179,65 @@ export default function Navigation() {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
               <Link
                 href="/about"
-                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium transition-colors duration-200"
+                className="text-gray-600 block px-3 py-2 text-base font-medium"
+                style={{ transition: 'all 0.2s ease-out' }}
                 onClick={() => setIsMenuOpen(false)}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#00653b';
+                  e.currentTarget.style.paddingLeft = '1rem';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                  e.currentTarget.style.paddingLeft = '0.75rem';
+                }}
               >
                 About
               </Link>
               <Link
                 href="/report"
-                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium transition-colors duration-200"
+                className="text-gray-600 block px-3 py-2 text-base font-medium"
+                style={{ transition: 'all 0.2s ease-out' }}
                 onClick={() => setIsMenuOpen(false)}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#00653b';
+                  e.currentTarget.style.paddingLeft = '1rem';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                  e.currentTarget.style.paddingLeft = '0.75rem';
+                }}
               >
                 Economic Report
               </Link>
               <Link
                 href="#goals"
-                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium transition-colors duration-200"
+                className="text-gray-600 block px-3 py-2 text-base font-medium"
+                style={{ transition: 'all 0.2s ease-out' }}
                 onClick={() => setIsMenuOpen(false)}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#00653b';
+                  e.currentTarget.style.paddingLeft = '1rem';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                  e.currentTarget.style.paddingLeft = '0.75rem';
+                }}
               >
                 Political Goals
               </Link>
               <Link
                 href="#help"
-                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium transition-colors duration-200"
+                className="text-gray-600 block px-3 py-2 text-base font-medium"
+                style={{ transition: 'all 0.2s ease-out' }}
                 onClick={() => setIsMenuOpen(false)}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#00653b';
+                  e.currentTarget.style.paddingLeft = '1rem';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                  e.currentTarget.style.paddingLeft = '0.75rem';
+                }}
               >
                 How to Help
               </Link>
@@ -114,8 +245,17 @@ export default function Navigation() {
                 href="https://www.lcwaparty.org.au/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[#00653b] block px-3 py-2 text-base font-medium transition-colors duration-200"
+                className="text-gray-600 block px-3 py-2 text-base font-medium"
+                style={{ transition: 'all 0.2s ease-out' }}
                 onClick={() => setIsMenuOpen(false)}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#00653b';
+                  e.currentTarget.style.paddingLeft = '1rem';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                  e.currentTarget.style.paddingLeft = '0.75rem';
+                }}
               >
                 Party
               </Link>
