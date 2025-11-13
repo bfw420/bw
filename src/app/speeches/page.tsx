@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { MessageSquare, BookOpen, FileText, Search } from "lucide-react";
@@ -98,12 +99,12 @@ export default function SpeechesPage() {
               Subscribe to the newsletter to be notified when the speech dashboard launches
               and to receive updates on Dr Walker&apos;s parliamentary work.
             </p>
-            <a
+            <Link
               href="/#help"
               className="inline-block text-[#00653b] hover:text-[#6cc24a] font-semibold transition-colors"
             >
               Subscribe to Newsletter →
-            </a>
+            </Link>
           </div>
         </div>
       </main>

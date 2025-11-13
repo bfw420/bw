@@ -60,17 +60,6 @@ export default function SubscriberCounter() {
     return num.toLocaleString('en-US');
   };
 
-  // Format compact number (e.g., 1.2K, 1.2M)
-  const formatCompactNumber = (num: number): string => {
-    if (num >= 1000000) {
-      return `${(num / 1000000).toFixed(1)}M`;
-    }
-    if (num >= 1000) {
-      return `${(num / 1000).toFixed(1)}K`;
-    }
-    return num.toString();
-  };
-
   if (isLoading) {
     return (
       <div className="flex items-center justify-center gap-2 text-gray-600 mb-6">
