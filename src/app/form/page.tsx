@@ -382,7 +382,7 @@ export default function FormPage() {
             <Twitter className="w-4 h-4" />
           </a>
           <a
-            href="https://www.tiktok.com/@brianwalkermlcs"
+            href="https://www.tiktok.com/@brianwalkermlc"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-500 hover:text-[#00653b] transition-colors"
@@ -394,9 +394,32 @@ export default function FormPage() {
 
         {/* Footer */}
         <div className="text-center text-sm text-gray-600">
-          <p>Office of Dr Brian Walker MLC</p>
-          <p>2 Parliament Place, West Perth, WA 6005</p>
-          <p>brian.walker.mlc@mp.wa.gov.au</p>
+          <p>
+            <a
+              href="/"
+              className="hover:text-[#00653b] transition-colors"
+            >
+              Office of Dr Brian Walker MLC
+            </a>
+          </p>
+          <p>
+            <a
+              href="https://maps.google.com/?q=2+Parliament+Place,+West+Perth,+WA+6005,+Australia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#00653b] transition-colors"
+            >
+              2 Parliament Place, West Perth, WA 6005
+            </a>
+          </p>
+          <p>
+            <a
+              href="mailto:brian.walker.mlc@mp.wa.gov.au"
+              className="hover:text-[#00653b] transition-colors"
+            >
+              brian.walker.mlc@mp.wa.gov.au
+            </a>
+          </p>
         </div>
       </div>
     </div>

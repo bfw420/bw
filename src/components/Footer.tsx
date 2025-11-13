@@ -60,7 +60,7 @@ const socialLinks = [
   },
   {
     name: "TikTok",
-    url: "https://www.tiktok.com/@brianwalkermlcs",
+    url: "https://www.tiktok.com/@brianwalkermlc",
     icon: TikTokIcon
   }
 ];

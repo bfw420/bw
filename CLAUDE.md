@@ -174,7 +174,7 @@ Required environment variables (create `.env.local` file):
 - **Patreon**: `https://www.patreon.com/cw/DrBrianWalkerMLC`
 - **Bluesky**: `https://bsky.app/profile/bfw.bsky.social`
 - **X (Twitter)**: `https://x.com/BrianWalkerMLC`
-- **TikTok**: `https://www.tiktok.com/@brianwalkermlcs`
+- **TikTok**: `https://www.tiktok.com/@brianwalkermlc`
 
 ## Development Notes
 
