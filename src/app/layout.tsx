@@ -43,6 +43,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#00653b] focus:text-white focus:rounded-md focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#6cc24a] focus:ring-offset-2"
+        >
+          Skip to main content
+        </a>
         {children}
         <GoogleAnalytics gaId="G-R96M1RT9HC" />
         <Analytics />

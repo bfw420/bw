@@ -3,11 +3,15 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (path: string) => pathname === path;
 
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
@@ -61,30 +65,56 @@ export default function Navigation() {
             <div className="ml-10 flex items-baseline space-x-4">
               <Link
                 href="/about"
-                className="text-gray-600 px-3 py-2 text-sm font-medium relative"
-                style={{ transition: 'all 0.2s ease-out' }}
+                className={`px-3 py-2 text-sm font-medium relative ${
+                  isActive('/about')
+                    ? 'text-[#00653b] font-bold'
+                    : 'text-gray-600'
+                }`}
+                style={{
+                  transition: 'all 0.2s ease-out',
+                  ...(isActive('/about') && {
+                    borderBottom: '2px solid #00653b'
+                  })
+                }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#00653b';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  if (!isActive('/about')) {
+                    e.currentTarget.style.color = '#00653b';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
-                  e.currentTarget.style.transform = 'translateY(0)';
+                  if (!isActive('/about')) {
+                    e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }
                 }}
               >
                 About
               </Link>
               <Link
                 href="/report"
-                className="text-gray-600 px-3 py-2 text-sm font-medium relative"
-                style={{ transition: 'all 0.2s ease-out' }}
+                className={`px-3 py-2 text-sm font-medium relative ${
+                  isActive('/report')
+                    ? 'text-[#00653b] font-bold'
+                    : 'text-gray-600'
+                }`}
+                style={{
+                  transition: 'all 0.2s ease-out',
+                  ...(isActive('/report') && {
+                    borderBottom: '2px solid #00653b'
+                  })
+                }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#00653b';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  if (!isActive('/report')) {
+                    e.currentTarget.style.color = '#00653b';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
-                  e.currentTarget.style.transform = 'translateY(0)';
+                  if (!isActive('/report')) {
+                    e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }
                 }}
               >
                 Economic Report
@@ -175,32 +205,48 @@ export default function Navigation() {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
               <Link
                 href="/about"
-                className="text-gray-600 block px-3 py-2 text-base font-medium"
+                className={`block px-3 py-2 text-base font-medium ${
+                  isActive('/about')
+                    ? 'text-[#00653b] font-bold bg-[#00653b]/10'
+                    : 'text-gray-600'
+                }`}
                 style={{ transition: 'all 0.2s ease-out' }}
                 onClick={() => setIsMenuOpen(false)}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#00653b';
-                  e.currentTarget.style.paddingLeft = '1rem';
+                  if (!isActive('/about')) {
+                    e.currentTarget.style.color = '#00653b';
+                    e.currentTarget.style.paddingLeft = '1rem';
+                  }
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
-                  e.currentTarget.style.paddingLeft = '0.75rem';
+                  if (!isActive('/about')) {
+                    e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                    e.currentTarget.style.paddingLeft = '0.75rem';
+                  }
                 }}
               >
                 About
               </Link>
               <Link
                 href="/report"
-                className="text-gray-600 block px-3 py-2 text-base font-medium"
+                className={`block px-3 py-2 text-base font-medium ${
+                  isActive('/report')
+                    ? 'text-[#00653b] font-bold bg-[#00653b]/10'
+                    : 'text-gray-600'
+                }`}
                 style={{ transition: 'all 0.2s ease-out' }}
                 onClick={() => setIsMenuOpen(false)}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#00653b';
-                  e.currentTarget.style.paddingLeft = '1rem';
+                  if (!isActive('/report')) {
+                    e.currentTarget.style.color = '#00653b';
+                    e.currentTarget.style.paddingLeft = '1rem';
+                  }
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
-                  e.currentTarget.style.paddingLeft = '0.75rem';
+                  if (!isActive('/report')) {
+                    e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                    e.currentTarget.style.paddingLeft = '0.75rem';
+                  }
                 }}
               >
                 Economic Report

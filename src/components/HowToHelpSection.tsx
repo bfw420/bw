@@ -10,7 +10,8 @@ import {
   Mail,
   Loader2,
   UserPlus,
-  Play
+  Play,
+  Instagram
 } from "lucide-react";
 
 interface YouTubeVideo {
@@ -312,6 +313,81 @@ export default function HowToHelpSection() {
               </Button>
             </div>
           )}
+        </div>
+
+        {/* Instagram Section */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Follow on Instagram
+            </h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+              Stay connected with daily updates, behind-the-scenes moments, and community engagement
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-12 border-2 border-purple-200/50 shadow-xl">
+            <div className="text-center max-w-3xl mx-auto">
+              <div className="inline-block p-6 bg-gradient-to-tr from-purple-500 via-pink-500 to-orange-400 rounded-3xl mb-6">
+                <Instagram className="w-16 h-16 text-white" />
+              </div>
+              <h4 className="text-2xl font-bold text-gray-900 mb-4">
+                @brianwalkermlc
+              </h4>
+              <p className="text-lg text-gray-700 mb-8">
+                Get real-time updates, see what I&apos;m working on in Parliament, and join the conversation about creating a better Western Australia.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <div className="bg-white rounded-xl p-6 shadow-sm">
+                  <div className="text-3xl font-bold text-purple-600 mb-2">📸</div>
+                  <h5 className="font-semibold text-gray-900 mb-2">Daily Updates</h5>
+                  <p className="text-sm text-gray-600">
+                    See what&apos;s happening in Parliament and the community
+                  </p>
+                </div>
+                <div className="bg-white rounded-xl p-6 shadow-sm">
+                  <div className="text-3xl font-bold text-pink-600 mb-2">🎬</div>
+                  <h5 className="font-semibold text-gray-900 mb-2">Behind the Scenes</h5>
+                  <p className="text-sm text-gray-600">
+                    Exclusive glimpses into parliamentary work and advocacy
+                  </p>
+                </div>
+                <div className="bg-white rounded-xl p-6 shadow-sm">
+                  <div className="text-3xl font-bold text-orange-600 mb-2">💬</div>
+                  <h5 className="font-semibold text-gray-900 mb-2">Community Connection</h5>
+                  <p className="text-sm text-gray-600">
+                    Engage directly and share your thoughts on policy
+                  </p>
+                </div>
+              </div>
+              <Button
+                asChild
+                className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white px-8 py-6 rounded-full font-bold text-lg shadow-lg"
+                style={{ transition: 'all 0.2s ease-out' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                  e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                }}
+              >
+                <a
+                  href="https://www.instagram.com/brianwalkermlc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3"
+                >
+                  <Instagram className="w-6 h-6" />
+                  <span>Follow @brianwalkermlc</span>
+                </a>
+              </Button>
+              <p className="text-sm text-gray-500 mt-4">
+                Join thousands of followers staying informed
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Party Section */}

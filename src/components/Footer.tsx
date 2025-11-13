@@ -157,7 +157,7 @@ export default function Footer() {
           {/* Social Media */}
           <div className="space-y-6">
             <h4 className="text-xl font-bold text-white">Follow Me</h4>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-4 gap-3 md:gap-4">
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
                 return (
@@ -166,7 +166,7 @@ export default function Footer() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-col items-center gap-2"
+                    className="flex flex-col items-center gap-1 md:gap-2"
                     aria-label={`Follow on ${social.name}`}
                     style={{ transition: 'all 0.3s ease-out' }}
                     onMouseEnter={(e) => {
@@ -194,8 +194,8 @@ export default function Footer() {
                       }
                     }}
                   >
-                    <div className="social-icon w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center" style={{ transition: 'all 0.3s ease-out' }}>
-                      <IconComponent className="w-7 h-7 text-white" />
+                    <div className="social-icon w-11 h-11 md:w-14 md:h-14 rounded-xl bg-white/10 flex items-center justify-center min-w-[44px] min-h-[44px]" style={{ transition: 'all 0.3s ease-out' }}>
+                      <IconComponent className="w-6 h-6 md:w-7 md:h-7 text-white" />
                     </div>
                     <span className="social-text text-xs text-white/70 font-medium text-center" style={{ transition: 'all 0.3s ease-out' }}>
                       {social.name}

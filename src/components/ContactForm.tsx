@@ -202,17 +202,17 @@ export default function ContactForm() {
               <p className="text-center text-white/90 mt-2">I&apos;ll get back to you as soon as possible</p>
             </div>
             
-            <div className="p-8 md:p-12">
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+            <div className="p-6 sm:p-8 md:p-12">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 sm:space-y-8">
                 {/* Name Fields */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="firstName" className="text-base font-medium text-gray-700">First Name *</Label>
                     <Input
                       id="firstName"
                       {...register("firstName")}
                       placeholder="Enter your first name"
-                      className="h-12 text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl transition-colors"
+                      className="h-14 sm:h-12 text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl transition-colors"
                     />
                     {errors.firstName && (
                       <p className="text-red-500 text-sm mt-1">{errors.firstName.message}</p>
@@ -224,7 +224,7 @@ export default function ContactForm() {
                       id="lastName"
                       {...register("lastName")}
                       placeholder="Enter your last name"
-                      className="h-12 text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl transition-colors"
+                      className="h-14 sm:h-12 text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl transition-colors"
                     />
                     {errors.lastName && (
                       <p className="text-red-500 text-sm mt-1">{errors.lastName.message}</p>
@@ -233,7 +233,7 @@ export default function ContactForm() {
                 </div>
 
                 {/* Contact Fields */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="email" className="text-base font-medium text-gray-700">Email Address *</Label>
                     <Input
@@ -241,7 +241,7 @@ export default function ContactForm() {
                       type="email"
                       {...register("email")}
                       placeholder="your.email@example.com"
-                      className="h-12 text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl transition-colors"
+                      className="h-14 sm:h-12 text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl transition-colors"
                     />
                     {errors.email && (
                       <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
@@ -254,7 +254,7 @@ export default function ContactForm() {
                       type="tel"
                       {...register("mobile")}
                       placeholder="Your mobile number (optional)"
-                      className="h-12 text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl transition-colors"
+                      className="h-14 sm:h-12 text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl transition-colors"
                     />
                   </div>
                 </div>
@@ -263,24 +263,24 @@ export default function ContactForm() {
                 <div className="space-y-4">
                   <Label className="text-base font-medium text-gray-700">Contact Type *</Label>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <label className="flex items-center p-4 bg-gray-50 rounded-xl border-2 border-transparent hover:border-[#00653b]/20 cursor-pointer transition-colors">
+                    <label className="flex items-center p-5 sm:p-4 bg-gray-50 rounded-xl border-2 border-transparent hover:border-[#00653b]/20 cursor-pointer transition-colors min-h-[60px]">
                       <input
                         type="radio"
                         value="political"
                         {...register("contactType")}
-                        className="w-5 h-5 text-[#00653b] mr-4"
+                        className="w-6 h-6 sm:w-5 sm:h-5 text-[#00653b] mr-4"
                       />
                       <div>
                         <span className="font-medium text-gray-900">Political Office</span>
                         <p className="text-sm text-gray-600">Legislative Council matters</p>
                       </div>
                     </label>
-                    <label className="flex items-center p-4 bg-gray-50 rounded-xl border-2 border-transparent hover:border-[#6cc24a]/20 cursor-pointer transition-colors">
+                    <label className="flex items-center p-5 sm:p-4 bg-gray-50 rounded-xl border-2 border-transparent hover:border-[#6cc24a]/20 cursor-pointer transition-colors min-h-[60px]">
                       <input
                         type="radio"
                         value="medical"
                         {...register("contactType")}
-                        className="w-5 h-5 text-[#6cc24a] mr-4"
+                        className="w-6 h-6 sm:w-5 sm:h-5 text-[#6cc24a] mr-4"
                       />
                       <div>
                         <span className="font-medium text-gray-900">Medical Practice</span>
@@ -308,19 +308,19 @@ export default function ContactForm() {
                 {/* Checkboxes */}
                 <div className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <label className="flex items-center p-4 bg-gray-50 rounded-xl cursor-pointer hover:bg-gray-100 transition-colors">
+                    <label className="flex items-center p-5 sm:p-4 bg-gray-50 rounded-xl cursor-pointer hover:bg-gray-100 transition-colors min-h-[60px]">
                       <input
                         type="checkbox"
                         {...register("subscribeNewsletter")}
-                        className="w-5 h-5 text-[#00653b] mr-4 rounded"
+                        className="w-6 h-6 sm:w-5 sm:h-5 text-[#00653b] mr-4 rounded"
                       />
                       <span className="font-medium text-gray-900">Subscribe to newsletter</span>
                     </label>
-                    <label className="flex items-center p-4 bg-gray-50 rounded-xl cursor-pointer hover:bg-gray-100 transition-colors">
+                    <label className="flex items-center p-5 sm:p-4 bg-gray-50 rounded-xl cursor-pointer hover:bg-gray-100 transition-colors min-h-[60px]">
                       <input
                         type="checkbox"
                         {...register("wantToVolunteer")}
-                        className="w-5 h-5 text-[#00653b] mr-4 rounded"
+                        className="w-6 h-6 sm:w-5 sm:h-5 text-[#00653b] mr-4 rounded"
                       />
                       <span className="font-medium text-gray-900">I want to volunteer</span>
                     </label>
@@ -338,7 +338,7 @@ export default function ContactForm() {
                     {...register("captcha")}
                     placeholder="Answer"
                     disabled={!isMounted}
-                    className="h-12 text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl transition-colors max-w-32"
+                    className="h-14 sm:h-12 text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl transition-colors max-w-32"
                   />
                   {errors.captcha && (
                     <p className="text-red-500 text-sm mt-1">{errors.captcha.message}</p>
