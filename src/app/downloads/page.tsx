@@ -3,7 +3,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Download, Image as ImageIcon, FileText, Folder } from "lucide-react";
+import { Download, Image as ImageIcon, FileText, Folder, Mail, Phone, Copy } from "lucide-react";
 
 export default function DownloadsPage() {
   return (
@@ -135,6 +135,128 @@ export default function DownloadsPage() {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Bio Snippets */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+              Biography Snippets
+            </h2>
+            <p className="text-gray-600 text-center mb-8 max-w-2xl mx-auto">
+              Copy and paste these bio snippets for various media needs
+            </p>
+
+            <div className="space-y-6">
+              {/* 50 Word Bio */}
+              <div className="bg-gray-50 rounded-xl p-6 border-2 border-gray-200">
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="font-bold text-lg text-gray-900">50 Words</h3>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => {
+                      navigator.clipboard.writeText("Hon Dr Brian Walker MLC is a Member of the Legislative Council for Western Australia and Leader of the Legalise Cannabis WA Party. With over 40 years as a General Practitioner, he combines medical expertise with evidence-based policy advocacy for healthcare reform, cannabis legalisation, and sustainable economic development.");
+                      alert("Bio copied to clipboard!");
+                    }}
+                    className="flex items-center gap-2"
+                  >
+                    <Copy className="w-4 h-4" />
+                    Copy
+                  </Button>
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  Hon Dr Brian Walker MLC is a Member of the Legislative Council for Western Australia and Leader of the Legalise Cannabis WA Party. With over 40 years as a General Practitioner, he combines medical expertise with evidence-based policy advocacy for healthcare reform, cannabis legalisation, and sustainable economic development.
+                </p>
+              </div>
+
+              {/* 100 Word Bio */}
+              <div className="bg-gray-50 rounded-xl p-6 border-2 border-gray-200">
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="font-bold text-lg text-gray-900">100 Words</h3>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => {
+                      navigator.clipboard.writeText("Hon Dr Brian Walker MLC is a Member of the Legislative Council for Western Australia and Leader of the Legalise Cannabis WA Party. With over 40 years of experience as a General Practitioner in Claremont, Dr Walker brings unique medical and scientific expertise to parliament. Since his election in 2021, he has tabled 11+ bills advocating for evidence-based cannabis reform, healthcare improvements, and progressive policy. His work focuses on reducing harm from prohibition, improving access to medicinal cannabis, and creating economic opportunities through regulated cannabis legalisation. Dr Walker holds qualifications including MB ChB, MRCGP, and RACGP, and continues his medical practice while serving in parliament.");
+                      alert("Bio copied to clipboard!");
+                    }}
+                    className="flex items-center gap-2"
+                  >
+                    <Copy className="w-4 h-4" />
+                    Copy
+                  </Button>
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  Hon Dr Brian Walker MLC is a Member of the Legislative Council for Western Australia and Leader of the Legalise Cannabis WA Party. With over 40 years of experience as a General Practitioner in Claremont, Dr Walker brings unique medical and scientific expertise to parliament. Since his election in 2021, he has tabled 11+ bills advocating for evidence-based cannabis reform, healthcare improvements, and progressive policy. His work focuses on reducing harm from prohibition, improving access to medicinal cannabis, and creating economic opportunities through regulated cannabis legalisation. Dr Walker holds qualifications including MB ChB, MRCGP, and RACGP, and continues his medical practice while serving in parliament.
+                </p>
+              </div>
+
+              {/* 200 Word Bio */}
+              <div className="bg-gray-50 rounded-xl p-6 border-2 border-gray-200">
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="font-bold text-lg text-gray-900">200 Words</h3>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => {
+                      navigator.clipboard.writeText("Hon Dr Brian Walker MLC is a Member of the Legislative Council for Western Australia and Leader of the Legalise Cannabis WA Party. With over 40 years of experience as a General Practitioner in Claremont, Dr Walker brings a unique combination of medical expertise and scientific rigour to the parliament.\n\nSince his election in 2021, Dr Walker has become a leading voice for evidence-based policy reform in Western Australia. He has tabled more than 11 bills in parliament, focusing on cannabis legalisation, healthcare improvements, harm reduction, and progressive social policy. His advocacy is grounded in medical science and a commitment to reducing the harm caused by cannabis prohibition while creating economic opportunities through regulated legalisation.\n\nDr Walker completed his medical training with an MB ChB and holds fellowship qualifications including MRCGP and RACGP. He continues to practice medicine at Next Practice Health in Claremont while serving in parliament, maintaining his connection to frontline healthcare delivery.\n\nAs Leader of the Legalise Cannabis WA Party, Dr Walker works to shift public policy towards compassionate, evidence-based approaches that prioritise health outcomes, individual freedom, and economic sustainability. His parliamentary work has made him a respected voice on issues ranging from medicinal cannabis access to broader healthcare reform and social justice.");
+                      alert("Bio copied to clipboard!");
+                    }}
+                    className="flex items-center gap-2"
+                  >
+                    <Copy className="w-4 h-4" />
+                    Copy
+                  </Button>
+                </div>
+                <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                  Hon Dr Brian Walker MLC is a Member of the Legislative Council for Western Australia and Leader of the Legalise Cannabis WA Party. With over 40 years of experience as a General Practitioner in Claremont, Dr Walker brings a unique combination of medical expertise and scientific rigour to the parliament.{"\n\n"}
+                  Since his election in 2021, Dr Walker has become a leading voice for evidence-based policy reform in Western Australia. He has tabled more than 11 bills in parliament, focusing on cannabis legalisation, healthcare improvements, harm reduction, and progressive social policy. His advocacy is grounded in medical science and a commitment to reducing the harm caused by cannabis prohibition while creating economic opportunities through regulated legalisation.{"\n\n"}
+                  Dr Walker completed his medical training with an MB ChB and holds fellowship qualifications including MRCGP and RACGP. He continues to practice medicine at Next Practice Health in Claremont while serving in parliament, maintaining his connection to frontline healthcare delivery.{"\n\n"}
+                  As Leader of the Legalise Cannabis WA Party, Dr Walker works to shift public policy towards compassionate, evidence-based approaches that prioritise health outcomes, individual freedom, and economic sustainability. His parliamentary work has made him a respected voice on issues ranging from medicinal cannabis access to broader healthcare reform and social justice.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Media Contact */}
+          <div className="mb-12 bg-gradient-to-br from-[#00653b]/5 to-[#6cc24a]/5 rounded-2xl p-8 border-2 border-[#00653b]/20">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              Media Contact
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 bg-[#00653b]/10 rounded-lg">
+                    <Mail className="w-5 h-5 text-[#00653b]" />
+                  </div>
+                  <h3 className="font-bold text-gray-900">Email</h3>
+                </div>
+                <a
+                  href="mailto:brian.walker.mlc@mp.wa.gov.au"
+                  className="text-[#00653b] hover:text-[#6cc24a] font-medium transition-colors"
+                >
+                  brian.walker.mlc@mp.wa.gov.au
+                </a>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 bg-[#6cc24a]/10 rounded-lg">
+                    <Phone className="w-5 h-5 text-[#6cc24a]" />
+                  </div>
+                  <h3 className="font-bold text-gray-900">Office</h3>
+                </div>
+                <p className="text-gray-700 font-medium">
+                  2 Parliament Place, West Perth, WA 6005
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 text-center">
+              <p className="text-gray-600 text-sm">
+                For urgent media inquiries, please email with &quot;URGENT MEDIA&quot; in the subject line
+              </p>
             </div>
           </div>
 
