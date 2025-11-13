@@ -83,14 +83,9 @@ export default function HeroSection() {
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          Evidence-Based Policy for a Better Western Australia
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          Dr Brian Walker - Your Doctor in Parliament
         </h1>
-
-        {/* Subheadings */}
-        <h2 className="text-xl md:text-2xl lg:text-3xl mb-3 font-semibold text-white">
-          Dr Brian - Your Doctor in Parliament
-        </h2>
 
         <p className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-100">
           Evidence-based policy, not politics as usual.
@@ -108,7 +103,7 @@ export default function HeroSection() {
           </div>
           <div className="flex items-center gap-2">
             <span className="text-[#6cc24a] text-2xl">✓</span>
-            <span>Leader, Legalise Cannabis WA Party</span>
+            <span>Leader of the Legalise Cannabis WA Party</span>
           </div>
         </div>
 
