@@ -1,14 +1,19 @@
 "use client";
 
+import Image from 'next/image';
 import { FileDown, BookOpen, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 export default function ReportPage() {
   const pdfUrl = 'https://www.dropbox.com/s/nco9utrm1h5a5yq/An%20Economic%20Case%20to%20Legalise%20Cannabis%20in%20Western%20Australia%202023.pdf?dl=1';
 
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
+      <Navigation />
+      <main>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#00653b] via-[#00653b] to-[#6cc24a] text-white py-20 md:py-32">
         <div className="absolute inset-0 bg-black/10"></div>
@@ -225,6 +230,46 @@ export default function ReportPage() {
         </div>
       </section>
 
+      {/* Report Images Gallery */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              Report Visuals
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="rounded-2xl overflow-hidden shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <Image
+                  src="/images/report/brian_report.png"
+                  alt="Economic Case Report Cover"
+                  width={600}
+                  height={800}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <Image
+                  src="/images/report/mockup1.webp"
+                  alt="Report Mockup 1"
+                  width={600}
+                  height={800}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <Image
+                  src="/images/report/mockup2.webp"
+                  alt="Report Mockup 2"
+                  width={600}
+                  height={800}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Back to Home */}
       <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
@@ -236,6 +281,8 @@ export default function ReportPage() {
           </Link>
         </div>
       </section>
-    </main>
+      </main>
+      <Footer />
+    </div>
   );
 }

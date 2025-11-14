@@ -465,6 +465,18 @@ export default function HowToHelpSection() {
 
         {/* Party Section */}
         <div className="bg-gradient-to-br from-[#00653b]/10 via-[#6cc24a]/5 to-[#00653b]/10 rounded-3xl p-8 md:p-12 border-2 border-[#00653b]/20 shadow-2xl">
+          {/* Party Team Photo */}
+          <div className="mb-8 relative w-full h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <Image
+              src="/images/lcwamedia.webp"
+              alt="Legalise Cannabis WA Party Team"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 1024px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+          </div>
+
           <div className="text-center">
             <div className="w-48 h-48 lg:w-64 lg:h-64 mx-auto mb-8">
               <Image

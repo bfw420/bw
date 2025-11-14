@@ -40,14 +40,14 @@ npm run lint
 
 The site is a single-page application with sections:
 - **Navigation**: Sticky header with mobile menu
-- **Hero**: "Your Doctor in Parliament" headline with Legislative Council logo, gradient slideshow, compact checkmark facts, and dual CTAs
-- **Stats Section**: 4-stat infographic bar with glassmorphism design (40+ Years GP, 5 Years Parliament, 11+ Bills, 5,000+ Subscribers)
+- **Hero**: "Your Doctor in Parliament" headline in modern frosted glass box (white/95 backdrop-blur-md), smaller Legislative Council logo (24x24/28x28), image slideshow without dark overlay showing speech_2, crowd, and ch10interview photos
+- **Stats Section**: 5-stat infographic bar with icons and glassmorphism design (40+ Years GP, 5 Years Parliament, 11+ Bills, 5,000+ Subscribers, 7 Languages)
 - **Wellness Section**: YouTube video carousel from channel feed
-- **Political Goals**: Campaign objectives with large icons, single-word titles, and detailed descriptions
-- **How to Help**: Newsletter signup with emotional copy, YouTube section with accountability messaging, subscriber counter and subscribe button
-- **Economic Report**: Featured report section
+- **Political Goals**: Campaign objectives with large icons, single-word titles, detailed descriptions, and chamber.webp banner image
+- **How to Help**: Newsletter signup with emotional copy, YouTube section with accountability messaging, subscriber counter and subscribe button, lcwamedia team photo in party section
+- **Economic Report**: Featured report section with smaller brian_report.png image
 - **Contact Form**: Dual-purpose form (political/medical) with webhook integration
-- **Footer**: Enhanced social media links in grid layout, qualifications displayed close to name in accent green
+- **Footer**: LCWA logo above name, enhanced social media links in grid layout, qualifications displayed close to name in accent green
 
 ### Key Features
 
@@ -125,8 +125,11 @@ src/
 
 ### Image Configuration
 - Remote patterns configured for `i.ytimg.com` (YouTube thumbnails)
-- Public images in `/public/images/`
+- **Public images in `/public/images/`**: 44 webp images including parliamentary photos, community events, media interviews, hemp advocacy, campaign team photos
+- **Report images in `/public/images/report/`**: brian_report.png, mockup1.webp, mockup2.webp, stats1.webp
 - SVG favicons for navigation
+- **Key hero slider images**: speech_2.webp, crowd.webp, ch10interview.webp
+- **Featured images**: lcwamedia.webp (party team), chamber.webp (legislative chamber), door.webp (portrait), inauguration.webp (ceremony)
 
 ### Styling Conventions
 - Use shadcn/ui components from `@/components/ui/`
@@ -239,3 +242,48 @@ Implemented comprehensive content strategy focusing on emotional connection and 
 7. **Footer**:
    - Qualifications (MB, ChB MRCGP, RACGP) moved closer to name
    - Changed from gray to accent green (#6cc24a) for visual hierarchy
+
+### Image Integration & Design Refresh (November 2025)
+Major visual enhancement with 44 professional images integrated throughout the site:
+
+1. **Hero Section Redesign**:
+   - Modern frosted glass box design (bg-white/95 backdrop-blur-md) replacing dark overlay
+   - 3 rotating hero images: speech_2.webp (parliamentary address), crowd.webp (rally), ch10interview.webp (TV interview)
+   - Smaller Legislative Council logo (24x24 mobile, 28x28 desktop)
+   - Full-brightness images with excellent text readability
+
+2. **Stats Section Enhancement**:
+   - Added 5th stat: "7 Languages Spoken" with Languages icon
+   - All stats now have contextual icons (Stethoscope, Building2, FileText, Users, Languages)
+   - Removed background image for cleaner gradient design
+   - Changed from 4-column to 5-column grid
+
+3. **About Page**:
+   - Hero banner: door.webp (professional portrait in chamber)
+   - Inauguration photo: inauguration.webp (2021 swearing-in ceremony)
+   - "In Action" gallery: 4x3 grid of 12 community/advocacy images (archerykids, cannabistalk, fieldlaugh, foodbank, hempbrick, holdingreport, veterans, youthparli, digging, rugby, spagnolointerview, abcbw)
+
+4. **Political Goals Section**:
+   - Banner image: chamber.webp showing WA Legislative Council
+   - Overlay caption about daily work in parliament
+
+5. **How to Help Section**:
+   - Party team photo: lcwamedia.webp showing full campaign team with banners
+   - Positioned above LCWA logo in "Join the Movement" section
+
+6. **Economic Report Section**:
+   - Smaller report image (max-w-sm) for better page balance
+   - Report page now includes Navigation and Footer
+   - Report visuals gallery: brian_report.png, mockup1.webp, mockup2.webp
+
+7. **Downloads Page**:
+   - Added office phone number: 08 9226 3550 (clickable tel: link)
+
+8. **Footer**:
+   - Small LCWA logo (16x16) added above "Dr Brian Walker MLC"
+
+**Image Organization**:
+- All 44 webp images in `/public/images/`
+- Report materials in `/public/images/report/`
+- Comprehensive documentation in `images/image_analysis.md`
+- All images optimized with Next.js Image component, responsive sizing, and hover animations

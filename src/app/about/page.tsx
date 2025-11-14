@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Stethoscope, Users, GraduationCap, Heart, Leaf } from "lucide-react";
@@ -19,6 +20,19 @@ export default function AboutPage() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               General Practitioner, Member of the Legislative Council, and Leader of the Legalise Cannabis WA Party
             </p>
+          </div>
+
+          {/* Hero Banner Image */}
+          <div className="mb-16 relative w-full h-80 md:h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            <Image
+              src="/images/door.webp"
+              alt="Dr Brian Walker MLC in the Western Australia Legislative Council"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, 1024px"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           </div>
 
           {/* WHY I SERVE Section */}
@@ -183,6 +197,23 @@ export default function AboutPage() {
 
           {/* Parliamentary Work */}
           <div className="bg-gradient-to-br from-[#00653b]/5 to-[#6cc24a]/5 rounded-2xl p-8 md:p-12 border border-[#00653b]/20">
+            {/* Inauguration Image */}
+            <div className="mb-8 relative w-full h-64 md:h-80 rounded-2xl overflow-hidden shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <Image
+                src="/images/inauguration.webp"
+                alt="Dr Brian Walker MLC Parliamentary Inauguration Ceremony"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 1024px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <p className="text-lg md:text-xl font-semibold text-center">
+                  Inaugural ceremony at the WA Legislative Council, 2021
+                </p>
+              </div>
+            </div>
+
             <div className="flex items-start gap-4 mb-6">
               <div className="p-3 bg-white rounded-lg shadow-sm">
                 <Users className="w-8 h-8 text-[#00653b]" />
@@ -219,6 +250,60 @@ export default function AboutPage() {
                 <p className="font-semibold text-[#00653b]">Wikipedia Entry →</p>
                 <p className="text-sm text-gray-600 mt-1">Biographical information</p>
               </a>
+            </div>
+          </div>
+
+          {/* Photo Gallery Section */}
+          <div className="mt-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#00653b] mb-4 text-center">
+              In Action
+            </h2>
+            <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+              Working in parliament, serving the community, and advocating for evidence-based policy
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {/* Row 1 */}
+              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <Image src="/images/abcbw.webp" alt="ABC Radio Perth interview" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+              </div>
+              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <Image src="/images/cannabistalk.webp" alt="Cannabis health presentation" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+              </div>
+              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <Image src="/images/fieldlaugh.webp" alt="Hemp field visit" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+              </div>
+              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <Image src="/images/foodbank.webp" alt="Food bank community service" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+              </div>
+
+              {/* Row 2 */}
+              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <Image src="/images/hempbrick.webp" alt="Hemp construction materials" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+              </div>
+              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <Image src="/images/holdingreport.webp" alt="Economic report in hemp field" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+              </div>
+              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <Image src="/images/veterans.webp" alt="Veterans community engagement" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+              </div>
+              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <Image src="/images/youthparli.webp" alt="Youth parliament program" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+              </div>
+
+              {/* Row 3 */}
+              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <Image src="/images/archerykids.webp" alt="Archery event with youth" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+              </div>
+              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <Image src="/images/digging.webp" alt="Tree planting ceremony" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+              </div>
+              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <Image src="/images/rugby.webp" alt="Community rugby league event" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+              </div>
+              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <Image src="/images/spagnolointerview.webp" alt="Outdoor interview" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+              </div>
             </div>
           </div>
         </div>

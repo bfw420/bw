@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   Leaf,
   Wheat,
@@ -112,6 +113,23 @@ export default function PoliticalGoalsSection() {
           <p className="text-base text-gray-700 max-w-3xl mx-auto">
             These goals represent my commitment to evidence-based policy that puts people and planet first.
           </p>
+        </div>
+
+        {/* Banner Image - Legislative Work */}
+        <div className="mt-16 relative w-full h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-2xl hover:-translate-y-1 transition-all duration-300">
+          <Image
+            src="/images/chamber.webp"
+            alt="Dr Brian Walker MLC in the Western Australia Legislative Council"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 1280px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+            <p className="text-xl md:text-2xl font-bold text-center">
+              Working every day in the WA Legislative Council to make these goals a reality
+            </p>
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FileText, TrendingUp, DollarSign } from "lucide-react";
 
@@ -19,6 +20,19 @@ export default function EconomicReportSection() {
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               A comprehensive academic report commissioned by the Legalise Cannabis WA Party reveals the significant economic benefits of cannabis legalisation for Western Australia.
             </p>
+          </div>
+
+          {/* Report Image */}
+          <div className="mb-10 flex justify-center">
+            <div className="relative w-full max-w-sm aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <Image
+                src="/images/report/brian_report.png"
+                alt="An Economic Case to Legalise Cannabis in Western Australia Report"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 384px"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">

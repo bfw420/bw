@@ -247,6 +247,11 @@ export default function DownloadsPage() {
                   </div>
                   <h3 className="font-bold text-gray-900">Office</h3>
                 </div>
+                <p className="text-gray-700 font-medium mb-2">
+                  <a href="tel:+61892263550" className="text-[#00653b] hover:text-[#6cc24a] transition-colors">
+                    08 9226 3550
+                  </a>
+                </p>
                 <p className="text-gray-700 font-medium">
                   2 Parliament Place, West Perth, WA 6005
                 </p>

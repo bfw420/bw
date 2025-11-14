@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   Facebook,
   Instagram,
@@ -89,6 +90,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand Section */}
           <div className="space-y-4">
+            {/* LCWA Logo */}
+            <div className="w-16 h-16">
+              <Image
+                src="/images/LCWA.png"
+                alt="Legalise Cannabis WA Party"
+                width={64}
+                height={64}
+                className="object-contain"
+              />
+            </div>
             <div className="space-y-1">
               <h3 className="text-xl font-bold text-white">
                 Dr Brian Walker MLC
