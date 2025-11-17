@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -118,7 +119,7 @@ export default function HeroSection() {
               size="lg"
               className="bg-white text-[#00653b] hover:bg-white/90 px-8 py-6 text-lg font-bold rounded-full shadow-xl transition-all duration-200 hover:scale-105"
             >
-              <a href="/#help">Join Newsletter</a>
+              <Link href="/#help">Join Newsletter</Link>
             </Button>
             <Button
               asChild

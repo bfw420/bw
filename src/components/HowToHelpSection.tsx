@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import confetti from "canvas-confetti";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -186,7 +187,7 @@ export default function HowToHelpSection() {
                     variant="ghost"
                     className="text-white hover:bg-white/10 underline"
                   >
-                    <a href="/newsletter">Read Past Newsletters</a>
+                    <Link href="/newsletter">Read Past Newsletters</Link>
                   </Button>
                 </div>
 
