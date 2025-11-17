@@ -40,14 +40,14 @@ npm run lint
 
 The site is a single-page application with sections:
 - **Navigation**: Sticky header with mobile menu
-- **Hero**: "Your Doctor in Parliament" headline in modern frosted glass box (white/95 backdrop-blur-md), smaller Legislative Council logo (24x24/28x28), image slideshow without dark overlay showing speech_2, crowd, and ch10interview photos
-- **Stats Section**: 5-stat infographic bar with icons and glassmorphism design (40+ Years GP, 5 Years Parliament, 11+ Bills, 5,000+ Subscribers, 7 Languages)
-- **Wellness Section**: YouTube video carousel from channel feed
-- **Political Goals**: Campaign objectives with large icons, single-word titles, detailed descriptions, and chamber.webp banner image
-- **How to Help**: Newsletter signup with emotional copy, YouTube section with accountability messaging, subscriber counter and subscribe button, lcwamedia team photo in party section
-- **Economic Report**: Featured report section with smaller brian_report.png image
+- **Hero**: "Your Doctor in Parliament" headline, 2-image slider (slider_doctor, slider_parli), left-aligned text with white drop shadows, CTAs: "Join Newsletter" (/#help) and "Volunteer" (https://lcwaparty.org.au/join)
+- **Stats Section**: 5-stat infographic bar with icons and glassmorphism design (40+ Years GP, 5 Years Parliament, 11+ Bills, 5,000+ Subscribers, 7 Languages), white background
+- **Wellness Section**: 5 pillars of wellness with icons, full green gradient background
+- **Political Goals**: Campaign objectives with large icons, single-word titles, detailed descriptions, taller chamber_2.webp banner image (h-80 md:h-96 lg:h-[32rem])
+- **How to Help**: Newsletter signup with emotional copy, YouTube section in red gradient box with subscriber counter and subscribe button, taller lcwamedia team photo (h-80 md:h-96 lg:h-[32rem]) in party section
+- **Economic Report**: Compact layout with brian_report.png image on left, three info cards stacked vertically on right, "Read the Full Report" button below
 - **Contact Form**: Dual-purpose form (political/medical) with webhook integration
-- **Footer**: LCWA logo above name, enhanced social media links in grid layout, qualifications displayed close to name in accent green
+- **Footer**: Larger LCWA logo (w-20 h-20) above name, enhanced social media links in grid layout (no Instagram), qualifications displayed close to name in accent green
 
 ### Key Features
 
@@ -205,6 +205,40 @@ Required environment variables (create `.env.local` file):
 
 ## Recent Updates
 
+### UI Refinements & Layout Optimization (November 2025)
+Streamlined user experience with improved CTAs, cleaner sections, and compact layouts:
+
+1. **Hero Section CTAs**:
+   - Updated primary CTA: "Join Newsletter" → links to /#help (newsletter signup)
+   - Updated secondary CTA: "Volunteer" → links to https://lcwaparty.org.au/join
+   - Left-aligned text with white drop shadows over 2-image slider
+
+2. **About Page Gallery**:
+   - Expanded to 24 images with randomized shuffle on each page load (Fisher-Yates algorithm)
+   - Fixed hydration mismatch by shuffling client-side only via useEffect
+   - All images clickable for full-size modal viewing with X close button
+   - Added downloads button at bottom linking to /downloads page
+
+3. **Political Goals Section**:
+   - Banner image (chamber_2.webp) made significantly taller: h-80 md:h-96 lg:h-[32rem]
+   - Enhanced visual impact of legislative chamber photo
+
+4. **How to Help Section**:
+   - Deleted Instagram section entirely
+   - YouTube section moved into red gradient box (matching newsletter/party section styling)
+   - YouTube icon in rounded box above title
+   - Party team photo (lcwamedia.webp) made taller: h-80 md:h-96 lg:h-[32rem]
+
+5. **Economic Report Section**:
+   - Redesigned for compact layout: image left, info cards stacked right
+   - Three smaller info cards with reduced padding and text sizes
+   - "Read the Full Report" button centered below
+   - Changed from py-20 to py-16 for less vertical space
+
+6. **Footer**:
+   - LCWA logo increased from w-16 h-16 (64px) to w-20 h-20 (80px)
+   - Instagram removed from social media links
+
 ### Value Proposition Strategy Implementation (November 2025)
 Implemented comprehensive content strategy focusing on emotional connection and social proof:
 
@@ -261,7 +295,9 @@ Major visual enhancement with 44 professional images integrated throughout the s
 3. **About Page**:
    - Hero banner: door.webp (professional portrait in chamber)
    - Inauguration photo: inauguration.webp (2021 swearing-in ceremony)
-   - "In Action" gallery: 4x3 grid of 12 community/advocacy images (archerykids, cannabistalk, fieldlaugh, foodbank, hempbrick, holdingreport, veterans, youthparli, digging, rugby, spagnolointerview, abcbw)
+   - "In Action" gallery: 24 images shuffled on each page load (abcbw, cannabistalk, fieldlaugh, foodbank, hempbrick, veterans, youthparli, archerykids, digging, rugby, ch10interview, crowd, speech_2, lcwamedia, doctorwork, abc-corruption, crowd3, hemp-field, hempprocessing, inauguration, panel, spagnolointerview, triointerview, Election-Mashup)
+   - Gallery images clickable for full-size modal viewing
+   - Downloads button at bottom linking to /downloads page
 
 4. **Political Goals Section**:
    - Banner image: chamber.webp showing WA Legislative Council

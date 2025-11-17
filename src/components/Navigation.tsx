@@ -120,7 +120,7 @@ export default function Navigation() {
                 Economic Report
               </Link>
               <Link
-                href="#goals"
+                href="/#goals"
                 className="text-gray-600 px-3 py-2 text-sm font-medium relative"
                 style={{ transition: 'all 0.2s ease-out' }}
                 onMouseEnter={(e) => {
@@ -135,7 +135,7 @@ export default function Navigation() {
                 Political Goals
               </Link>
               <Link
-                href="#help"
+                href="/#help"
                 className="text-gray-600 px-3 py-2 text-sm font-medium relative"
                 style={{ transition: 'all 0.2s ease-out' }}
                 onMouseEnter={(e) => {
@@ -252,7 +252,7 @@ export default function Navigation() {
                 Economic Report
               </Link>
               <Link
-                href="#goals"
+                href="/#goals"
                 className="text-gray-600 block px-3 py-2 text-base font-medium"
                 style={{ transition: 'all 0.2s ease-out' }}
                 onClick={() => setIsMenuOpen(false)}
@@ -268,7 +268,7 @@ export default function Navigation() {
                 Political Goals
               </Link>
               <Link
-                href="#help"
+                href="/#help"
                 className="text-gray-600 block px-3 py-2 text-base font-medium"
                 style={{ transition: 'all 0.2s ease-out' }}
                 onClick={() => setIsMenuOpen(false)}

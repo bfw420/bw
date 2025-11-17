@@ -1,14 +1,85 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Stethoscope, Users, GraduationCap, Heart, Leaf } from "lucide-react";
+import { Stethoscope, Users, GraduationCap, Heart, Leaf, X } from "lucide-react";
+
+const galleryImages = [
+  { src: "/images/abcbw.webp", alt: "ABC Radio Perth interview" },
+  { src: "/images/cannabistalk.webp", alt: "Cannabis health presentation" },
+  { src: "/images/fieldlaugh.webp", alt: "Hemp field visit" },
+  { src: "/images/foodbank.webp", alt: "Food bank community service" },
+  { src: "/images/hempbrick.webp", alt: "Hemp construction materials" },
+  { src: "/images/veterans.webp", alt: "Veterans community engagement" },
+  { src: "/images/youthparli.webp", alt: "Youth parliament program" },
+  { src: "/images/archerykids.webp", alt: "Archery event with youth" },
+  { src: "/images/digging.webp", alt: "Tree planting ceremony" },
+  { src: "/images/rugby.webp", alt: "Community rugby league event" },
+  { src: "/images/ch10interview.webp", alt: "Channel 10 television interview" },
+  { src: "/images/crowd.webp", alt: "Community rally and public speaking" },
+  { src: "/images/speech_2.webp", alt: "Parliamentary speech in Legislative Council" },
+  { src: "/images/lcwamedia.webp", alt: "Legalise Cannabis WA Party team" },
+  { src: "/images/doctorwork.webp", alt: "Medical consultation work" },
+  { src: "/images/abc-corruption.webp", alt: "ABC corruption investigation interview" },
+  { src: "/images/crowd3.webp", alt: "Community gathering and engagement" },
+  { src: "/images/hemp-field.webp", alt: "Industrial hemp field visit" },
+  { src: "/images/hempprocessing.webp", alt: "Hemp processing facility" },
+  { src: "/images/inauguration.webp", alt: "Parliamentary inauguration ceremony" },
+  { src: "/images/panel.webp", alt: "Panel discussion event" },
+  { src: "/images/spagnolointerview.webp", alt: "Spagnolo interview" },
+  { src: "/images/triointerview.webp", alt: "Trio interview session" },
+  { src: "/images/Election-Mashup.webp", alt: "Election campaign highlights" },
+];
+
+// Fisher-Yates shuffle algorithm
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
 export default function AboutPage() {
+  const [selectedImage, setSelectedImage] = useState<{src: string, alt: string} | null>(null);
+  const [shuffledImages, setShuffledImages] = useState(galleryImages);
+
+  // Shuffle images only on client side after hydration
+  useEffect(() => {
+    setShuffledImages(shuffleArray(galleryImages));
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+            onClick={() => setSelectedImage(null)}
+            aria-label="Close"
+          >
+            <X className="w-8 h-8" />
+          </button>
+          <div className="relative max-w-6xl max-h-[90vh] w-full h-full">
+            <Image
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              fill
+              className="object-contain"
+              sizes="90vw"
+            />
+          </div>
+        </div>
+      )}
 
       <main className="py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +115,7 @@ export default function AboutPage() {
 
               <div className="text-gray-800 space-y-4 text-lg leading-relaxed">
                 <p>
-                  For 20 years as a GP in Claremont, I saw the same story repeat:
+                  For my entire career as a GP, I saw the same story repeat:
                   <strong className="text-[#00653b]"> Good people suffering because of bad policy.</strong>
                 </p>
 
@@ -259,52 +330,37 @@ export default function AboutPage() {
               In Action
             </h2>
             <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-              Working in parliament, serving the community, and advocating for evidence-based policy
+              Working in parliament, serving the community, and advocating for evidence-based policy. Click any image to view full size.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {/* Row 1 */}
-              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <Image src="/images/abcbw.webp" alt="ABC Radio Perth interview" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
-              </div>
-              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <Image src="/images/cannabistalk.webp" alt="Cannabis health presentation" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
-              </div>
-              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <Image src="/images/fieldlaugh.webp" alt="Hemp field visit" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
-              </div>
-              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <Image src="/images/foodbank.webp" alt="Food bank community service" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
-              </div>
-
-              {/* Row 2 */}
-              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <Image src="/images/hempbrick.webp" alt="Hemp construction materials" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
-              </div>
-              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <Image src="/images/holdingreport.webp" alt="Economic report in hemp field" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
-              </div>
-              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <Image src="/images/veterans.webp" alt="Veterans community engagement" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
-              </div>
-              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <Image src="/images/youthparli.webp" alt="Youth parliament program" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
-              </div>
-
-              {/* Row 3 */}
-              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <Image src="/images/archerykids.webp" alt="Archery event with youth" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
-              </div>
-              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <Image src="/images/digging.webp" alt="Tree planting ceremony" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
-              </div>
-              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <Image src="/images/rugby.webp" alt="Community rugby league event" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
-              </div>
-              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <Image src="/images/spagnolointerview.webp" alt="Outdoor interview" fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
-              </div>
+              {shuffledImages.map((image, index) => (
+                <div
+                  key={index}
+                  className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 cursor-pointer group"
+                  onClick={() => setSelectedImage(image)}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                </div>
+              ))}
             </div>
+          </div>
+
+          {/* Downloads Button Section */}
+          <div className="mt-16 text-center">
+            <a
+              href="/downloads"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00653b] to-[#6cc24a] text-white font-semibold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              📥 View Downloads & Resources
+            </a>
           </div>
         </div>
       </main>

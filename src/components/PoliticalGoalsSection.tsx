@@ -80,7 +80,7 @@ export default function PoliticalGoalsSection() {
             return (
               <div
                 key={index}
-                className="group p-6 bg-white rounded-xl border-2 border-[#00653b]/10 shadow-md cursor-pointer"
+                className="group relative p-6 bg-white rounded-xl border-2 border-[#00653b]/10 shadow-md cursor-pointer overflow-hidden"
                 style={{ transition: 'all 0.3s ease-out' }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-8px)';
@@ -93,7 +93,18 @@ export default function PoliticalGoalsSection() {
                   e.currentTarget.style.borderColor = 'rgba(0, 101, 59, 0.1)';
                 }}
               >
-                <div className="text-center">
+                {/* Background Image on Hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300">
+                  <Image
+                    src="/images/chamber_2.webp"
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="400px"
+                  />
+                </div>
+
+                <div className="relative text-center">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#00653b]/10 to-[#6cc24a]/10 rounded-xl mb-4 group-hover:from-[#00653b] group-hover:to-[#6cc24a] transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
                     <IconComponent className="w-8 h-8 text-[#00653b] group-hover:text-white transition-colors duration-300" />
                   </div>
@@ -116,9 +127,9 @@ export default function PoliticalGoalsSection() {
         </div>
 
         {/* Banner Image - Legislative Work */}
-        <div className="mt-16 relative w-full h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-2xl hover:-translate-y-1 transition-all duration-300">
+        <div className="mt-16 relative w-full h-80 md:h-96 lg:h-[32rem] rounded-3xl overflow-hidden shadow-2xl hover:-translate-y-1 transition-all duration-300">
           <Image
-            src="/images/chamber.webp"
+            src="/images/chamber_2.webp"
             alt="Dr Brian Walker MLC in the Western Australia Legislative Council"
             fill
             className="object-cover"
@@ -127,7 +138,7 @@ export default function PoliticalGoalsSection() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
           <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
             <p className="text-xl md:text-2xl font-bold text-center">
-              Working every day in the WA Legislative Council to make these goals a reality
+              Working in the WA Legislative Council to make these goals a reality
             </p>
           </div>
         </div>

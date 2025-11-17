@@ -91,12 +91,12 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="space-y-4">
             {/* LCWA Logo */}
-            <div className="w-16 h-16">
+            <div className="w-20 h-20">
               <Image
                 src="/images/LCWA.png"
                 alt="Legalise Cannabis WA Party"
-                width={64}
-                height={64}
+                width={80}
+                height={80}
                 className="object-contain"
               />
             </div>

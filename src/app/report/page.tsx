@@ -142,6 +142,19 @@ export default function ReportPage() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
+            {/* Holding Report Image */}
+            <div className="mb-10 flex justify-center">
+              <div className="relative w-full max-w-2xl rounded-2xl overflow-hidden shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <Image
+                  src="/images/holdingreport.webp"
+                  alt="Dr Brian Walker holding the Economic Case Report"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+
             <div className="mb-12 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Introduction by Hon Dr Brian Walker MLC
@@ -196,8 +209,26 @@ export default function ReportPage() {
               </div>
             </div>
 
+            {/* Report Images */}
+            <div className="mt-12 mb-10 flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8">
+              <Image
+                src="/images/report/brian_report.png"
+                alt="Economic Case Report Cover"
+                width={300}
+                height={400}
+                className="w-full max-w-xs h-auto object-contain hover:-translate-y-2 transition-all duration-300"
+              />
+              <Image
+                src="/images/report/mockup1.webp"
+                alt="Report Mockup"
+                width={300}
+                height={400}
+                className="w-full max-w-xs h-auto object-contain hover:-translate-y-2 transition-all duration-300"
+              />
+            </div>
+
             {/* Download CTA */}
-            <div className="mt-12 text-center p-8 bg-gradient-to-br from-[#00653b] to-[#6cc24a] rounded-xl shadow-xl">
+            <div className="mt-8 text-center p-8 bg-gradient-to-br from-[#00653b] to-[#6cc24a] rounded-xl shadow-xl">
               <h3 className="text-2xl font-bold text-white mb-4">
                 Ready to Read the Full Report?
               </h3>
@@ -225,46 +256,6 @@ export default function ReportPage() {
                   Download PDF Report
                 </a>
               </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Report Images Gallery */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-              Report Visuals
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="rounded-2xl overflow-hidden shadow-xl hover:-translate-y-2 transition-all duration-300">
-                <Image
-                  src="/images/report/brian_report.png"
-                  alt="Economic Case Report Cover"
-                  width={600}
-                  height={800}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              <div className="rounded-2xl overflow-hidden shadow-xl hover:-translate-y-2 transition-all duration-300">
-                <Image
-                  src="/images/report/mockup1.webp"
-                  alt="Report Mockup 1"
-                  width={600}
-                  height={800}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              <div className="rounded-2xl overflow-hidden shadow-xl hover:-translate-y-2 transition-all duration-300">
-                <Image
-                  src="/images/report/mockup2.webp"
-                  alt="Report Mockup 2"
-                  width={600}
-                  height={800}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
             </div>
           </div>
         </div>

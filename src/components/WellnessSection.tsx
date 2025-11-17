@@ -38,13 +38,13 @@ const wellnessPillars = [
 
 export default function WellnessSection() {
   return (
-    <section id="wellness" className="py-16 bg-gradient-to-br from-[#00653b]/5 to-[#6cc24a]/10">
+    <section id="wellness" className="py-16 bg-gradient-to-r from-[#00653b] to-[#6cc24a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#00653b] mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             I stand for wellness
           </h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+          <p className="text-lg text-white/90 max-w-3xl mx-auto">
             The 5 pillars of wellness that form the foundation of a healthy society:
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function WellnessSection() {
             return (
               <div
                 key={index}
-                className="text-center bg-white rounded-lg border border-gray-200 shadow-sm cursor-pointer"
+                className="text-center bg-white/95 backdrop-blur-sm rounded-lg border border-white/30 shadow-lg cursor-pointer"
                 style={{
                   transition: 'all 0.2s ease-out'
                 }}
@@ -64,11 +64,11 @@ export default function WellnessSection() {
                   const iconContainer = card.querySelector('.icon-container') as HTMLElement;
                   const iconElement = card.querySelector('.icon-element') as HTMLElement;
                   const titleText = card.querySelector('.title-text') as HTMLElement;
-                  
+
                   // Animate card
                   card.style.transform = 'translateY(-12px) scale(1.05)';
                   card.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
-                  card.style.borderColor = '#00653b';
+                  card.style.borderColor = 'white';
                   
                   // Animate icon container
                   if (iconContainer) {
@@ -96,8 +96,8 @@ export default function WellnessSection() {
                   
                   // Reset card
                   card.style.transform = 'translateY(0) scale(1)';
-                  card.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.1)';
-                  card.style.borderColor = '#e5e7eb';
+                  card.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+                  card.style.borderColor = 'rgba(255, 255, 255, 0.3)';
                   
                   // Reset icon container
                   if (iconContainer) {

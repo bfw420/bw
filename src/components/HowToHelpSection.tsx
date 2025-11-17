@@ -10,8 +10,7 @@ import {
   Mail,
   Loader2,
   UserPlus,
-  Play,
-  Instagram
+  Play
 } from "lucide-react";
 
 interface YouTubeVideo {
@@ -144,46 +143,9 @@ export default function HowToHelpSection() {
             <div className="bg-gradient-to-r from-[#00653b] to-[#6cc24a] rounded-3xl overflow-hidden shadow-2xl">
               <div className="px-8 py-12 text-white">
                 <Mail className="w-16 h-16 mx-auto mb-6 opacity-90" />
-                <h3 className="text-3xl md:text-4xl font-bold mb-4 text-center">DON&apos;T LET THE MEDIA SILENCE THIS MOVEMENT</h3>
+                <h3 className="text-3xl md:text-4xl font-bold mb-6 text-center">Stay Informed with My Newsletter</h3>
 
-                <div className="max-w-2xl mx-auto mb-8 space-y-3 text-center">
-                  <p className="text-lg opacity-95">
-                    Legacy media won&apos;t cover evidence-based cannabis reform.
-                  </p>
-                  <p className="text-lg opacity-95">
-                    They won&apos;t report on progressive healthcare policy.
-                  </p>
-                  <p className="text-lg opacity-95">
-                    They won&apos;t tell you what&apos;s really happening in Parliament.
-                  </p>
-                  <p className="text-xl font-bold mt-4">
-                    So I will.
-                  </p>
-                </div>
-
-                <div className="max-w-2xl mx-auto mb-8">
-                  <p className="text-lg font-semibold mb-4 text-center">Join 5,000+ Western Australians getting:</p>
-                  <div className="space-y-2 text-left">
-                    <div className="flex items-start gap-3">
-                      <span className="text-[#6cc24a] text-xl mt-1">→</span>
-                      <p className="text-base">Monthly policy updates (what I&apos;m fighting for and why)</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <span className="text-[#6cc24a] text-xl mt-1">→</span>
-                      <p className="text-base">Parliamentary session recaps (how I voted and what happened)</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <span className="text-[#6cc24a] text-xl mt-1">→</span>
-                      <p className="text-base">Exclusive research and reports (before the media gets them)</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <span className="text-[#6cc24a] text-xl mt-1">→</span>
-                      <p className="text-base">Action alerts when I need your voice</p>
-                    </div>
-                  </div>
-                </div>
-
-                <p className="text-center text-lg font-medium mb-6">
+                <p className="text-center text-lg font-medium mb-6 max-w-2xl mx-auto">
                   No fluff. No spam. Just the truth about progressive policy in WA.
                 </p>
 
@@ -228,10 +190,22 @@ export default function HowToHelpSection() {
                   </Button>
                 </div>
 
-                <div className="mt-8 text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 max-w-2xl mx-auto">
-                  <p className="text-sm italic opacity-90">
-                    💬 &quot;The only politician who actually tells me what&apos;s going on.&quot; - Sarah M., Fremantle
-                  </p>
+                <div className="mt-8 space-y-3">
+                  <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 max-w-2xl mx-auto">
+                    <p className="text-sm italic opacity-90">
+                      💬 &quot;The only politician who actually tells me what&apos;s going on.&quot; - Sarah M., Fremantle
+                    </p>
+                  </div>
+                  <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 max-w-2xl mx-auto">
+                    <p className="text-sm italic opacity-90">
+                      💬 &quot;Finally, someone in Parliament who speaks the truth.&quot; - Mark T., Perth
+                    </p>
+                  </div>
+                  <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 max-w-2xl mx-auto">
+                    <p className="text-sm italic opacity-90">
+                      💬 &quot;Brian&apos;s newsletters are the only political updates I actually read.&quot; - Jessica L., Rockingham
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -239,35 +213,18 @@ export default function HowToHelpSection() {
         </div>
 
         {/* YouTube Section */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-[#00653b] mb-4">
-              WATCH ME HOLD POWER ACCOUNTABLE
-            </h3>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-6">
-              Parliament sessions. Policy breakdowns. The fights the media won&apos;t show you.
-            </p>
-            <div className="max-w-2xl mx-auto mb-8 text-left bg-gray-50 rounded-xl p-6 border-2 border-gray-200">
-              <p className="text-base font-semibold mb-3 text-gray-900">📺 New videos every week covering:</p>
-              <div className="space-y-2">
-                <div className="flex items-start gap-3">
-                  <span className="text-[#00653b] text-xl mt-1">→</span>
-                  <p className="text-gray-700">Parliamentary debates (the full context, not just soundbites)</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-[#6cc24a] text-xl mt-1">→</span>
-                  <p className="text-gray-700">Policy explainers (cannabis reform, healthcare, environment)</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-[#00653b] text-xl mt-1">→</span>
-                  <p className="text-gray-700">Community town halls (your questions, my answers)</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-[#6cc24a] text-xl mt-1">→</span>
-                  <p className="text-gray-700">Behind-the-scenes (how laws actually get made)</p>
-                </div>
+        <div className="mb-16">
+          <div className="bg-gradient-to-br from-red-50 to-red-100/50 rounded-2xl p-6 md:p-8 border border-red-200/50 shadow-lg">
+            <div className="text-center mb-8">
+              <div className="inline-block p-4 bg-[#cc0000] rounded-2xl mb-4">
+                <Play className="w-10 h-10 text-white fill-white" />
               </div>
-            </div>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+                Subscribe to My YouTube Channel
+              </h3>
+              <p className="text-base text-gray-700 mb-6">
+                New videos every week!
+              </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <SubscriberCounter />
               <a
@@ -386,122 +343,44 @@ export default function HowToHelpSection() {
               </Button>
             </div>
           )}
-        </div>
-
-        {/* Instagram Section */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Follow on Instagram
-            </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-              Stay connected with daily updates, behind-the-scenes moments, and community engagement
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-12 border-2 border-purple-200/50 shadow-xl">
-            <div className="text-center max-w-3xl mx-auto">
-              <div className="inline-block p-6 bg-gradient-to-tr from-purple-500 via-pink-500 to-orange-400 rounded-3xl mb-6">
-                <Instagram className="w-16 h-16 text-white" />
-              </div>
-              <h4 className="text-2xl font-bold text-gray-900 mb-4">
-                @brianwalkermlc
-              </h4>
-              <p className="text-lg text-gray-700 mb-8">
-                Get real-time updates, see what I&apos;m working on in Parliament, and join the conversation about creating a better Western Australia.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">📸</div>
-                  <h5 className="font-semibold text-gray-900 mb-2">Daily Updates</h5>
-                  <p className="text-sm text-gray-600">
-                    See what&apos;s happening in Parliament and the community
-                  </p>
-                </div>
-                <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <div className="text-3xl font-bold text-pink-600 mb-2">🎬</div>
-                  <h5 className="font-semibold text-gray-900 mb-2">Behind the Scenes</h5>
-                  <p className="text-sm text-gray-600">
-                    Exclusive glimpses into parliamentary work and advocacy
-                  </p>
-                </div>
-                <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <div className="text-3xl font-bold text-orange-600 mb-2">💬</div>
-                  <h5 className="font-semibold text-gray-900 mb-2">Community Connection</h5>
-                  <p className="text-sm text-gray-600">
-                    Engage directly and share your thoughts on policy
-                  </p>
-                </div>
-              </div>
-              <Button
-                asChild
-                className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white px-8 py-6 rounded-full font-bold text-lg shadow-lg"
-                style={{ transition: 'all 0.2s ease-out' }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'scale(1.05)';
-                  e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'scale(1)';
-                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
-                }}
-              >
-                <a
-                  href="https://www.instagram.com/brianwalkermlc/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3"
-                >
-                  <Instagram className="w-6 h-6" />
-                  <span>Follow @brianwalkermlc</span>
-                </a>
-              </Button>
-              <p className="text-sm text-gray-500 mt-4">
-                Join thousands of followers staying informed
-              </p>
-            </div>
           </div>
         </div>
 
         {/* Party Section */}
-        <div className="bg-gradient-to-br from-[#00653b]/10 via-[#6cc24a]/5 to-[#00653b]/10 rounded-3xl p-8 md:p-12 border-2 border-[#00653b]/20 shadow-2xl">
+        <div className="bg-gradient-to-br from-[#00653b]/10 via-[#6cc24a]/5 to-[#00653b]/10 rounded-2xl p-6 md:p-8 border-2 border-[#00653b]/20 shadow-xl">
           {/* Party Team Photo */}
-          <div className="mb-8 relative w-full h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl hover:-translate-y-1 transition-all duration-300">
+          <div className="mb-6 relative w-full h-80 md:h-96 lg:h-[32rem] rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
             <Image
               src="/images/lcwamedia.webp"
               alt="Legalise Cannabis WA Party Team"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 1024px"
+              sizes="(max-width: 768px) 100vw, 800px"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           </div>
 
           <div className="text-center">
-            <div className="w-48 h-48 lg:w-64 lg:h-64 mx-auto mb-8">
+            <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-5">
               <Image
                 src="/images/LCWA.png"
                 alt="Legalise Cannabis WA Party"
-                width={256}
-                height={256}
+                width={160}
+                height={160}
                 className="object-contain w-full h-full"
               />
             </div>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Join the Movement
             </h3>
-            <p className="text-xl text-gray-700 mb-4 font-medium">
-              I am the leader of the Legalise Cannabis WA Party
-            </p>
-            <p className="text-lg text-gray-600 mb-10 max-w-3xl mx-auto">
-              Together, we&apos;re creating progressive change for Western Australia through evidence-based policy,
-              compassionate healthcare reform, and sustainable economic development.
+            <p className="text-base text-gray-700 mb-6 max-w-2xl mx-auto">
+              Leader of the Legalise Cannabis WA Party. Creating progressive change through evidence-based policy.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-3">
               <Button
                 asChild
-                className="bg-[#00653b] text-white px-8 py-3 rounded-full font-bold text-lg shadow-lg"
+                className="bg-[#00653b] text-white px-6 py-2.5 rounded-full font-bold shadow-lg"
                 style={{ transition: 'all 0.2s ease-out' }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'scale(1.05)';
@@ -523,7 +402,7 @@ export default function HowToHelpSection() {
 
               <Button
                 asChild
-                className="bg-[#6cc24a] text-white px-8 py-3 rounded-full font-bold text-lg shadow-lg"
+                className="bg-[#6cc24a] text-white px-6 py-2.5 rounded-full font-bold shadow-lg"
                 style={{ transition: 'all 0.2s ease-out' }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'scale(1.05)';
@@ -545,7 +424,7 @@ export default function HowToHelpSection() {
 
               <Button
                 asChild
-                className="bg-gray-700 text-white px-8 py-3 rounded-full font-bold text-lg shadow-lg"
+                className="bg-gray-700 text-white px-6 py-2.5 rounded-full font-bold shadow-lg"
                 style={{ transition: 'all 0.2s ease-out' }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'scale(1.05)';
