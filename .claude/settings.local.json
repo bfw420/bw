@@ -10,7 +10,8 @@
       "Bash(npm run lint:*)",
       "Bash(cat:*)",
       "Bash(cp:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(next.config.ts)"
     ],
     "deny": [],
     "ask": []
