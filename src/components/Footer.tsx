@@ -89,22 +89,27 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand Section */}
-          <div className="space-y-4">
+          <div>
             {/* LCWA Logo */}
-            <div className="w-20 h-20">
+            <Link
+              href="https://www.lcwaparty.org.au/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block w-56 hover:opacity-80 transition-opacity duration-200 mb-3"
+            >
               <Image
-                src="/images/LCWA.png"
+                src="/images/LCWA_side.png"
                 alt="Legalise Cannabis WA Party"
-                width={80}
-                height={80}
-                className="object-contain"
+                width={224}
+                height={224}
+                className="object-contain w-full h-auto"
               />
-            </div>
+            </Link>
             <div className="space-y-1">
-              <h3 className="text-xl font-bold text-white">
+              <h3 className="text-2xl font-bold text-white">
                 Dr Brian Walker MLC
               </h3>
-              <p className="text-sm text-[#6cc24a] italic font-medium">
+              <p className="text-xs text-[#6cc24a]/70 italic mb-3">
                 MB, ChB MRCGP, RACGP
               </p>
             </div>
