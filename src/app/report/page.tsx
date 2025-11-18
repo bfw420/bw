@@ -17,6 +17,13 @@ export default function ReportPage() {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#00653b] via-[#00653b] to-[#6cc24a] text-white py-20 md:py-32">
         <div className="absolute inset-0 bg-black/10"></div>
+        <div
+          className="absolute inset-0 opacity-10 bg-repeat"
+          style={{
+            backgroundImage: 'url(/images/leaf-background.webp)',
+            backgroundSize: '400px 400px',
+          }}
+        ></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-4">
