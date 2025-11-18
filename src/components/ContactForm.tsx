@@ -33,6 +33,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string>("");
+  const [notification, setNotification] = useState<{ type: 'success' | 'error', message: string } | null>(null);
 
   const form = useForm({
     resolver: zodResolver(contactSchema),
@@ -95,17 +96,19 @@ export default function ContactForm() {
       const result = await response.json();
 
       if (response.ok && result.success) {
-        alert("Thank you! Your message has been sent successfully. I'll respond within 48 hours for urgent matters, or 5 business days for general inquiries.");
+        setNotification({ type: 'success', message: 'Message sent successfully! I\'ll get back to you soon.' });
         reset();
         setTurnstileToken(""); // Reset Turnstile token
+        // Auto-hide notification after 5 seconds
+        setTimeout(() => setNotification(null), 5000);
       } else {
         // Handle specific error messages from server
-        alert(result.message || "Sorry, there was an error sending your message. Please try again later.");
+        setNotification({ type: 'error', message: result.message || 'Failed to send message. Please try again.' });
         setTurnstileToken(""); // Reset Turnstile token on error
       }
     } catch (error) {
       console.error("Error sending message:", error);
-      alert("Sorry, there was an error sending your message. Please try again later.");
+      setNotification({ type: 'error', message: 'Something went wrong. Please try again later.' });
     } finally {
       setIsSubmitting(false);
     }
@@ -182,6 +185,19 @@ export default function ContactForm() {
             
             <div className="p-6 sm:p-8 md:p-12">
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 sm:space-y-8">
+                {/* Notification Banner */}
+                {notification && (
+                  <div
+                    className={`p-4 rounded-xl border-2 ${
+                      notification.type === 'success'
+                        ? 'bg-[#6cc24a]/10 border-[#6cc24a] text-[#00653b]'
+                        : 'bg-red-50 border-red-300 text-red-800'
+                    }`}
+                  >
+                    <p className="text-center font-medium">{notification.message}</p>
+                  </div>
+                )}
+
                 {/* Name Fields */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div className="space-y-2">
