@@ -92,6 +92,7 @@ export async function POST(request: NextRequest) {
     });
 
     const turnstileResult = await turnstileResponse.json();
+    console.log('Turnstile verification result:', turnstileResult);
 
     if (!turnstileResult.success) {
       console.log('Turnstile verification failed:', turnstileResult);
@@ -101,6 +102,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    console.log('Turnstile verification passed! ✅');
+
     // Message length validation (prevent spam)
     if (body.message.length < 10 || body.message.length > 5000) {
       return NextResponse.json(
@@ -109,32 +112,31 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Prepare webhook payload (use POST, not GET with URL params)
-    const webhookData = {
+    // Prepare webhook URL with query parameters (n8n expects GET request)
+    const baseWebhookUrl = 'https://n8n.jaxius.net/webhook/6cffe9fc-d8f8-4fdd-8a0d-0b9f94ecadc5';
+    const webhookParams = new URLSearchParams({
       firstName: body.firstName,
       lastName: body.lastName,
       email: body.email,
       mobile: body.mobile || '',
       message: body.message,
-      subscribeNewsletter: body.subscribeNewsletter || false,
-      wantToVolunteer: body.wantToVolunteer || false,
+      subscribeNewsletter: String(body.subscribeNewsletter || false),
+      wantToVolunteer: String(body.wantToVolunteer || false),
       contactType: body.contactType,
       recipientEmail: body.recipientEmail,
       submittedAt: new Date().toISOString(),
       userAgent: request.headers.get('user-agent') || 'unknown',
       ip: getRateLimitKey(request)
-    };
+    });
 
-    const webhookUrl = 'https://n8n.jaxius.net/webhook/6cffe9fc-d8f8-4fdd-8a0d-0b9f94ecadc5';
-    console.log('Sending to webhook via POST');
+    const webhookUrl = `${baseWebhookUrl}?${webhookParams.toString()}`;
+    console.log('Sending to webhook via GET');
 
     const response = await fetch(webhookUrl, {
-      method: 'POST',
+      method: 'GET',
       headers: {
-        'Content-Type': 'application/json',
         'User-Agent': 'BrianWalkerMLC-Website/1.0',
-      },
-      body: JSON.stringify(webhookData)
+      }
     });
 
     console.log('Webhook response status:', response.status);
