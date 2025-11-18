@@ -296,9 +296,21 @@ export default function Footer() {
     {showBackToTop && (
       <button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 bg-[#00653b] text-white p-4 rounded-full shadow-2xl hover:bg-[#6cc24a] transition-all duration-300 z-50 hover:scale-110"
+        className="fixed bottom-8 right-8 bg-white text-[#00653b] p-4 rounded-full shadow-2xl hover:shadow-[#6cc24a]/50 transition-all duration-300 z-50 border-2 border-[#00653b]/20"
         aria-label="Back to top"
         style={{ transition: 'all 0.3s ease-out' }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'scale(1.15) translateY(-4px)';
+          e.currentTarget.style.backgroundColor = '#6cc24a';
+          e.currentTarget.style.color = 'white';
+          e.currentTarget.style.borderColor = '#6cc24a';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'scale(1) translateY(0)';
+          e.currentTarget.style.backgroundColor = 'white';
+          e.currentTarget.style.color = '#00653b';
+          e.currentTarget.style.borderColor = 'rgba(0, 101, 59, 0.2)';
+        }}
       >
         <ArrowUp className="w-6 h-6" />
       </button>
