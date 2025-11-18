@@ -29,7 +29,7 @@ export default function StatsSection() {
                 <Building2 className="w-7 h-7 md:w-8 md:h-8 text-[#00653b]" />
               </div>
               <div className="text-3xl md:text-4xl font-bold text-[#00653b] mb-1">
-                4
+                4.0
               </div>
               <div className="text-xs md:text-sm text-gray-700 font-medium">
                 Years in WA Parliament
@@ -47,7 +47,7 @@ export default function StatsSection() {
                 5
               </div>
               <div className="text-xs md:text-sm text-gray-700 font-medium">
-                Languages Spoken
+                Fluent Languages
               </div>
             </div>
           </div>
