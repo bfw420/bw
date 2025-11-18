@@ -70,17 +70,33 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: true, message: 'Message sent successfully' });
     }
 
-    // Server-side captcha validation
-    if (!body.captchaAnswer || !body.captchaExpected) {
+    // Cloudflare Turnstile verification
+    if (!body.turnstileToken) {
       return NextResponse.json(
-        { success: false, message: 'Captcha validation failed' },
+        { success: false, message: 'Please complete the security check' },
         { status: 400 }
       );
     }
 
-    if (parseInt(body.captchaAnswer) !== parseInt(body.captchaExpected)) {
+    // Verify Turnstile token with Cloudflare
+    const turnstileResponse = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        secret: '0x4AAAAAACBfplzDyQ45hI8l2H8zvWDZIYM',
+        response: body.turnstileToken,
+        remoteip: getRateLimitKey(request)
+      })
+    });
+
+    const turnstileResult = await turnstileResponse.json();
+
+    if (!turnstileResult.success) {
+      console.log('Turnstile verification failed:', turnstileResult);
       return NextResponse.json(
-        { success: false, message: 'Incorrect captcha answer' },
+        { success: false, message: 'Security check failed. Please try again.' },
         { status: 400 }
       );
     }

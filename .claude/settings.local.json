@@ -11,7 +11,8 @@
       "Bash(cat:*)",
       "Bash(cp:*)",
       "Bash(mkdir:*)",
-      "Bash(next.config.ts)"
+      "Bash(next.config.ts)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []

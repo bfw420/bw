@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -14,6 +14,7 @@ import {
   Send,
   Loader2
 } from "lucide-react";
+import { Turnstile } from '@marsidev/react-turnstile';
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -24,7 +25,6 @@ const contactSchema = z.object({
   subscribeNewsletter: z.boolean().default(false),
   wantToVolunteer: z.boolean().default(false),
   contactType: z.enum(["medical", "political"]),
-  captcha: z.string().min(1, "Please complete the captcha"),
   website: z.string().optional() // Honeypot field
 });
 
@@ -32,20 +32,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [captchaQuestion, setCaptchaQuestion] = useState({ a: 0, b: 0, answer: 0 });
-  const [isMounted, setIsMounted] = useState(false);
-
-  // Generate captcha only on client side to avoid hydration mismatch
-  useEffect(() => {
-    const generateCaptcha = () => {
-      const a = Math.floor(Math.random() * 10) + 1;
-      const b = Math.floor(Math.random() * 10) + 1;
-      return { a, b, answer: a + b };
-    };
-    
-    setCaptchaQuestion(generateCaptcha());
-    setIsMounted(true);
-  }, []);
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const form = useForm({
     resolver: zodResolver(contactSchema),
@@ -58,7 +45,6 @@ export default function ContactForm() {
       contactType: "political" as const,
       subscribeNewsletter: false,
       wantToVolunteer: false,
-      captcha: "",
       website: "" // Honeypot field - should always be empty
     }
   });
@@ -70,6 +56,13 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
+      // Check if Turnstile token is present
+      if (!turnstileToken) {
+        alert("Please complete the security check");
+        setIsSubmitting(false);
+        return;
+      }
+
       // Determine recipient email
       const recipientEmail = data.contactType === "medical"
         ? "claremont@nextpracticehealth.com"
@@ -87,8 +80,7 @@ export default function ContactForm() {
         contactType: data.contactType,
         recipientEmail: recipientEmail,
         website: data.website, // Honeypot field
-        captchaAnswer: data.captcha,
-        captchaExpected: captchaQuestion.answer.toString()
+        turnstileToken: turnstileToken
       };
 
       // Send to API route with server-side validation
@@ -105,25 +97,11 @@ export default function ContactForm() {
       if (response.ok && result.success) {
         alert("Thank you! Your message has been sent successfully. I'll respond within 48 hours for urgent matters, or 5 business days for general inquiries.");
         reset();
-        // Generate new captcha
-        const generateNewCaptcha = () => {
-          const a = Math.floor(Math.random() * 10) + 1;
-          const b = Math.floor(Math.random() * 10) + 1;
-          return { a, b, answer: a + b };
-        };
-        setCaptchaQuestion(generateNewCaptcha());
+        setTurnstileToken(""); // Reset Turnstile token
       } else {
         // Handle specific error messages from server
         alert(result.message || "Sorry, there was an error sending your message. Please try again later.");
-        if (result.message?.includes('captcha')) {
-          // Reset captcha on captcha error
-          const generateNewCaptcha = () => {
-            const a = Math.floor(Math.random() * 10) + 1;
-            const b = Math.floor(Math.random() * 10) + 1;
-            return { a, b, answer: a + b };
-          };
-          setCaptchaQuestion(generateNewCaptcha());
-        }
+        setTurnstileToken(""); // Reset Turnstile token on error
       }
     } catch (error) {
       console.error("Error sending message:", error);
@@ -327,22 +305,20 @@ export default function ContactForm() {
                   </div>
                 </div>
 
-                {/* Captcha */}
+                {/* Cloudflare Turnstile */}
                 <div className="space-y-2">
-                  <Label htmlFor="captcha" className="text-base font-medium text-gray-700">
-                    Security Check: What is {isMounted ? captchaQuestion.a : "?"} + {isMounted ? captchaQuestion.b : "?"}? *
+                  <Label className="text-base font-medium text-gray-700">
+                    Security Check *
                   </Label>
-                  <Input
-                    id="captcha"
-                    type="number"
-                    {...register("captcha")}
-                    placeholder="Answer"
-                    disabled={!isMounted}
-                    className="h-14 sm:h-12 text-base border-2 border-gray-200 focus:border-[#00653b] rounded-xl transition-colors max-w-32"
+                  <Turnstile
+                    siteKey="0x4AAAAAACBfpoWtpO2-JGTD"
+                    onSuccess={(token) => setTurnstileToken(token)}
+                    onError={() => setTurnstileToken("")}
+                    onExpire={() => setTurnstileToken("")}
+                    options={{
+                      theme: 'light',
+                    }}
                   />
-                  {errors.captcha && (
-                    <p className="text-red-500 text-sm mt-1">{errors.captcha.message}</p>
-                  )}
                 </div>
 
                 {/* Honeypot field - hidden from users but visible to bots */}
