@@ -9,12 +9,12 @@ export default function EconomicReportSection() {
   return (
     <section id="economic-report" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-[#00653b]/5 via-white to-[#6cc24a]/5 rounded-3xl p-6 md:p-8 border-2 border-[#00653b]/10 shadow-xl">
-          <div className="text-center mb-6">
-            <div className="inline-block p-3 bg-[#00653b]/10 rounded-full mb-3">
+        <div className="bg-gradient-to-br from-[#00653b]/5 via-white to-[#6cc24a]/5 rounded-3xl p-8 md:p-10 border-2 border-[#00653b]/10 shadow-xl">
+          <div className="text-center mb-8">
+            <div className="inline-block p-3 bg-[#00653b]/10 rounded-full mb-4">
               <FileText className="w-8 h-8 text-[#00653b]" />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
               The Economic Case for Cannabis Reform
             </h2>
             <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto">
@@ -23,9 +23,9 @@ export default function EconomicReportSection() {
           </div>
 
           {/* Two Column Layout: Image Left, Cards Right */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             {/* Report Image */}
-            <div className="flex justify-center md:justify-start">
+            <div className="flex justify-center md:justify-start items-center">
               <div className="relative w-full max-w-xs aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl hover:-translate-y-2 transition-all duration-300">
                 <Image
                   src="/images/report/brian_report.png"
@@ -38,7 +38,7 @@ export default function EconomicReportSection() {
             </div>
 
             {/* Cards Stacked Vertically */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col justify-center gap-4">
               <div
                 className="group bg-white rounded-xl p-4 shadow-md border border-[#00653b]/20 cursor-pointer"
                 style={{ transition: 'all 0.3s ease-out' }}
