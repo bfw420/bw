@@ -165,51 +165,60 @@ export default function HowToHelpSection() {
                       className="h-14 px-8 text-lg font-bold rounded-xl whitespace-nowrap relative overflow-hidden"
                       disabled={isSubmitting}
                       style={{
-                        background: isSubmitting
-                          ? 'white'
-                          : 'linear-gradient(45deg, #fff 0%, #6cc24a 50%, #fff 100%)',
-                        backgroundSize: '200% 200%',
+                        background: 'white',
+                        color: '#00653b',
                         animation: isSubmitting
                           ? 'none'
-                          : 'gradient-shift 3s ease infinite, breathe 2s ease-in-out infinite',
+                          : 'breathe 2s ease-in-out infinite, glow-pulse 2s ease-in-out infinite',
                         boxShadow: isSubmitting
                           ? '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-                          : '0 0 30px rgba(108, 194, 74, 0.6), 0 10px 25px -5px rgba(0, 0, 0, 0.2)',
-                        color: '#00653b',
-                        transition: 'all 0.3s ease-out'
+                          : '0 0 0 3px rgba(108, 194, 74, 0.3), 0 10px 25px -5px rgba(0, 0, 0, 0.2)',
+                        transition: 'all 0.3s ease-out',
+                        border: '2px solid rgba(108, 194, 74, 0.5)'
                       }}
                       onMouseEnter={(e) => {
                         if (!isSubmitting) {
-                          e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)';
-                          e.currentTarget.style.boxShadow = '0 0 40px rgba(108, 194, 74, 0.8), 0 20px 30px -5px rgba(0, 0, 0, 0.3)';
+                          e.currentTarget.style.transform = 'scale(1.1) translateY(-4px)';
+                          e.currentTarget.style.background = '#6cc24a';
+                          e.currentTarget.style.color = 'white';
+                          e.currentTarget.style.borderColor = '#6cc24a';
+                          e.currentTarget.style.boxShadow = '0 0 0 4px rgba(108, 194, 74, 0.4), 0 0 60px rgba(108, 194, 74, 0.8), 0 25px 35px -5px rgba(0, 0, 0, 0.4)';
                         }
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.transform = 'scale(1) translateY(0)';
-                        e.currentTarget.style.boxShadow = '0 0 30px rgba(108, 194, 74, 0.6), 0 10px 25px -5px rgba(0, 0, 0, 0.2)';
+                        e.currentTarget.style.background = 'white';
+                        e.currentTarget.style.color = '#00653b';
+                        e.currentTarget.style.borderColor = 'rgba(108, 194, 74, 0.5)';
+                        e.currentTarget.style.boxShadow = '0 0 0 3px rgba(108, 194, 74, 0.3), 0 10px 25px -5px rgba(0, 0, 0, 0.2)';
                       }}
                     >
                       {/* Shimmer effect overlay */}
                       {!isSubmitting && (
                         <span
-                          className="absolute inset-0 -z-10"
+                          className="absolute inset-0"
                           style={{
-                            background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent)',
-                            animation: 'shimmer 2s infinite',
-                            transform: 'translateX(-100%)'
+                            background: 'linear-gradient(90deg, transparent, rgba(108, 194, 74, 0.3), transparent)',
+                            animation: 'shimmer 3s infinite',
+                            transform: 'translateX(-100%)',
+                            pointerEvents: 'none'
                           }}
                         />
                       )}
                       {isSubmitting ? "Subscribing..." : "Send Me the Real Story"}
                     </Button>
                     <style jsx>{`
-                      @keyframes gradient-shift {
-                        0%, 100% { background-position: 0% 50%; }
-                        50% { background-position: 100% 50%; }
-                      }
                       @keyframes breathe {
                         0%, 100% { transform: scale(1); }
-                        50% { transform: scale(1.03); }
+                        50% { transform: scale(1.02); }
+                      }
+                      @keyframes glow-pulse {
+                        0%, 100% {
+                          box-shadow: 0 0 0 3px rgba(108, 194, 74, 0.3), 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+                        }
+                        50% {
+                          box-shadow: 0 0 0 5px rgba(108, 194, 74, 0.5), 0 0 40px rgba(108, 194, 74, 0.4), 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+                        }
                       }
                       @keyframes shimmer {
                         0% { transform: translateX(-100%); }
