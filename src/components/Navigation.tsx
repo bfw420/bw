@@ -135,19 +135,32 @@ export default function Navigation() {
                 Political Goals
               </Link>
               <Link
-                href="/#help"
-                className="text-gray-600 px-3 py-2 text-sm font-medium relative"
-                style={{ transition: 'all 0.2s ease-out' }}
+                href="/speeches"
+                className={`px-3 py-2 text-sm font-medium relative ${
+                  isActive('/speeches')
+                    ? 'text-[#00653b] font-bold'
+                    : 'text-gray-600'
+                }`}
+                style={{
+                  transition: 'all 0.2s ease-out',
+                  ...(isActive('/speeches') && {
+                    borderBottom: '2px solid #00653b'
+                  })
+                }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#00653b';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  if (!isActive('/speeches')) {
+                    e.currentTarget.style.color = '#00653b';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
-                  e.currentTarget.style.transform = 'translateY(0)';
+                  if (!isActive('/speeches')) {
+                    e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }
                 }}
               >
-                How to Help
+                Speeches
               </Link>
               <Link
                 href="https://www.lcwaparty.org.au/"
@@ -268,20 +281,28 @@ export default function Navigation() {
                 Political Goals
               </Link>
               <Link
-                href="/#help"
-                className="text-gray-600 block px-3 py-2 text-base font-medium"
+                href="/speeches"
+                className={`block px-3 py-2 text-base font-medium ${
+                  isActive('/speeches')
+                    ? 'text-[#00653b] font-bold'
+                    : 'text-gray-600'
+                }`}
                 style={{ transition: 'all 0.2s ease-out' }}
                 onClick={() => setIsMenuOpen(false)}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#00653b';
-                  e.currentTarget.style.paddingLeft = '1rem';
+                  if (!isActive('/speeches')) {
+                    e.currentTarget.style.color = '#00653b';
+                    e.currentTarget.style.paddingLeft = '1rem';
+                  }
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
-                  e.currentTarget.style.paddingLeft = '0.75rem';
+                  if (!isActive('/speeches')) {
+                    e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                    e.currentTarget.style.paddingLeft = '0.75rem';
+                  }
                 }}
               >
-                How to Help
+                Speeches
               </Link>
               <Link
                 href="https://www.lcwaparty.org.au/"
