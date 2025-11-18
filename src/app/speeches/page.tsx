@@ -1,146 +1,274 @@
 "use client";
 
-import Link from "next/link";
+import { useState, useEffect, useMemo } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { MessageSquare, BookOpen, FileText, Search } from "lucide-react";
+import { Search, ArrowUpDown, Filter, Loader2, ExternalLink } from "lucide-react";
+import { Input } from "@/components/ui/button";
+
+interface HansardRecord {
+  id: number;
+  date: string;
+  emoji: string;
+  subject: string;
+  subjecturl: string;
+  type: string;
+  summary: string;
+  house: string;
+}
 
 export default function SpeechesPage() {
+  const [records, setRecords] = useState<HansardRecord[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [typeFilter, setTypeFilter] = useState<string>("all");
+  const [sortField, setSortField] = useState<keyof HansardRecord>("date");
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
+
+  // Fetch Hansard records from API
+  useEffect(() => {
+    const fetchRecords = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch("https://api.jaxius.net/bw/hansard", {
+          headers: {
+            "x-api-key": "tillyisasexybitch",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch Hansard records");
+        }
+
+        const data = await response.json();
+        setRecords(data);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "An error occurred");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRecords();
+  }, []);
+
+  // Get unique types for filter
+  const uniqueTypes = useMemo(() => {
+    const types = new Set(records.map((r) => r.type));
+    return Array.from(types).sort();
+  }, [records]);
+
+  // Filter and sort records
+  const filteredRecords = useMemo(() => {
+    let filtered = records;
+
+    // Apply search filter
+    if (searchTerm) {
+      filtered = filtered.filter(
+        (record) =>
+          record.subject.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          record.summary.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    // Apply type filter
+    if (typeFilter !== "all") {
+      filtered = filtered.filter((record) => record.type === typeFilter);
+    }
+
+    // Apply sorting
+    filtered.sort((a, b) => {
+      let aValue = a[sortField];
+      let bValue = b[sortField];
+
+      // Convert dates to timestamps for comparison
+      if (sortField === "date") {
+        aValue = new Date(a.date).getTime();
+        bValue = new Date(b.date).getTime();
+      }
+
+      if (aValue < bValue) return sortDirection === "asc" ? -1 : 1;
+      if (aValue > bValue) return sortDirection === "asc" ? 1 : -1;
+      return 0;
+    });
+
+    return filtered;
+  }, [records, searchTerm, typeFilter, sortField, sortDirection]);
+
+  // Toggle sort
+  const handleSort = (field: keyof HansardRecord) => {
+    if (sortField === field) {
+      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
+    } else {
+      setSortField(field);
+      setSortDirection("asc");
+    }
+  };
+
+  // Format date for display
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString("en-AU", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
 
       <main className="py-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-16">
-            <div className="inline-block p-4 bg-[#00653b]/10 rounded-full mb-6">
-              <MessageSquare className="w-12 h-12 text-[#00653b]" />
-            </div>
+          <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-[#00653b] mb-4">
               Parliamentary Speeches
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore recent Hansard speeches and contributions to parliamentary debates
+              Browse and search Hansard records from the WA Legislative Council
             </p>
           </div>
 
-          {/* Coming Soon Notice */}
-          <div className="bg-gradient-to-br from-[#00653b]/5 to-[#6cc24a]/5 rounded-2xl p-12 border-2 border-[#00653b]/20 text-center">
-            <div className="inline-block p-4 bg-white rounded-full mb-6 shadow-sm">
-              <BookOpen className="w-10 h-10 text-[#6cc24a]" />
+          {/* Search and Filter Bar */}
+          <div className="bg-gradient-to-br from-[#00653b]/5 to-[#6cc24a]/5 rounded-2xl p-6 mb-8 border border-[#00653b]/20">
+            <div className="flex flex-col md:flex-row gap-4">
+              {/* Search Input */}
+              <div className="flex-1 relative">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Search by subject or summary..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#00653b]/20 focus:outline-none focus:ring-2 focus:ring-[#6cc24a] bg-white"
+                />
+              </div>
+
+              {/* Type Filter */}
+              <div className="relative">
+                <Filter className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <select
+                  value={typeFilter}
+                  onChange={(e) => setTypeFilter(e.target.value)}
+                  className="pl-10 pr-8 py-3 rounded-xl border border-[#00653b]/20 focus:outline-none focus:ring-2 focus:ring-[#6cc24a] bg-white appearance-none cursor-pointer min-w-[200px]"
+                >
+                  <option value="all">All Types</option>
+                  {uniqueTypes.map((type) => (
+                    <option key={type} value={type}>
+                      {type}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Speech Dashboard Coming Soon
-            </h2>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              This page will soon feature a comprehensive dashboard to explore Dr Brian Walker&apos;s
-              parliamentary speeches, Hansard records, and contributions to legislative debates.
-            </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12">
-              <div
-                className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 cursor-pointer"
-                style={{ transition: 'all 0.2s ease-out' }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
-                  e.currentTarget.style.borderColor = 'rgba(0, 101, 59, 0.3)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)';
-                  e.currentTarget.style.borderColor = 'rgba(229, 231, 235, 1)';
-                }}
-              >
-                <Search className="w-8 h-8 text-[#00653b] mb-3 mx-auto" />
-                <h3 className="font-bold text-lg text-gray-900 mb-2">Search & Filter</h3>
-                <p className="text-gray-600 text-sm">
-                  Browse speeches by topic, date, or keyword
-                </p>
-              </div>
-
-              <div
-                className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 cursor-pointer"
-                style={{ transition: 'all 0.2s ease-out' }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
-                  e.currentTarget.style.borderColor = 'rgba(108, 194, 74, 0.3)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)';
-                  e.currentTarget.style.borderColor = 'rgba(229, 231, 235, 1)';
-                }}
-              >
-                <FileText className="w-8 h-8 text-[#6cc24a] mb-3 mx-auto" />
-                <h3 className="font-bold text-lg text-gray-900 mb-2">Full Transcripts</h3>
-                <p className="text-gray-600 text-sm">
-                  Read complete Hansard transcripts
-                </p>
-              </div>
-
-              <div
-                className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 cursor-pointer"
-                style={{ transition: 'all 0.2s ease-out' }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
-                  e.currentTarget.style.borderColor = 'rgba(0, 101, 59, 0.3)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)';
-                  e.currentTarget.style.borderColor = 'rgba(229, 231, 235, 1)';
-                }}
-              >
-                <MessageSquare className="w-8 h-8 text-[#00653b] mb-3 mx-auto" />
-                <h3 className="font-bold text-lg text-gray-900 mb-2">Key Issues</h3>
-                <p className="text-gray-600 text-sm">
-                  Track speeches on important topics
-                </p>
-              </div>
+            {/* Results Count */}
+            <div className="mt-4 text-sm text-gray-600">
+              Showing {filteredRecords.length} of {records.length} records
             </div>
           </div>
 
-          {/* Parliamentary Resources */}
-          <div className="mt-12 bg-white rounded-2xl p-8 border-2 border-[#00653b]/20 shadow-sm">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-              Parliamentary Resources
-            </h2>
-            <p className="text-gray-600 text-center mb-6">
-              In the meantime, you can view Dr Brian Walker&apos;s parliamentary contributions through
-              the official WA Parliament website:
-            </p>
-            <div className="text-center">
-              <a
-                href="https://www.parliament.wa.gov.au/parliament/memblist.nsf/WAllMembersFlat/Walker,%20Brian%20Francis?opendocument"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-[#00653b] hover:bg-[#00653b]/90 text-white px-6 py-3 rounded-full font-semibold transition-all duration-200 hover:scale-105 shadow-md"
-              >
-                View Parliamentary Profile →
-              </a>
+          {/* Loading State */}
+          {loading && (
+            <div className="flex justify-center items-center py-20">
+              <Loader2 className="w-10 h-10 animate-spin text-[#00653b]" />
+              <span className="ml-3 text-xl text-gray-600">Loading Hansard records...</span>
             </div>
-          </div>
+          )}
 
-          {/* Subscribe for Updates */}
-          <div className="mt-12 text-center bg-gradient-to-r from-[#00653b]/5 to-[#6cc24a]/5 rounded-2xl p-8 border border-[#00653b]/20">
-            <h3 className="text-xl font-bold text-gray-900 mb-3">
-              Stay Informed
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Subscribe to the newsletter to be notified when the speech dashboard launches
-              and to receive updates on Dr Walker&apos;s parliamentary work.
-            </p>
-            <Link
-              href="/#help"
-              className="inline-block text-[#00653b] hover:text-[#6cc24a] font-semibold transition-all duration-200 hover:scale-105"
-            >
-              Subscribe to Newsletter →
-            </Link>
-          </div>
+          {/* Error State */}
+          {error && (
+            <div className="bg-red-50 border border-red-200 rounded-xl p-6 text-center">
+              <p className="text-red-800 font-semibold">Error: {error}</p>
+            </div>
+          )}
+
+          {/* Table */}
+          {!loading && !error && (
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-[#00653b]/20">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead className="bg-gradient-to-r from-[#00653b] to-[#6cc24a] text-white">
+                    <tr>
+                      <th
+                        className="px-6 py-4 text-left cursor-pointer hover:bg-white/10 transition-colors"
+                        onClick={() => handleSort("date")}
+                      >
+                        <div className="flex items-center gap-2">
+                          Date
+                          <ArrowUpDown className="w-4 h-4" />
+                        </div>
+                      </th>
+                      <th className="px-6 py-4 text-center">📄</th>
+                      <th
+                        className="px-6 py-4 text-left cursor-pointer hover:bg-white/10 transition-colors"
+                        onClick={() => handleSort("subject")}
+                      >
+                        <div className="flex items-center gap-2">
+                          Subject
+                          <ArrowUpDown className="w-4 h-4" />
+                        </div>
+                      </th>
+                      <th
+                        className="px-6 py-4 text-left cursor-pointer hover:bg-white/10 transition-colors"
+                        onClick={() => handleSort("type")}
+                      >
+                        <div className="flex items-center gap-2">
+                          Type
+                          <ArrowUpDown className="w-4 h-4" />
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    {filteredRecords.map((record) => (
+                      <tr
+                        key={record.id}
+                        className="hover:bg-[#00653b]/5 transition-colors"
+                      >
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-medium">
+                          {formatDate(record.date)}
+                        </td>
+                        <td className="px-6 py-4 text-center text-2xl">
+                          {record.emoji}
+                        </td>
+                        <td className="px-6 py-4">
+                          <a
+                            href={record.subjecturl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#00653b] hover:text-[#6cc24a] font-semibold flex items-center gap-2 transition-colors"
+                          >
+                            {record.subject}
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                          <div className="text-sm text-gray-600 mt-2 leading-relaxed">
+                            {record.summary}
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#6cc24a]/10 text-[#00653b] border border-[#6cc24a]/20">
+                            {record.type}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* No Results */}
+              {filteredRecords.length === 0 && !loading && (
+                <div className="text-center py-12">
+                  <p className="text-gray-500 text-lg">
+                    No records found matching your search criteria.
+                  </p>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </main>
 
