@@ -9,7 +9,8 @@ export default function EconomicReportSection() {
   return (
     <section id="economic-report" className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-[#00653b]/5 via-white to-[#6cc24a]/5 rounded-3xl p-6 md:p-8 border-2 border-[#00653b]/10 shadow-xl">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-gradient-to-br from-[#00653b]/5 via-white to-[#6cc24a]/5 rounded-3xl p-6 md:p-8 border-2 border-[#00653b]/10 shadow-xl">
           <div className="text-center mb-6">
             <div className="inline-block p-2 bg-[#00653b]/10 rounded-full mb-3">
               <FileText className="w-6 h-6 text-[#00653b]" />
@@ -23,7 +24,7 @@ export default function EconomicReportSection() {
           </div>
 
           {/* Two Column Layout: Image Left, Cards Right */}
-          <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-4 md:gap-6 mb-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-4 md:gap-6 mb-6">
             {/* Report Image */}
             <div className="flex justify-center md:justify-start items-center">
               <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
@@ -137,6 +138,7 @@ export default function EconomicReportSection() {
               </Link>
             </Button>
           </div>
+        </div>
         </div>
       </div>
     </section>

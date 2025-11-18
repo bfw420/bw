@@ -400,7 +400,7 @@ export default function HowToHelpSection() {
               Join the Movement
             </h3>
             <p className="text-base text-gray-700 mb-6 max-w-2xl mx-auto">
-              Leader of the Legalise Cannabis WA Party. Creating progressive change through evidence-based policy.
+              I am Leader of the Legalise Cannabis WA Party. Let&apos;s overgrow the government together.
             </p>
 
             <div className="flex flex-wrap justify-center gap-3">
