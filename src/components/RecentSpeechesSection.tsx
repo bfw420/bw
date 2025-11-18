@@ -144,7 +144,7 @@ export default function RecentSpeechesSection() {
               }}
             >
               <Link href="/speeches" className="flex items-center gap-2">
-                View All Speeches
+                View all recent parliamentary speeches
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>

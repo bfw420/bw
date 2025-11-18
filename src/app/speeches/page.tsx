@@ -382,6 +382,44 @@ export default function SpeechesPage() {
                   </Button>
                 </div>
               )}
+
+              {/* Copyright Disclaimer */}
+              <div className="mt-12 pt-8 border-t border-gray-200">
+                <div className="bg-gray-50 rounded-lg p-6 text-center">
+                  <p className="text-xs text-gray-600 leading-relaxed max-w-4xl mx-auto">
+                    <strong>Source & Copyright Notice:</strong> This information is sourced from the official{" "}
+                    <a
+                      href="https://www.parliament.wa.gov.au/hansard"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#00653b] hover:text-[#6cc24a] underline"
+                    >
+                      Western Australian Parliamentary Hansard
+                    </a>
+                    . © Parliament of Western Australia. This material is reproduced for educational and informational purposes only, with no commercial use, profit, or advertising.
+                    Dr Brian Walker MLC makes no claim to copyright over this material and does not represent, alter, or misrepresent the parliamentary records.
+                    All excerpts are used in accordance with fair dealing provisions and the Parliament&apos;s{" "}
+                    <a
+                      href="https://www.parliament.wa.gov.au/parliament/copyright.nsf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#00653b] hover:text-[#6cc24a] underline"
+                    >
+                      copyright and conditions of use
+                    </a>
+                    . For the most current and official records, please visit the{" "}
+                    <a
+                      href="https://www.parliament.wa.gov.au"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#00653b] hover:text-[#6cc24a] underline"
+                    >
+                      Parliament of Western Australia website
+                    </a>
+                    .
+                  </p>
+                </div>
+              </div>
             </>
           )}
         </div>
