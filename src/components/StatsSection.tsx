@@ -1,12 +1,12 @@
 "use client";
 
-import { Stethoscope, Building2, FileText, Users, Languages } from "lucide-react";
+import { Stethoscope, Building2, FileText, ScrollText, Users, Languages } from "lucide-react";
 
 export default function StatsSection() {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-4 md:gap-6">
           {/* Stat 1 */}
           <div className="text-center">
             <div className="bg-gradient-to-br from-[#00653b]/5 to-[#6cc24a]/5 border border-[#00653b]/10 rounded-2xl p-4 md:p-5 hover:border-[#00653b] hover:shadow-lg transition-all duration-300 hover:scale-105 h-full">
@@ -56,6 +56,21 @@ export default function StatsSection() {
           <div className="text-center">
             <div className="bg-gradient-to-br from-[#00653b]/5 to-[#6cc24a]/5 border border-[#00653b]/10 rounded-2xl p-4 md:p-5 hover:border-[#00653b] hover:shadow-lg transition-all duration-300 hover:scale-105 h-full">
               <div className="flex justify-center mb-2">
+                <ScrollText className="w-7 h-7 md:w-8 md:h-8 text-[#00653b]" />
+              </div>
+              <div className="text-3xl md:text-4xl font-bold text-[#00653b] mb-1">
+                16
+              </div>
+              <div className="text-xs md:text-sm text-gray-700 font-medium">
+                Petitions Tabled
+              </div>
+            </div>
+          </div>
+
+          {/* Stat 5 */}
+          <div className="text-center">
+            <div className="bg-gradient-to-br from-[#00653b]/5 to-[#6cc24a]/5 border border-[#00653b]/10 rounded-2xl p-4 md:p-5 hover:border-[#00653b] hover:shadow-lg transition-all duration-300 hover:scale-105 h-full">
+              <div className="flex justify-center mb-2">
                 <Languages className="w-7 h-7 md:w-8 md:h-8 text-[#00653b]" />
               </div>
               <div className="text-3xl md:text-4xl font-bold text-[#00653b] mb-1">
@@ -67,7 +82,7 @@ export default function StatsSection() {
             </div>
           </div>
 
-          {/* Stat 5 */}
+          {/* Stat 6 */}
           <div className="text-center">
             <div className="bg-gradient-to-br from-[#00653b]/5 to-[#6cc24a]/5 border border-[#00653b]/10 rounded-2xl p-4 md:p-5 hover:border-[#00653b] hover:shadow-lg transition-all duration-300 hover:scale-105 h-full">
               <div className="flex justify-center mb-2">
