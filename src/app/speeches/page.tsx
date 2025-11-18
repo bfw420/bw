@@ -4,7 +4,6 @@ import { useState, useEffect, useMemo } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Search, ArrowUpDown, Filter, Loader2, ExternalLink } from "lucide-react";
-import { Input } from "@/components/ui/button";
 
 interface HansardRecord {
   id: number;
@@ -42,6 +41,7 @@ export default function SpeechesPage() {
         }
 
         const data = await response.json();
+        console.log(`Fetched ${data.length} Hansard records from API`);
         setRecords(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : "An error occurred");
