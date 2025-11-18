@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import WellnessSection from "@/components/WellnessSection";
 import StatsSection from "@/components/StatsSection";
 import PoliticalGoalsSection from "@/components/PoliticalGoalsSection";
+import RecentSpeechesSection from "@/components/RecentSpeechesSection";
 import HowToHelpSection from "@/components/HowToHelpSection";
 import EconomicReportSection from "@/components/EconomicReportSection";
 import ContactForm from "@/components/ContactForm";
@@ -17,6 +18,7 @@ export default function Home() {
         <StatsSection />
         <WellnessSection />
         <PoliticalGoalsSection />
+        <RecentSpeechesSection />
         <HowToHelpSection />
         <EconomicReportSection />
         <ContactForm />
