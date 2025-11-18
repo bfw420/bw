@@ -246,9 +246,6 @@ export default function HowToHelpSection() {
         <div className="mb-16">
           <div className="bg-gradient-to-br from-red-50 to-red-100/50 rounded-2xl p-6 md:p-8 border border-red-200/50 shadow-lg">
             <div className="text-center mb-8">
-              <div className="inline-block p-4 bg-[#cc0000] rounded-2xl mb-4">
-                <Play className="w-10 h-10 text-white fill-white" />
-              </div>
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
                 Subscribe to My YouTube Channel
               </h3>

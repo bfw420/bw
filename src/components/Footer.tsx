@@ -296,7 +296,7 @@ export default function Footer() {
     {showBackToTop && (
       <button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 bg-white text-[#00653b] p-4 rounded-full shadow-2xl hover:shadow-[#6cc24a]/50 transition-all duration-300 z-50 border-2 border-[#00653b]/20"
+        className="fixed bottom-6 right-6 bg-white text-[#00653b] p-3 rounded-full shadow-xl hover:shadow-[#6cc24a]/50 transition-all duration-300 z-50 border-2 border-[#00653b]/20"
         aria-label="Back to top"
         style={{ transition: 'all 0.3s ease-out' }}
         onMouseEnter={(e) => {
@@ -312,7 +312,7 @@ export default function Footer() {
           e.currentTarget.style.borderColor = 'rgba(0, 101, 59, 0.2)';
         }}
       >
-        <ArrowUp className="w-6 h-6" />
+        <ArrowUp className="w-5 h-5" />
       </button>
     )}
     </>
