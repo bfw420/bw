@@ -23,10 +23,10 @@ export default function EconomicReportSection() {
           </div>
 
           {/* Two Column Layout: Image Left, Cards Right */}
-          <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4 md:gap-6 mb-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-4 md:gap-6 mb-6 max-w-4xl mx-auto">
             {/* Report Image */}
             <div className="flex justify-center md:justify-start items-center">
-              <div className="relative w-full max-w-[200px] md:max-w-[220px] aspect-[3/4] rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
+              <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <Image
                   src="/images/report/brian_report.png"
                   alt="An Economic Case to Legalise Cannabis in Western Australia Report"
