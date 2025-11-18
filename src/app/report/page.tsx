@@ -182,12 +182,12 @@ export default function ReportPage() {
                 The report assesses the potential economic consequences for Western Australia should we permit adult-use recreational cannabis in a legal and well-regulated system. It turns out that legalising cannabis would have direct positive budgetary implications from increasing income from a range of measures including revenue generation and reduced expenditure on enforcing prohibition. However, the experience of other jurisdictions which have already legalised cannabis suggests that additional benefits would be likely to follow, including new employment opportunities within Western Australia not only in cultivation and processing, but in retail and tourism, implying an increase in state GDP.
               </p>
 
-              {/* WA Cannabis Stats Infographic */}
+              {/* WA Cannabis Facts Infographic */}
               <div className="my-10 flex justify-center">
                 <div className="relative w-full max-w-3xl rounded-xl overflow-hidden shadow-lg hover:-translate-y-2 transition-all duration-300">
                   <Image
-                    src="/images/report/stats1.webp"
-                    alt="WA Cannabis Statistics Infographic"
+                    src="/images/report/facts.jpg"
+                    alt="WA Cannabis Facts Infographic"
                     width={1000}
                     height={750}
                     className="w-full h-auto object-contain"
