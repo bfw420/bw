@@ -44,7 +44,7 @@ const socialLinks = [
   },
   {
     name: "YouTube",
-    url: "https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A",
+    url: "https://www.youtube.com/channel/UCCIGBIf3b385BV5d48Y1U2A?sub_confirmation=1",
     icon: Youtube
   },
   {
