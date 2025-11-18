@@ -139,12 +139,12 @@ export default function SpeechesPage() {
     }
   };
 
-  // Format date to Perth time (UTC+8)
+  // Format date by adding 1 day
   const formatPerthDate = (dateString: string) => {
     const date = new Date(dateString);
-    // Add 8 hours for Perth time
-    const perthDate = new Date(date.getTime() + (8 * 60 * 60 * 1000));
-    return perthDate.toLocaleDateString("en-AU", {
+    // Add 1 day (24 hours)
+    const adjustedDate = new Date(date.getTime() + (24 * 60 * 60 * 1000));
+    return adjustedDate.toLocaleDateString("en-AU", {
       year: "numeric",
       month: "short",
       day: "numeric",

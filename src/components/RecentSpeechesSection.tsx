@@ -42,6 +42,18 @@ export default function RecentSpeechesSection() {
     fetchSpeeches();
   }, []);
 
+  // Format date by adding 1 day
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    // Add 1 day (24 hours)
+    const adjustedDate = new Date(date.getTime() + (24 * 60 * 60 * 1000));
+    return adjustedDate.toLocaleDateString("en-AU", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  };
+
   return (
     <section className="py-16 bg-gradient-to-br from-[#00653b]/5 to-[#6cc24a]/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,6 +108,9 @@ export default function RecentSpeechesSection() {
                     <div className="flex items-start gap-4">
                       <div className="text-3xl flex-shrink-0">{speech.emoji}</div>
                       <div className="flex-1 min-w-0">
+                        <div className="text-xs text-gray-500 mb-1">
+                          {formatDate(speech.date)}
+                        </div>
                         <h3 className="text-lg font-bold text-[#00653b] mb-2 line-clamp-2">
                           {speech.subject}
                         </h3>
@@ -106,33 +121,35 @@ export default function RecentSpeechesSection() {
                     </div>
                   </a>
                 ))}
-
-                {/* View All Button */}
-                <div className="text-center pt-4">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-[#00653b] text-white px-8 py-6 rounded-full font-bold shadow-lg"
-                    style={{ transition: 'all 0.3s ease-out' }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)';
-                      e.currentTarget.style.backgroundColor = '#6cc24a';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'scale(1) translateY(0)';
-                      e.currentTarget.style.backgroundColor = '#00653b';
-                    }}
-                  >
-                    <Link href="/speeches" className="flex items-center gap-2">
-                      View All Speeches
-                      <ArrowRight className="w-5 h-5" />
-                    </Link>
-                  </Button>
-                </div>
               </>
             )}
           </div>
         </div>
+
+        {/* View All Button - Centered Below Grid */}
+        {!loading && (
+          <div className="text-center mt-8">
+            <Button
+              asChild
+              size="lg"
+              className="bg-[#00653b] text-white px-8 py-6 rounded-full font-bold shadow-lg"
+              style={{ transition: 'all 0.3s ease-out' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)';
+                e.currentTarget.style.backgroundColor = '#6cc24a';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1) translateY(0)';
+                e.currentTarget.style.backgroundColor = '#00653b';
+              }}
+            >
+              <Link href="/speeches" className="flex items-center gap-2">
+                View All Speeches
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
