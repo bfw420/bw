@@ -24,7 +24,7 @@ export default function EconomicReportSection() {
           </div>
 
           {/* Two Column Layout: Image Left, Cards Right */}
-          <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-4 md:gap-6 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-4 md:gap-6 mb-6">
             {/* Report Image */}
             <div className="flex justify-center md:justify-start items-center">
               <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">

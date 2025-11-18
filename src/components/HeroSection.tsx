@@ -138,7 +138,7 @@ export default function HeroSection() {
     return (
       <section className="lg:hidden">
         {/* Text Section with Green Gradient */}
-        <div className="bg-gradient-to-br from-[#00653b] to-[#6cc24a] py-12 px-4 text-center">
+        <div className="bg-gradient-to-br from-[#00653b] to-[#6cc24a] py-8 px-4 text-center">
           <div className="max-w-7xl mx-auto">
             <HeroContent className="max-w-2xl mx-auto" />
           </div>
@@ -250,7 +250,7 @@ export default function HeroSection() {
       </Button>
 
       {/* Hero Content - Left Aligned */}
-      <div className="absolute inset-0 flex items-center z-10">
+      <div className="absolute inset-0 flex items-start pt-24 z-10">
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 w-full">
           <HeroContent className="max-w-2xl" />
         </div>
