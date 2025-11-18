@@ -34,11 +34,7 @@ export default function SpeechesPage() {
     const fetchRecords = async () => {
       try {
         setLoading(true);
-        const response = await fetch("https://api.jaxius.net/bw/hansard", {
-          headers: {
-            "x-api-key": "tillyisasexybitch",
-          },
-        });
+        const response = await fetch("/api/hansard");
 
         if (!response.ok) {
           throw new Error("Failed to fetch Hansard records");
@@ -179,10 +175,10 @@ export default function SpeechesPage() {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-[#00653b] mb-4">
-              Parliamentary Speeches
+              My Parliamentary Speeches
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Browse and search Hansard records from the WA Legislative Council
+              Browse and search my recent Hansard record from the WA Legislative Council.
             </p>
           </div>
 
