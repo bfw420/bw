@@ -93,7 +93,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-lg md:text-xl lg:text-2xl mb-6 text-white/95 drop-shadow-md">
-            Evidence-based policy, not politics as usual.
+            Truth. Freedom. Justice.
           </p>
 
           {/* Key Facts with Checkmarks */}
@@ -117,7 +117,18 @@ export default function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="bg-white text-[#00653b] hover:bg-white/90 px-8 py-6 text-lg font-bold rounded-full shadow-xl transition-all duration-200 hover:scale-105"
+              className="bg-white text-[#00653b] px-8 py-6 text-lg font-bold rounded-full shadow-xl"
+              style={{ transition: 'all 0.3s ease-out' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.1) translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)';
+                e.currentTarget.style.backgroundColor = '#f0f0f0';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1) translateY(0)';
+                e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                e.currentTarget.style.backgroundColor = 'white';
+              }}
             >
               <Link href="/#help">Join Newsletter</Link>
             </Button>
@@ -125,7 +136,20 @@ export default function HeroSection() {
               asChild
               size="lg"
               variant="outline"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#00653b] px-8 py-6 text-lg font-bold rounded-full shadow-xl transition-all duration-200 hover:scale-105"
+              className="bg-transparent border-2 border-white text-white px-8 py-6 text-lg font-bold rounded-full shadow-xl"
+              style={{ transition: 'all 0.3s ease-out' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.1) translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)';
+                e.currentTarget.style.backgroundColor = 'white';
+                e.currentTarget.style.color = '#00653b';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1) translateY(0)';
+                e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = 'white';
+              }}
             >
               <a href="https://lcwaparty.org.au/join" target="_blank" rel="noopener noreferrer">Volunteer</a>
             </Button>

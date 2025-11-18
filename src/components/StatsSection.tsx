@@ -14,7 +14,7 @@ export default function StatsSection() {
                 <Stethoscope className="w-7 h-7 md:w-8 md:h-8 text-[#00653b]" />
               </div>
               <div className="text-3xl md:text-4xl font-bold text-[#00653b] mb-1">
-                40+
+                46
               </div>
               <div className="text-xs md:text-sm text-gray-700 font-medium">
                 Years as GP
@@ -56,13 +56,13 @@ export default function StatsSection() {
           <div className="text-center">
             <div className="bg-gradient-to-br from-[#00653b]/5 to-[#6cc24a]/5 border border-[#00653b]/10 rounded-2xl p-4 md:p-5 hover:border-[#00653b] hover:shadow-lg transition-all duration-300 hover:scale-105 h-full">
               <div className="flex justify-center mb-2">
-                <Users className="w-7 h-7 md:w-8 md:h-8 text-[#00653b]" />
+                <Languages className="w-7 h-7 md:w-8 md:h-8 text-[#00653b]" />
               </div>
               <div className="text-3xl md:text-4xl font-bold text-[#00653b] mb-1">
-                5,000+
+                5
               </div>
               <div className="text-xs md:text-sm text-gray-700 font-medium">
-                Newsletter Subscribers
+                Languages Spoken
               </div>
             </div>
           </div>
@@ -71,13 +71,13 @@ export default function StatsSection() {
           <div className="text-center">
             <div className="bg-gradient-to-br from-[#00653b]/5 to-[#6cc24a]/5 border border-[#00653b]/10 rounded-2xl p-4 md:p-5 hover:border-[#00653b] hover:shadow-lg transition-all duration-300 hover:scale-105 h-full">
               <div className="flex justify-center mb-2">
-                <Languages className="w-7 h-7 md:w-8 md:h-8 text-[#00653b]" />
+                <Users className="w-7 h-7 md:w-8 md:h-8 text-[#00653b]" />
               </div>
               <div className="text-3xl md:text-4xl font-bold text-[#00653b] mb-1">
-                7
+                5,000+
               </div>
               <div className="text-xs md:text-sm text-gray-700 font-medium">
-                Languages Spoken
+                Newsletter Subscribers
               </div>
             </div>
           </div>
