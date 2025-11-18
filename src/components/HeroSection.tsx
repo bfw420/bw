@@ -64,7 +64,7 @@ export default function HeroSection() {
       </div>
 
       {/* Main Headline */}
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight text-white drop-shadow-lg">
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight text-white drop-shadow-lg whitespace-nowrap">
         Your Doctor in Parliament
       </h1>
 

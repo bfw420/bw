@@ -237,24 +237,6 @@ export default function HowToHelpSection() {
                     <Link href="/newsletter">Read Past Newsletters</Link>
                   </Button>
                 </div>
-
-                <div className="mt-8 space-y-3">
-                  <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 max-w-2xl mx-auto">
-                    <p className="text-sm italic opacity-90">
-                      💬 &quot;The only politician who actually tells me what&apos;s going on.&quot; - Sarah M., Fremantle
-                    </p>
-                  </div>
-                  <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 max-w-2xl mx-auto">
-                    <p className="text-sm italic opacity-90">
-                      💬 &quot;Finally, someone in Parliament who speaks the truth.&quot; - Mark T., Perth
-                    </p>
-                  </div>
-                  <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 max-w-2xl mx-auto">
-                    <p className="text-sm italic opacity-90">
-                      💬 &quot;Brian&apos;s newsletters are the only political updates I actually read.&quot; - Jessica L., Rockingham
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
