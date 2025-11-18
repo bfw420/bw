@@ -96,7 +96,7 @@ export default function PoliticalGoalsSection() {
                 {/* Background Image on Hover */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300">
                   <Image
-                    src="/images/chamber_2.webp"
+                    src="/images/crowd.webp"
                     alt=""
                     fill
                     className="object-cover"
@@ -126,11 +126,11 @@ export default function PoliticalGoalsSection() {
           </p>
         </div>
 
-        {/* Banner Image - Legislative Work */}
+        {/* Banner Image - Community Rally */}
         <div className="mt-16 relative w-full h-80 md:h-96 lg:h-[32rem] rounded-3xl overflow-hidden shadow-2xl hover:-translate-y-1 transition-all duration-300">
           <Image
-            src="/images/chamber_2.webp"
-            alt="Dr Brian Walker MLC in the Western Australia Legislative Council"
+            src="/images/crowd.webp"
+            alt="Dr Brian Walker MLC at community rally"
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 1280px"
