@@ -18,10 +18,9 @@ export default function ReportPage() {
       <section className="relative bg-gradient-to-br from-[#00653b] via-[#00653b] to-[#6cc24a] text-white py-20 md:py-32">
         <div className="absolute inset-0 bg-black/10"></div>
         <div
-          className="absolute inset-0 opacity-10 bg-repeat"
+          className="absolute inset-0 opacity-10 bg-center bg-cover bg-no-repeat"
           style={{
             backgroundImage: 'url(/images/leaf-background.webp)',
-            backgroundSize: '400px 400px',
           }}
         ></div>
         <div className="container mx-auto px-4 relative z-10">
