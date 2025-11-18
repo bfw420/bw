@@ -162,18 +162,23 @@ export default function HowToHelpSection() {
                     />
                     <Button
                       type="submit"
-                      className="h-14 px-8 bg-white text-[#00653b] text-lg font-bold rounded-xl whitespace-nowrap"
+                      className="h-14 px-8 bg-white text-[#00653b] text-lg font-bold rounded-xl whitespace-nowrap animate-pulse shadow-lg"
                       disabled={isSubmitting}
-                      style={{ transition: 'all 0.2s ease-out' }}
+                      style={{
+                        transition: 'all 0.2s ease-out',
+                        animation: isSubmitting ? 'none' : 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+                      }}
                       onMouseEnter={(e) => {
                         if (!isSubmitting) {
-                          e.currentTarget.style.transform = 'scale(1.05)';
+                          e.currentTarget.style.transform = 'scale(1.1)';
                           e.currentTarget.style.backgroundColor = 'rgb(243, 244, 246)';
+                          e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)';
                         }
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.transform = 'scale(1)';
                         e.currentTarget.style.backgroundColor = 'white';
+                        e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
                       }}
                     >
                       {isSubmitting ? "Subscribing..." : "Send Me the Real Story"}
