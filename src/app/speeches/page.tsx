@@ -70,19 +70,28 @@ export default function SpeechesPage() {
       "that", "these", "those", "not", "no", "yes", "all", "some", "any"
     ]);
 
+    // Priority topics that should be boosted in the word cloud
+    const priorityTopics = new Set([
+      "hemp", "health", "hospitals", "hospital", "ambulance", "cannabis",
+      "medicinal", "medical", "patients", "patient", "mental", "emergency",
+      "healthcare", "treatment", "legislation", "parliament", "reform"
+    ]);
+
     records.forEach((record) => {
       const text = `${record.subject} ${record.summary}`.toLowerCase();
-      const words = text.match(/\b[a-z]{4,}\b/g) || [];
+      const words = text.match(/\b[a-z]{3,}\b/g) || []; // Changed from 4+ to 3+ letters
       words.forEach((word) => {
         if (!stopWords.has(word)) {
-          wordCounts[word] = (wordCounts[word] || 0) + 1;
+          // Boost priority topics by giving them extra weight
+          const weight = priorityTopics.has(word) ? 3 : 1;
+          wordCounts[word] = (wordCounts[word] || 0) + weight;
         }
       });
     });
 
     return Object.entries(wordCounts)
       .sort((a, b) => b[1] - a[1])
-      .slice(0, 15)
+      .slice(0, 20) // Increased from 15 to 20 words
       .map(([word]) => word);
   }, [records]);
 
