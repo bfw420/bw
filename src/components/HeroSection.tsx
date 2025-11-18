@@ -52,7 +52,7 @@ export default function HeroSection() {
   const HeroContent = ({ className = "" }: { className?: string }) => (
     <div className={className}>
       {/* Legislative Council Logo */}
-      <div className="mb-5">
+      <div className="mb-5 flex justify-center lg:justify-start">
         <div className="w-20 h-20 md:w-24 md:h-24">
           <Image
             src="/images/CouncilLogo.png"
@@ -73,7 +73,7 @@ export default function HeroSection() {
       </p>
 
       {/* Key Facts with Checkmarks */}
-      <div className="flex flex-col gap-3 mb-8 text-sm md:text-base">
+      <div className="flex flex-col gap-3 mb-8 text-sm md:text-base items-center lg:items-start">
         <div className="flex items-center gap-2">
           <span className="text-[#6cc24a] text-xl font-bold drop-shadow">✓</span>
           <span className="text-white drop-shadow-md">Member of Legislative Council since 2021</span>
@@ -89,7 +89,7 @@ export default function HeroSection() {
       </div>
 
       {/* Call to Action Buttons */}
-      <div className="flex flex-col sm:flex-row gap-4">
+      <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
         <Button
           asChild
           size="lg"
@@ -138,9 +138,9 @@ export default function HeroSection() {
     return (
       <section className="lg:hidden">
         {/* Text Section with Green Gradient */}
-        <div className="bg-gradient-to-br from-[#00653b] to-[#6cc24a] py-12 px-4">
+        <div className="bg-gradient-to-br from-[#00653b] to-[#6cc24a] py-12 px-4 text-center">
           <div className="max-w-7xl mx-auto">
-            <HeroContent className="max-w-2xl" />
+            <HeroContent className="max-w-2xl mx-auto" />
           </div>
         </div>
 
