@@ -29,6 +29,7 @@ npm run lint
 - **Styling**: Tailwind CSS v4 with custom theme
 - **UI Components**: shadcn/ui (New York style)
 - **Forms**: react-hook-form + zod validation
+- **Security**: Cloudflare Turnstile (@marsidev/react-turnstile)
 - **Icons**: lucide-react
 - **Animations**: canvas-confetti, tw-animate-css
 - **Analytics**: Google Analytics (G-R96M1RT9HC), Vercel Analytics
@@ -59,9 +60,17 @@ The site is a single-page application with sections:
 
 3. **YouTube Subscriber Counter**: `/api/youtube/subscribers/route.ts` fetches live subscriber count via YouTube Data API v3, displays with animated tick-up counter in compact YouTube-styled card next to subscribe button with red YouTube play icon
 
-4. **Contact Form Webhook**: `/api/contact/route.ts` converts POST to GET request with URL params and forwards to n8n webhook
+4. **Contact Form Security & Processing**: `/api/contact/route.ts` processes form submissions with multiple security layers:
+   - Cloudflare Turnstile server-side verification (enterprise-grade bot protection)
+   - Rate limiting (3 requests per minute per IP)
+   - Honeypot field detection
+   - Server-side validation (email format, message length, required fields)
+   - Forwards to n8n webhook after passing all checks
 
-5. **Custom Captcha**: Client-side math captcha to prevent spam
+5. **Bot Protection**: Cloudflare Turnstile CAPTCHA with server-side token verification
+   - Site Key: `0x4AAAAAACBfpoWtpO2-JGTD`
+   - Secret Key stored server-side for verification
+   - Automatic token refresh on form reset
 
 ### Color Scheme
 
