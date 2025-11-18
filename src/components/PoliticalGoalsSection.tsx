@@ -135,12 +135,6 @@ export default function PoliticalGoalsSection() {
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 1280px"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-            <p className="text-xl md:text-2xl font-bold text-center">
-              Working in the WA Legislative Council to make these goals a reality
-            </p>
-          </div>
         </div>
       </div>
     </section>
