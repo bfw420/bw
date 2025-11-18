@@ -2,11 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import {
   Facebook,
   Instagram,
   Youtube,
-  Twitter
+  Twitter,
+  Mail,
+  ArrowUp
 } from "lucide-react";
 
 // Custom social media icons
@@ -63,6 +66,11 @@ const socialLinks = [
     name: "TikTok",
     url: "https://www.tiktok.com/@brianwalkermlc",
     icon: TikTokIcon
+  },
+  {
+    name: "Newsletter",
+    url: "#help",
+    icon: Mail
   }
 ];
 
@@ -84,9 +92,25 @@ const footerLinks = [
 ];
 
 export default function Footer() {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 400);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="bg-[#00653b] text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <>
+      <footer className="bg-[#00653b] text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand Section */}
           <div>
@@ -267,5 +291,18 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+
+    {/* Back to Top Button */}
+    {showBackToTop && (
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-8 right-8 bg-[#00653b] text-white p-4 rounded-full shadow-2xl hover:bg-[#6cc24a] transition-all duration-300 z-50 hover:scale-110"
+        aria-label="Back to top"
+        style={{ transition: 'all 0.3s ease-out' }}
+      >
+        <ArrowUp className="w-6 h-6" />
+      </button>
+    )}
+    </>
   );
 }
