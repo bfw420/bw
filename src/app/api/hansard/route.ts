@@ -12,7 +12,7 @@ export async function GET() {
       );
     }
 
-    const response = await fetch("https://api.jaxius.net/bw/hansard", {
+    const response = await fetch("https://api.jaxius.net/bw/bw_hansard", {
       headers: {
         "x-api-key": apiKey,
       },
