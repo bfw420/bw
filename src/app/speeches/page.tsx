@@ -41,8 +41,10 @@ export default function SpeechesPage() {
         }
 
         const data = await response.json();
-        console.log(`Fetched ${data.length} Hansard records from API`);
-        setRecords(data);
+        // Handle both array and object response formats
+        const records = Array.isArray(data) ? data : (data.records || data.data || []);
+        console.log(`Fetched ${records.length} Hansard records from API`);
+        setRecords(records);
       } catch (err) {
         setError(err instanceof Error ? err.message : "An error occurred");
       } finally {
