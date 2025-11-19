@@ -27,7 +27,7 @@ export default function RecentSpeechesSection() {
         if (response.ok) {
           const data = await response.json();
           // Handle both array and object response formats
-          const records = Array.isArray(data) ? data : (data.records || data.data || []);
+          const records = Array.isArray(data) ? data : (data.rows || data.records || data.data || []);
           // Sort by date descending and take top 3
           const sorted = [...records].sort((a: HansardRecord, b: HansardRecord) =>
             new Date(b.date).getTime() - new Date(a.date).getTime()

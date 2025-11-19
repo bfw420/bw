@@ -42,7 +42,7 @@ export default function SpeechesPage() {
 
         const data = await response.json();
         // Handle both array and object response formats
-        const records = Array.isArray(data) ? data : (data.records || data.data || []);
+        const records = Array.isArray(data) ? data : (data.rows || data.records || data.data || []);
         console.log(`Fetched ${records.length} Hansard records from API`);
         setRecords(records);
       } catch (err) {
