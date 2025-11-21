@@ -130,7 +130,7 @@ export default function NewsFilter({ featuredPosts, regularPosts }: NewsFilterPr
             <span className="text-sm text-gray-600">Active filters:</span>
             {searchQuery && (
               <span className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                Search: "{searchQuery}"
+                Search: &quot;{searchQuery}&quot;
                 <button onClick={() => setSearchQuery('')} className="hover:text-blue-900">
                   <X className="w-3 h-3" />
                 </button>

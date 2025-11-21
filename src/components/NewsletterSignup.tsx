@@ -6,7 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Loader2, Mail, CheckCircle } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 import { Turnstile } from '@marsidev/react-turnstile';
 import confetti from 'canvas-confetti';
 

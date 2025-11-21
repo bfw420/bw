@@ -17,7 +17,7 @@ export default function NotFound() {
               Post Not Found
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Sorry, we couldn't find the blog post you're looking for. It may have been moved or deleted.
+              Sorry, we couldn&apos;t find the blog post you&apos;re looking for. It may have been moved or deleted.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

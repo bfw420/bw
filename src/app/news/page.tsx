@@ -2,6 +2,7 @@ import { getPosts, getFeaturedPosts } from '@/lib/ghost';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import NewsFilter from '@/components/NewsFilter';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'News & Updates | Dr Brian Walker MLC',

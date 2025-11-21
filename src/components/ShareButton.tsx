@@ -18,7 +18,7 @@ export default function ShareButton({ title, excerpt }: ShareButtonProps) {
           text: excerpt,
           url,
         });
-      } catch (error) {
+      } catch {
         // User cancelled the share
         console.log('Share cancelled');
       }
