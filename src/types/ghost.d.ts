@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare module '@tryghost/content-api' {
   export interface GhostContentAPIOptions {
     url: string;
