@@ -11,8 +11,6 @@ import { Turnstile } from '@marsidev/react-turnstile';
 import confetti from 'canvas-confetti';
 
 const newsletterSchema = z.object({
-  firstName: z.string().min(1, 'First name is required'),
-  lastName: z.string().min(1, 'Last name is required'),
   email: z.string().email('Please enter a valid email address'),
   website: z.string().optional(), // Honeypot field
 });
@@ -37,8 +35,6 @@ export default function NewsletterSignup({ source = 'newsletter', className = ''
   } = useForm<NewsletterFormData>({
     resolver: zodResolver(newsletterSchema),
     defaultValues: {
-      firstName: '',
-      lastName: '',
       email: '',
       website: '', // Honeypot field - should always be empty
     },
@@ -56,8 +52,8 @@ export default function NewsletterSignup({ source = 'newsletter', className = ''
       }
 
       const apiData = {
-        firstName: data.firstName,
-        lastName: data.lastName,
+        firstName: 'Newsletter',
+        lastName: 'Subscriber',
         email: data.email,
         mobile: '',
         message: `Newsletter signup from ${source}`,
@@ -114,42 +110,36 @@ export default function NewsletterSignup({ source = 'newsletter', className = ''
   return (
     <div className={className}>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-        <div className="grid md:grid-cols-2 gap-4">
-          <div>
+        <div className="flex gap-3">
+          <div className="flex-1">
             <Input
-              {...register('firstName')}
-              placeholder="First Name"
-              className="bg-white border-gray-300 focus:border-[#00653b] focus:ring-[#00653b]"
+              {...register('email')}
+              type="email"
+              placeholder="Enter your email address"
+              className="bg-white border-gray-300 focus:border-[#00653b] focus:ring-[#00653b] h-12"
               disabled={isSubmitting}
             />
-            {errors.firstName && (
-              <p className="text-red-500 text-sm mt-1">{errors.firstName.message}</p>
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
             )}
           </div>
-          <div>
-            <Input
-              {...register('lastName')}
-              placeholder="Last Name"
-              className="bg-white border-gray-300 focus:border-[#00653b] focus:ring-[#00653b]"
-              disabled={isSubmitting}
-            />
-            {errors.lastName && (
-              <p className="text-red-500 text-sm mt-1">{errors.lastName.message}</p>
+          <Button
+            type="submit"
+            disabled={isSubmitting || !turnstileToken}
+            className="bg-gradient-to-r from-[#00653b] to-[#6cc24a] hover:scale-105 transition-transform duration-200 text-white font-bold px-8 h-12"
+          >
+            {isSubmitting ? (
+              <>
+                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                Subscribing...
+              </>
+            ) : (
+              <>
+                <Mail className="mr-2 h-5 w-5" />
+                Subscribe
+              </>
             )}
-          </div>
-        </div>
-
-        <div>
-          <Input
-            {...register('email')}
-            type="email"
-            placeholder="Email Address"
-            className="bg-white border-gray-300 focus:border-[#00653b] focus:ring-[#00653b]"
-            disabled={isSubmitting}
-          />
-          {errors.email && (
-            <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
-          )}
+          </Button>
         </div>
 
         {/* Honeypot field - hidden from users */}
@@ -161,33 +151,16 @@ export default function NewsletterSignup({ source = 'newsletter', className = ''
           autoComplete="off"
         />
 
-        {/* Turnstile CAPTCHA */}
+        {/* Turnstile CAPTCHA - compact mode */}
         <div className="flex justify-center">
           <Turnstile
             siteKey="0x4AAAAAACBfpoWtpO2-JGTD"
             onSuccess={setTurnstileToken}
             onError={() => setTurnstileToken('')}
             onExpire={() => setTurnstileToken('')}
+            size="compact"
           />
         </div>
-
-        <Button
-          type="submit"
-          disabled={isSubmitting || !turnstileToken}
-          className="w-full bg-gradient-to-r from-[#00653b] to-[#6cc24a] hover:scale-105 transition-transform duration-200 text-white font-bold py-3 text-lg"
-        >
-          {isSubmitting ? (
-            <>
-              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-              Subscribing...
-            </>
-          ) : (
-            <>
-              <Mail className="mr-2 h-5 w-5" />
-              Subscribe to Newsletter
-            </>
-          )}
-        </Button>
 
         {/* Notification */}
         {notification && (
