@@ -163,6 +163,34 @@ export default function Navigation() {
                 Speeches
               </Link>
               <Link
+                href="/news"
+                className={`px-3 py-2 text-sm font-medium relative ${
+                  isActive('/news') || pathname?.startsWith('/news/')
+                    ? 'text-[#00653b] font-bold'
+                    : 'text-gray-600'
+                }`}
+                style={{
+                  transition: 'all 0.2s ease-out',
+                  ...((isActive('/news') || pathname?.startsWith('/news/')) && {
+                    borderBottom: '2px solid #00653b'
+                  })
+                }}
+                onMouseEnter={(e) => {
+                  if (!isActive('/news') && !pathname?.startsWith('/news/')) {
+                    e.currentTarget.style.color = '#00653b';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive('/news') && !pathname?.startsWith('/news/')) {
+                    e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }
+                }}
+              >
+                News
+              </Link>
+              <Link
                 href="https://www.lcwaparty.org.au/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -303,6 +331,30 @@ export default function Navigation() {
                 }}
               >
                 Speeches
+              </Link>
+              <Link
+                href="/news"
+                className={`block px-3 py-2 text-base font-medium ${
+                  isActive('/news') || pathname?.startsWith('/news/')
+                    ? 'text-[#00653b] font-bold bg-[#00653b]/10'
+                    : 'text-gray-600'
+                }`}
+                style={{ transition: 'all 0.2s ease-out' }}
+                onClick={() => setIsMenuOpen(false)}
+                onMouseEnter={(e) => {
+                  if (!isActive('/news') && !pathname?.startsWith('/news/')) {
+                    e.currentTarget.style.color = '#00653b';
+                    e.currentTarget.style.paddingLeft = '1rem';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive('/news') && !pathname?.startsWith('/news/')) {
+                    e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                    e.currentTarget.style.paddingLeft = '0.75rem';
+                  }
+                }}
+              >
+                News
               </Link>
               <Link
                 href="https://www.lcwaparty.org.au/"

@@ -82,7 +82,7 @@ const footerLinks = [
   { name: "Contact", href: "#contact" },
   { name: "Party", href: "https://www.lcwaparty.org.au/" },
   { name: "Donate", href: "https://www.lcwaparty.org.au/donate" },
-  { name: "Parliament", href: "https://www.parliament.wa.gov.au/parliament/memblist.nsf/WAllMembersFlat/Walker,%20Brian%20Francis?opendocument" },
+  { name: "News", href: "/news" },
   { name: "Media Releases", href: "/media" },
   { name: "Speeches", href: "/speeches" },
   { name: "Downloads", href: "/downloads" },

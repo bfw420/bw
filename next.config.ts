@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'ghost.jaxius.net',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };

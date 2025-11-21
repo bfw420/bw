@@ -143,4 +143,236 @@
     clip: auto;
     white-space: normal;
   }
+
+  /* Ghost CMS Content Styles */
+  .ghost-content {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Ghost image cards and figures */
+  .ghost-content figure {
+    margin: 2rem 0;
+  }
+
+  .ghost-content figure img {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .ghost-content figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    text-align: center;
+    color: rgb(107 114 128);
+    font-style: italic;
+  }
+
+  /* Ghost galleries */
+  .ghost-content .kg-gallery-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .ghost-content .kg-gallery-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .ghost-content .kg-gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+
+  /* Ghost bookmark cards */
+  .ghost-content .kg-bookmark-card {
+    width: 100%;
+    margin: 2rem 0;
+  }
+
+  .ghost-content .kg-bookmark-container {
+    display: flex;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(229 231 235);
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+
+  .ghost-content .kg-bookmark-container:hover {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    transform: translateY(-2px);
+  }
+
+  .ghost-content .kg-bookmark-content {
+    flex: 1;
+    padding: 1.5rem;
+  }
+
+  .ghost-content .kg-bookmark-title {
+    font-weight: 600;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    color: rgb(17 24 39);
+  }
+
+  .ghost-content .kg-bookmark-description {
+    font-size: 0.875rem;
+    color: rgb(107 114 128);
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .ghost-content .kg-bookmark-metadata {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: rgb(156 163 175);
+  }
+
+  .ghost-content .kg-bookmark-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .ghost-content .kg-bookmark-thumbnail {
+    min-width: 200px;
+    max-width: 200px;
+  }
+
+  .ghost-content .kg-bookmark-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Ghost embed cards (YouTube, Twitter, etc.) */
+  .ghost-content .kg-embed-card {
+    margin: 2rem 0;
+  }
+
+  .ghost-content .kg-embed-card iframe {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  }
+
+  /* Ghost callout cards */
+  .ghost-content .kg-callout-card {
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+    border-left: 4px solid #6cc24a;
+    background-color: rgb(249 250 251);
+  }
+
+  .ghost-content .kg-callout-text {
+    color: rgb(55 65 81);
+  }
+
+  /* Ghost toggle cards */
+  .ghost-content .kg-toggle-card {
+    margin: 1.5rem 0;
+    border: 1px solid rgb(229 231 235);
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .ghost-content .kg-toggle-heading {
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(249 250 251);
+  }
+
+  .ghost-content .kg-toggle-content {
+    padding: 1rem;
+    border-top: 1px solid rgb(229 231 235);
+  }
+
+  /* Ghost product cards */
+  .ghost-content .kg-product-card {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border: 1px solid rgb(229 231 235);
+    border-radius: 0.5rem;
+  }
+
+  /* Ghost video cards */
+  .ghost-content .kg-video-card {
+    margin: 2rem 0;
+  }
+
+  .ghost-content .kg-video-card video {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  }
+
+  /* Ghost audio cards */
+  .ghost-content .kg-audio-card {
+    margin: 2rem 0;
+  }
+
+  .ghost-content .kg-audio-card audio {
+    width: 100%;
+  }
+
+  /* Ghost file cards */
+  .ghost-content .kg-file-card {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 1px solid rgb(229 231 235);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Responsive tables */
+  .ghost-content table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .ghost-content table {
+      display: table;
+    }
+  }
+
+  /* Ensure iframe embeds are responsive */
+  .ghost-content iframe {
+    max-width: 100%;
+  }
+
+  /* Ghost buttons */
+  .ghost-content .kg-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(to right, #00653b, #6cc24a);
+    color: white;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .ghost-content .kg-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  }
 }
