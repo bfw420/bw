@@ -206,7 +206,6 @@ export default function NewsletterSignup({ source = 'newsletter', className = ''
             onSuccess={setTurnstileToken}
             onError={() => setTurnstileToken('')}
             onExpire={() => setTurnstileToken('')}
-            size="compact"
           />
         </div>
 

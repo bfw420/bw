@@ -91,13 +91,14 @@ export default async function BlogPostPage({ params }: PageProps) {
             {post.tags && post.tags.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-6">
                 {post.tags.map((tag) => (
-                  <span
+                  <Link
                     key={tag.id}
-                    className="inline-flex items-center gap-1 bg-gradient-to-r from-[#00653b] to-[#6cc24a] text-white text-xs font-semibold px-3 py-1 rounded-full"
+                    href={`/news?tag=${encodeURIComponent(tag.name)}`}
+                    className="inline-flex items-center gap-1 bg-gradient-to-r from-[#00653b] to-[#6cc24a] text-white text-xs font-semibold px-3 py-1 rounded-full hover:scale-110 transition-transform cursor-pointer"
                   >
                     <Tag className="w-3 h-3" />
                     {tag.name}
-                  </span>
+                  </Link>
                 ))}
               </div>
             )}

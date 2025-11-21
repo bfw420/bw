@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { CalendarDays, Clock, Tag, ArrowRight, Search, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { GhostPost } from '@/lib/ghost';
+import { useSearchParams } from 'next/navigation';
 
 interface NewsFilterProps {
   featuredPosts: GhostPost[];
@@ -22,8 +23,17 @@ function formatDate(dateString: string) {
 }
 
 export default function NewsFilter({ featuredPosts, regularPosts }: NewsFilterProps) {
+  const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
+
+  // Set tag from URL parameter on mount
+  useEffect(() => {
+    const tagFromUrl = searchParams.get('tag');
+    if (tagFromUrl) {
+      setSelectedTag(tagFromUrl);
+    }
+  }, [searchParams]);
 
   // Get all unique tags from posts
   const allTags = useMemo(() => {
