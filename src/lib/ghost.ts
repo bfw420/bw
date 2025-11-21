@@ -88,10 +88,10 @@ export async function getPosts(limit = 10, page = 1): Promise<GhostPost[]> {
  */
 export async function getPostBySlug(slug: string): Promise<GhostPost | null> {
   try {
-    const post = await api.posts.read(
-      { slug },
-      { include: ['tags', 'authors'] }
-    );
+    const post = await api.posts.read({
+      slug,
+      include: ['tags', 'authors']
+    });
     return post as GhostPost;
   } catch (error) {
     console.error(`Error fetching Ghost post with slug "${slug}":`, error);
