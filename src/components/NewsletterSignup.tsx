@@ -51,26 +51,18 @@ export default function NewsletterSignup({ source = 'newsletter', className = ''
         return;
       }
 
-      const apiData = {
-        firstName: 'Newsletter',
-        lastName: 'Subscriber',
-        email: data.email,
-        mobile: '',
-        message: `Newsletter signup from ${source}`,
-        subscribeNewsletter: true,
-        wantToVolunteer: false,
-        contactType: 'political' as const,
-        recipientEmail: 'brian.walker.mlc@mp.wa.gov.au',
-        website: data.website,
-        turnstileToken: turnstileToken,
-      };
-
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/newsletter', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(apiData),
+        body: JSON.stringify({
+          email: data.email,
+          subscriptionType: 'newsletter',
+          source: source,
+          subscribedAt: new Date().toISOString(),
+          turnstileToken: turnstileToken,
+        }),
       });
 
       const result = await response.json();
