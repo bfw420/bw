@@ -162,31 +162,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
             {/* Article Content */}
             <div
-              className="ghost-content prose prose-lg max-w-none mb-12
-                prose-headings:text-gray-900 prose-headings:font-bold
-                prose-h1:text-4xl prose-h1:mt-12 prose-h1:mb-8
-                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
-                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-                prose-h4:text-xl prose-h4:mt-6 prose-h4:mb-3
-                prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
-                prose-a:text-[#00653b] prose-a:underline hover:prose-a:text-[#6cc24a] prose-a:transition-colors
-                prose-strong:text-gray-900 prose-strong:font-bold
-                prose-em:text-gray-700 prose-em:italic
-                prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
-                prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6
-                prose-li:text-gray-700 prose-li:mb-2 prose-li:leading-relaxed
-                prose-blockquote:border-l-4 prose-blockquote:border-[#6cc24a] prose-blockquote:pl-6 prose-blockquote:py-2 prose-blockquote:my-6 prose-blockquote:italic prose-blockquote:text-gray-700
-                prose-img:rounded-lg prose-img:shadow-lg prose-img:my-8 prose-img:w-full
-                prose-figure:my-8
-                prose-figcaption:text-center prose-figcaption:text-sm prose-figcaption:text-gray-600 prose-figcaption:mt-2 prose-figcaption:italic
-                prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto prose-pre:my-6
-                prose-code:text-[#00653b] prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm
-                prose-pre:prose-code:bg-transparent prose-pre:prose-code:text-gray-100 prose-pre:prose-code:p-0
-                prose-hr:border-gray-300 prose-hr:my-12
-                prose-table:my-8 prose-table:border-collapse
-                prose-th:bg-gray-100 prose-th:p-3 prose-th:text-left prose-th:font-bold
-                prose-td:p-3 prose-td:border-t prose-td:border-gray-200
-                prose-video:rounded-lg prose-video:shadow-lg prose-video:my-8"
+              className="ghost-content text-gray-700 leading-relaxed mb-12"
               dangerouslySetInnerHTML={{ __html: post.html }}
             />
 
