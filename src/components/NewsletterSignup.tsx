@@ -168,7 +168,7 @@ export default function NewsletterSignup({ source = 'newsletter', className = ''
                 }}
               />
             )}
-            {isSubmitting ? "Subscribing..." : "Send Me the Real Story"}
+            {isSubmitting ? "Subscribing..." : "Join my Newsletter"}
           </Button>
           <style jsx>{`
             @keyframes breathe {
@@ -206,6 +206,7 @@ export default function NewsletterSignup({ source = 'newsletter', className = ''
             onSuccess={setTurnstileToken}
             onError={() => setTurnstileToken('')}
             onExpire={() => setTurnstileToken('')}
+            theme="light"
           />
         </div>
 

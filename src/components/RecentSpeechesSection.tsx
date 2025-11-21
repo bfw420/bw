@@ -81,9 +81,9 @@ export default function RecentSpeechesSection() {
           </div>
 
           {/* Recent Speeches */}
-          <div className="h-[400px] flex flex-col justify-between">
+          <div className="flex flex-col gap-4">
             {loading ? (
-              <div className="flex justify-center items-center h-full">
+              <div className="flex justify-center items-center h-[400px]">
                 <Loader2 className="w-8 h-8 animate-spin text-[#00653b]" />
               </div>
             ) : (
@@ -94,7 +94,7 @@ export default function RecentSpeechesSection() {
                     href={speech.subjecturl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block bg-white rounded-xl p-4 shadow-md border border-[#00653b]/20 transition-all duration-300 flex-1 flex flex-col justify-center"
+                    className="block bg-white rounded-xl p-4 shadow-md border border-[#00653b]/20 transition-all duration-300"
                     style={{ transition: 'all 0.3s ease-out' }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.transform = 'translateY(-4px)';
@@ -113,7 +113,7 @@ export default function RecentSpeechesSection() {
                         <div className="text-xs text-gray-500 mb-1">
                           {formatDate(speech.date)}
                         </div>
-                        <h3 className="text-lg font-bold text-[#00653b] mb-2 line-clamp-2">
+                        <h3 className="text-lg font-bold text-[#00653b] mb-2 truncate">
                           {speech.subject}
                         </h3>
                         <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#6cc24a]/10 text-[#00653b] border border-[#6cc24a]/20">
