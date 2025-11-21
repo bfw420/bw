@@ -88,7 +88,7 @@ export default function NewsFilter({ featuredPosts, regularPosts }: NewsFilterPr
   return (
     <>
       {/* Search and Filter Section */}
-      <div className="max-w-6xl mx-auto mb-12">
+      <div className="max-w-6xl mx-auto mb-12 pt-16">
         {/* Search Bar */}
         <div className="relative mb-6">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
