@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { getPosts, getFeaturedPosts } from '@/lib/ghost';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -39,10 +40,12 @@ export default async function NewsPage() {
         </section>
 
         {/* News Filter Component with Search and Tags */}
-        <NewsFilter
-          featuredPosts={featuredPosts}
-          regularPosts={nonFeaturedPosts}
-        />
+        <Suspense fallback={<div className="container mx-auto px-4 py-16"><p className="text-center text-gray-600">Loading posts...</p></div>}>
+          <NewsFilter
+            featuredPosts={featuredPosts}
+            regularPosts={nonFeaturedPosts}
+          />
+        </Suspense>
 
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-r from-[#00653b] to-[#6cc24a] text-white">
