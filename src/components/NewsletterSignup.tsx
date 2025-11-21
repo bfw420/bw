@@ -110,36 +110,84 @@ export default function NewsletterSignup({ source = 'newsletter', className = ''
   return (
     <div className={className}>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-4 p-2 bg-white/10 backdrop-blur-sm rounded-2xl">
           <div className="flex-1">
             <Input
               {...register('email')}
               type="email"
               placeholder="Enter your email address"
-              className="bg-white border-gray-300 focus:border-[#00653b] focus:ring-[#00653b] h-12"
+              className="h-14 text-lg px-6 bg-white text-gray-900 border-0 rounded-xl focus:ring-2 focus:ring-white/30"
               disabled={isSubmitting}
             />
             {errors.email && (
-              <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+              <p className="text-red-300 text-sm mt-1">{errors.email.message}</p>
             )}
           </div>
           <Button
             type="submit"
             disabled={isSubmitting || !turnstileToken}
-            className="bg-gradient-to-r from-[#00653b] to-[#6cc24a] hover:scale-105 transition-transform duration-200 text-white font-bold px-8 h-12"
+            className="h-14 px-8 text-lg font-bold rounded-xl whitespace-nowrap relative overflow-hidden"
+            style={{
+              background: 'white',
+              color: '#00653b',
+              animation: isSubmitting
+                ? 'none'
+                : 'breathe 2s ease-in-out infinite, glow-pulse 2s ease-in-out infinite',
+              boxShadow: isSubmitting
+                ? '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+                : '0 0 0 3px rgba(108, 194, 74, 0.3), 0 10px 25px -5px rgba(0, 0, 0, 0.2)',
+              transition: 'all 0.3s ease-out',
+              border: '2px solid rgba(108, 194, 74, 0.5)'
+            }}
+            onMouseEnter={(e) => {
+              if (!isSubmitting) {
+                e.currentTarget.style.transform = 'scale(1.1) translateY(-4px)';
+                e.currentTarget.style.background = '#6cc24a';
+                e.currentTarget.style.color = 'white';
+                e.currentTarget.style.borderColor = '#6cc24a';
+                e.currentTarget.style.boxShadow = '0 0 0 4px rgba(108, 194, 74, 0.4), 0 0 60px rgba(108, 194, 74, 0.8), 0 25px 35px -5px rgba(0, 0, 0, 0.4)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1) translateY(0)';
+              e.currentTarget.style.background = 'white';
+              e.currentTarget.style.color = '#00653b';
+              e.currentTarget.style.borderColor = 'rgba(108, 194, 74, 0.5)';
+              e.currentTarget.style.boxShadow = '0 0 0 3px rgba(108, 194, 74, 0.3), 0 10px 25px -5px rgba(0, 0, 0, 0.2)';
+            }}
           >
-            {isSubmitting ? (
-              <>
-                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                Subscribing...
-              </>
-            ) : (
-              <>
-                <Mail className="mr-2 h-5 w-5" />
-                Subscribe
-              </>
+            {/* Shimmer effect overlay */}
+            {!isSubmitting && (
+              <span
+                className="absolute inset-0"
+                style={{
+                  background: 'linear-gradient(90deg, transparent, rgba(108, 194, 74, 0.3), transparent)',
+                  animation: 'shimmer 3s infinite',
+                  transform: 'translateX(-100%)',
+                  pointerEvents: 'none'
+                }}
+              />
             )}
+            {isSubmitting ? "Subscribing..." : "Send Me the Real Story"}
           </Button>
+          <style jsx>{`
+            @keyframes breathe {
+              0%, 100% { transform: scale(1); }
+              50% { transform: scale(1.02); }
+            }
+            @keyframes glow-pulse {
+              0%, 100% {
+                box-shadow: 0 0 0 3px rgba(108, 194, 74, 0.3), 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+              }
+              50% {
+                box-shadow: 0 0 0 5px rgba(108, 194, 74, 0.5), 0 0 40px rgba(108, 194, 74, 0.4), 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+              }
+            }
+            @keyframes shimmer {
+              0% { transform: translateX(-100%); }
+              100% { transform: translateX(200%); }
+            }
+          `}</style>
         </div>
 
         {/* Honeypot field - hidden from users */}
