@@ -26,6 +26,7 @@ interface YouTubeVideo {
 export default function HowToHelpSection() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [notification, setNotification] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
   const [videos, setVideos] = useState<YouTubeVideo[]>([]);
   const [videosLoading, setVideosLoading] = useState(true);
   const [videosError, setVideosError] = useState<string | null>(null);
@@ -88,7 +89,8 @@ export default function HowToHelpSection() {
   const handleNewsletterSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+    setNotification(null);
+
     try {
       // Send to our newsletter API route which forwards to the webhook
       const response = await fetch("/api/newsletter", {
@@ -109,14 +111,20 @@ export default function HowToHelpSection() {
 
       if (response.ok && result.success) {
         triggerConfetti();
-        alert("Thank you for subscribing to the newsletter!");
+        setNotification({
+          type: 'success',
+          message: "🎉 You're subscribed! Check your inbox for updates."
+        });
         setEmail("");
       } else {
         throw new Error(result.message || `API failed with status: ${response.status}`);
       }
     } catch (error) {
       console.error("Newsletter signup error:", error);
-      alert("Sorry, there was an error subscribing to the newsletter. Please try again later.");
+      setNotification({
+        type: 'error',
+        message: "Sorry, there was an error. Please try again later."
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -227,6 +235,19 @@ export default function HowToHelpSection() {
                     `}</style>
                   </div>
                 </form>
+
+                {/* Notification */}
+                {notification && (
+                  <div
+                    className={`mt-4 p-4 rounded-lg text-center font-medium ${
+                      notification.type === 'success'
+                        ? 'bg-white/20 text-white border border-white/30'
+                        : 'bg-red-500/20 text-white border border-red-300/30'
+                    }`}
+                  >
+                    {notification.message}
+                  </div>
+                )}
 
                 <div className="text-center">
                   <Button
