@@ -195,19 +195,6 @@ export default function ContactForm() {
             
             <div className="p-6 sm:p-8 md:p-12">
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 sm:space-y-8">
-                {/* Notification Banner */}
-                {notification && (
-                  <div
-                    className={`p-4 rounded-xl border-2 ${
-                      notification.type === 'success'
-                        ? 'bg-[#6cc24a]/10 border-[#6cc24a] text-[#00653b]'
-                        : 'bg-red-50 border-red-300 text-red-800'
-                    }`}
-                  >
-                    <p className="text-center font-medium">{notification.message}</p>
-                  </div>
-                )}
-
                 {/* Name Fields */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div className="space-y-2">
@@ -336,13 +323,16 @@ export default function ContactForm() {
                   <Label className="text-base font-medium text-gray-700">
                     Security Check *
                   </Label>
-                  <Turnstile
-                    siteKey="0x4AAAAAACBfpoWtpO2-JGTD"
-                    onSuccess={(token) => setTurnstileToken(token)}
-                    onError={() => setTurnstileToken("")}
-                    onExpire={() => setTurnstileToken("")}
-                    theme="light"
-                  />
+                  <div className="bg-white p-4 rounded-xl">
+                    <Turnstile
+                      siteKey="0x4AAAAAACBfpoWtpO2-JGTD"
+                      onSuccess={(token) => setTurnstileToken(token)}
+                      onError={() => setTurnstileToken("")}
+                      onExpire={() => setTurnstileToken("")}
+                      theme="light"
+                      appearance="always"
+                    />
+                  </div>
                 </div>
 
                 {/* Honeypot field - hidden from users but visible to bots */}
@@ -392,6 +382,19 @@ export default function ContactForm() {
                     )}
                   </Button>
                 </div>
+
+                {/* Success/Error Message - Below Submit Button */}
+                {notification && (
+                  <div className="text-center">
+                    <p className={`text-lg font-medium ${
+                      notification.type === 'success'
+                        ? 'text-[#00653b]'
+                        : 'text-red-600'
+                    }`}>
+                      {notification.message}
+                    </p>
+                  </div>
+                )}
               </form>
             </div>
           </div>
