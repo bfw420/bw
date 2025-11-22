@@ -18,7 +18,8 @@
       "Bash(echo \"# Ghost CMS Configuration\nGHOST_URL=https://ghost.jaxius.net\nGHOST_CONTENT_API_KEY=be006347a11a126c2bbea20d72\")",
       "Bash(.env.local)",
       "mcp__MCP_DOCKER__browser_eval",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "Bash(npx tsc:*)"
     ],
     "deny": [],
     "ask": []

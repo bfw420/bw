@@ -120,19 +120,32 @@ export default function Navigation() {
                 Economic Report
               </Link>
               <Link
-                href="/#goals"
-                className="text-gray-600 px-3 py-2 text-sm font-medium relative"
-                style={{ transition: 'all 0.2s ease-out' }}
+                href="/media"
+                className={`px-3 py-2 text-sm font-medium relative ${
+                  isActive('/media')
+                    ? 'text-[#00653b] font-bold'
+                    : 'text-gray-600'
+                }`}
+                style={{
+                  transition: 'all 0.2s ease-out',
+                  ...(isActive('/media') && {
+                    borderBottom: '2px solid #00653b'
+                  })
+                }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#00653b';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  if (!isActive('/media')) {
+                    e.currentTarget.style.color = '#00653b';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
-                  e.currentTarget.style.transform = 'translateY(0)';
+                  if (!isActive('/media')) {
+                    e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }
                 }}
               >
-                Political Goals
+                Media
               </Link>
               <Link
                 href="/speeches"
@@ -293,20 +306,28 @@ export default function Navigation() {
                 Economic Report
               </Link>
               <Link
-                href="/#goals"
-                className="text-gray-600 block px-3 py-2 text-base font-medium"
+                href="/media"
+                className={`block px-3 py-2 text-base font-medium ${
+                  isActive('/media')
+                    ? 'text-[#00653b] font-bold bg-[#00653b]/5'
+                    : 'text-gray-600'
+                }`}
                 style={{ transition: 'all 0.2s ease-out' }}
                 onClick={() => setIsMenuOpen(false)}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#00653b';
-                  e.currentTarget.style.paddingLeft = '1rem';
+                  if (!isActive('/media')) {
+                    e.currentTarget.style.color = '#00653b';
+                    e.currentTarget.style.paddingLeft = '1rem';
+                  }
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'rgb(75, 85, 99)';
-                  e.currentTarget.style.paddingLeft = '0.75rem';
+                  if (!isActive('/media')) {
+                    e.currentTarget.style.color = 'rgb(75, 85, 99)';
+                    e.currentTarget.style.paddingLeft = '0.75rem';
+                  }
                 }}
               >
-                Political Goals
+                Media
               </Link>
               <Link
                 href="/speeches"
