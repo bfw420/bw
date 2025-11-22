@@ -113,7 +113,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Prepare webhook URL with query parameters (n8n expects GET request)
-    const baseWebhookUrl = 'https://n8n.jaxius.net/webhook/6cffe9fc-d8f8-4fdd-8a0d-0b9f94ecadc5';
+    const baseWebhookUrl = 'https://n8n.jaxius.net/webhook/bwwebsitecontactform';
     const webhookParams = new URLSearchParams({
       firstName: body.firstName,
       lastName: body.lastName,

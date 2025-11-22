@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
       params.append(key, String(value));
     });
     
-    const webhookUrl = `https://n8n.jaxius.net/webhook/804071e0-3cb7-4df5-b90e-9e370218f439?${params.toString()}`;
+    const webhookUrl = `https://n8n.jaxius.net/webhook/bwnewslettersub?${params.toString()}`;
     console.log('Sending to newsletter webhook via GET:', webhookUrl);
     
     const response = await fetch(webhookUrl, {

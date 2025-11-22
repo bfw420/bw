@@ -15,6 +15,7 @@ import {
   Loader2
 } from "lucide-react";
 import { Turnstile } from '@marsidev/react-turnstile';
+import confetti from 'canvas-confetti';
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -52,6 +53,14 @@ export default function ContactForm() {
 
   const { register, handleSubmit, formState: { errors }, reset } = form;
 
+  const triggerConfetti = () => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#00653b', '#6cc24a', '#ffffff']
+    });
+  };
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
@@ -96,6 +105,7 @@ export default function ContactForm() {
       const result = await response.json();
 
       if (response.ok && result.success) {
+        triggerConfetti();
         setNotification({ type: 'success', message: 'Message sent successfully! I\'ll get back to you soon.' });
         reset();
         setTurnstileToken(""); // Reset Turnstile token
