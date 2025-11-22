@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,8 +12,7 @@ import {
   Landmark,
   Cross,
   Send,
-  Loader2,
-  HelpCircle
+  Loader2
 } from "lucide-react";
 import { Turnstile } from '@marsidev/react-turnstile';
 import confetti from 'canvas-confetti';
@@ -133,24 +131,9 @@ export default function ContactForm() {
           <h2 className="text-4xl md:text-5xl font-bold text-[#00653b] mb-6">
             Get In Touch
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Whether you need political assistance or medical care, I&apos;m here to help.
           </p>
-
-          {/* FAQ Button */}
-          <div className="flex justify-center">
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-2 border-[#00653b] text-[#00653b] hover:bg-[#00653b] hover:text-white px-8 py-6 rounded-full font-bold text-lg transition-all duration-200 hover:scale-105"
-            >
-              <Link href="/faq" className="flex items-center gap-2">
-                <HelpCircle className="w-5 h-5" />
-                Check Our FAQ First
-              </Link>
-            </Button>
-          </div>
         </div>
 
         {/* Contact Information Cards */}
