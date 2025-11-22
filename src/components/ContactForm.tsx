@@ -319,20 +319,14 @@ export default function ContactForm() {
                 </div>
 
                 {/* Cloudflare Turnstile */}
-                <div className="space-y-2">
-                  <Label className="text-base font-medium text-gray-700">
-                    Security Check *
-                  </Label>
-                  <div className="bg-white p-4 rounded-xl">
-                    <Turnstile
-                      siteKey="0x4AAAAAACBfpoWtpO2-JGTD"
-                      onSuccess={(token) => setTurnstileToken(token)}
-                      onError={() => setTurnstileToken("")}
-                      onExpire={() => setTurnstileToken("")}
-                      theme="light"
-                      appearance="always"
-                    />
-                  </div>
+                <div className="flex justify-center">
+                  <Turnstile
+                    siteKey="0x4AAAAAACBfpoWtpO2-JGTD"
+                    onSuccess={(token) => setTurnstileToken(token)}
+                    onError={() => setTurnstileToken("")}
+                    onExpire={() => setTurnstileToken("")}
+                    theme="light"
+                  />
                 </div>
 
                 {/* Honeypot field - hidden from users but visible to bots */}
