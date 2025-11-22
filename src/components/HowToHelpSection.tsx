@@ -248,16 +248,6 @@ export default function HowToHelpSection() {
                     {notification.message}
                   </div>
                 )}
-
-                <div className="text-center">
-                  <Button
-                    asChild
-                    variant="ghost"
-                    className="text-white hover:bg-white/10 underline"
-                  >
-                    <Link href="/newsletter">Read Past Newsletters</Link>
-                  </Button>
-                </div>
               </div>
             </div>
           </div>
