@@ -319,13 +319,12 @@ export default function ContactForm() {
                 </div>
 
                 {/* Cloudflare Turnstile */}
-                <div className="flex justify-center" data-theme="light">
+                <div className="flex justify-center">
                   <Turnstile
                     siteKey="0x4AAAAAACBfpoWtpO2-JGTD"
                     onSuccess={(token) => setTurnstileToken(token)}
                     onError={() => setTurnstileToken("")}
                     onExpire={() => setTurnstileToken("")}
-                    {...({ options: { theme: 'light' as const } } as any)}
                   />
                 </div>
 
