@@ -19,7 +19,12 @@
       "Bash(.env.local)",
       "mcp__MCP_DOCKER__browser_eval",
       "Bash(npm uninstall:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "WebSearch",
+      "WebFetch(domain:developers.cloudflare.com)",
+      "WebFetch(domain:docs.page)",
+      "WebFetch(domain:github.com)",
+      "Bash(npm view:*)"
     ],
     "deny": [],
     "ask": []
