@@ -567,4 +567,16 @@
     transform: scale(1.05);
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
   }
+
+  /* Force Cloudflare Turnstile to always use light theme */
+  [data-theme="light"],
+  [data-theme="light"] * {
+    color-scheme: light only !important;
+  }
+
+  /* Target Turnstile iframes specifically */
+  iframe[src*="challenges.cloudflare.com"],
+  iframe[title*="Widget containing"] {
+    color-scheme: light only !important;
+  }
 }
