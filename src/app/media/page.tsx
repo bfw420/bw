@@ -142,7 +142,7 @@ export default function MediaPage() {
                 </div>
 
                 {/* Turnstile */}
-                <div className="flex justify-center">
+                <div className="flex justify-center" data-theme="light" style={{ colorScheme: 'light' }}>
                   <Turnstile
                     siteKey="0x4AAAAAACBfpoWtpO2-JGTD"
                     theme="light"
@@ -155,11 +155,10 @@ export default function MediaPage() {
                 {/* Notification */}
                 {notification && (
                   <div
-                    className={`p-4 rounded-xl border-2 flex items-start gap-3 ${
-                      notification.type === 'success'
+                    className={`p-4 rounded-xl border-2 flex items-start gap-3 ${notification.type === 'success'
                         ? 'bg-[#6cc24a]/10 border-[#6cc24a] text-[#00653b]'
                         : 'bg-red-50 border-red-300 text-red-800'
-                    }`}
+                      }`}
                   >
                     {notification.type === 'success' && <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />}
                     <p className="text-sm font-medium">{notification.message}</p>

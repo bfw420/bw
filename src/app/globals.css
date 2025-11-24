@@ -571,12 +571,13 @@
   /* Force Cloudflare Turnstile to always use light theme */
   [data-theme="light"],
   [data-theme="light"] * {
-    color-scheme: light only !important;
+    color-scheme: light !important;
   }
 
-  /* Target Turnstile iframes specifically */
+  /* Target Turnstile iframes specifically with high specificity */
   iframe[src*="challenges.cloudflare.com"],
   iframe[title*="Widget containing"] {
-    color-scheme: light only !important;
+    color-scheme: light !important;
+    background-color: #ffffff !important;
   }
 }

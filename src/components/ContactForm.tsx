@@ -192,7 +192,7 @@ export default function ContactForm() {
               <h3 className="text-3xl font-bold text-white text-center">Send me a Message</h3>
               <p className="text-center text-white/90 mt-2">I&apos;ll get back to you as soon as possible</p>
             </div>
-            
+
             <div className="p-6 sm:p-8 md:p-12">
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 sm:space-y-8">
                 {/* Name Fields */}
@@ -319,7 +319,7 @@ export default function ContactForm() {
                 </div>
 
                 {/* Cloudflare Turnstile */}
-                <div className="flex justify-center">
+                <div className="flex justify-center" data-theme="light" style={{ colorScheme: 'light' }}>
                   <Turnstile
                     siteKey="0x4AAAAAACBfpoWtpO2-JGTD"
                     theme="light"
@@ -380,11 +380,10 @@ export default function ContactForm() {
                 {/* Success/Error Message - Below Submit Button */}
                 {notification && (
                   <div className="text-center">
-                    <p className={`text-lg font-medium ${
-                      notification.type === 'success'
+                    <p className={`text-lg font-medium ${notification.type === 'success'
                         ? 'text-[#00653b]'
                         : 'text-red-600'
-                    }`}>
+                      }`}>
                       {notification.message}
                     </p>
                   </div>

@@ -192,7 +192,7 @@ export default function NewsletterSignup({ source = 'newsletter', className = ''
         />
 
         {/* Turnstile CAPTCHA - compact mode */}
-        <div className="flex justify-center">
+        <div className="flex justify-center" data-theme="light" style={{ colorScheme: 'light' }}>
           <Turnstile
             siteKey="0x4AAAAAACBfpoWtpO2-JGTD"
             theme="light"
@@ -205,11 +205,10 @@ export default function NewsletterSignup({ source = 'newsletter', className = ''
         {/* Notification */}
         {notification && (
           <div
-            className={`p-4 rounded-lg flex items-start gap-3 ${
-              notification.type === 'success'
+            className={`p-4 rounded-lg flex items-start gap-3 ${notification.type === 'success'
                 ? 'bg-green-50 text-green-800 border border-green-200'
                 : 'bg-red-50 text-red-800 border border-red-200'
-            }`}
+              }`}
           >
             {notification.type === 'success' && <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />}
             <p className="text-sm font-medium">{notification.message}</p>
