@@ -198,7 +198,6 @@ export default function NewsletterSignup({ source = 'newsletter', className = ''
             onSuccess={setTurnstileToken}
             onError={() => setTurnstileToken('')}
             onExpire={() => setTurnstileToken('')}
-            options={{ theme: 'light' as const }}
           />
         </div>
 
