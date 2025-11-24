@@ -51,7 +51,7 @@ const faqData: FAQItem[] = [
   {
     category: "Healthcare",
     question: "What languages do you speak?",
-    answer: "I speak five languages fluently: English, Afrikaans, French, Dutch, and German. This multilingual capability allows me to communicate with diverse communities across Western Australia and understand health and policy issues from multiple cultural perspectives. It's particularly valuable when engaging with multicultural communities and understanding international best practices in healthcare and drug policy reform."
+    answer: "I speak five languages fluently: English, Mandarin, Russian, German, and Italian. This multilingual capability allows me to communicate with diverse communities across Western Australia and understand health and policy issues from multiple cultural perspectives. It's particularly valuable when engaging with multicultural communities and understanding international best practices in healthcare and drug policy reform."
   },
   {
     category: "Healthcare",
@@ -197,11 +197,10 @@ export default function FAQPage() {
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-200 ${
-                      selectedCategory === category
+                    className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-200 ${selectedCategory === category
                         ? 'bg-[#00653b] text-white shadow-lg scale-105'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                    }`}
+                      }`}
                   >
                     {category !== "All" && <Icon className="w-4 h-4" />}
                     {category}

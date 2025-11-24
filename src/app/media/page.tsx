@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Newspaper, FileText, Download, Image as ImageIcon, Folder, Mail, Phone, Copy, CheckCircle } from "lucide-react";
+import Image from "next/image";
 import { Turnstile } from '@marsidev/react-turnstile';
 import confetti from 'canvas-confetti';
 
@@ -102,16 +103,15 @@ export default function MediaPage() {
 
           {/* Media Releases Section */}
           <div className="mb-16 bg-gradient-to-br from-[#00653b]/5 to-[#6cc24a]/5 rounded-2xl p-12 border-2 border-[#00653b]/20">
-            <div className="inline-block p-4 bg-white rounded-full mb-6 shadow-sm">
-              <FileText className="w-10 h-10 text-[#6cc24a]" />
+            <div className="relative w-full aspect-video mb-12 rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src="/images/ch10interview.webp"
+                alt="Dr Brian Walker Interview"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Media Releases Coming Soon
-            </h2>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl">
-              This section will soon feature the latest media releases, press statements,
-              and news from Dr Brian Walker&apos;s parliamentary work and community advocacy.
-            </p>
 
             {/* Subscribe to Media Releases */}
             <div className="bg-white rounded-xl p-8 border border-[#00653b]/20">
@@ -156,8 +156,8 @@ export default function MediaPage() {
                 {notification && (
                   <div
                     className={`p-4 rounded-xl border-2 flex items-start gap-3 ${notification.type === 'success'
-                        ? 'bg-[#6cc24a]/10 border-[#6cc24a] text-[#00653b]'
-                        : 'bg-red-50 border-red-300 text-red-800'
+                      ? 'bg-[#6cc24a]/10 border-[#6cc24a] text-[#00653b]'
+                      : 'bg-red-50 border-red-300 text-red-800'
                       }`}
                   >
                     {notification.type === 'success' && <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />}
