@@ -322,6 +322,7 @@ export default function ContactForm() {
                 <div className="flex justify-center">
                   <Turnstile
                     siteKey="0x4AAAAAACBfpoWtpO2-JGTD"
+                    theme="light"
                     onSuccess={(token) => setTurnstileToken(token)}
                     onError={() => setTurnstileToken("")}
                     onExpire={() => setTurnstileToken("")}
