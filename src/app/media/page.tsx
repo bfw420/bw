@@ -142,12 +142,13 @@ export default function MediaPage() {
                 </div>
 
                 {/* Turnstile */}
-                <div className="flex justify-center">
+                <div className="flex justify-center" data-theme="light">
                   <Turnstile
                     siteKey="0x4AAAAAACBfpoWtpO2-JGTD"
                     onSuccess={setTurnstileToken}
                     onError={() => setTurnstileToken('')}
                     onExpire={() => setTurnstileToken('')}
+                    {...({ options: { theme: 'light' } } as any)}
                   />
                 </div>
 
