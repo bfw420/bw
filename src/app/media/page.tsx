@@ -5,7 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Newspaper, Calendar, FileText, Download, Image as ImageIcon, Folder, Mail, Phone, Copy, CheckCircle } from "lucide-react";
+import { Newspaper, FileText, Download, Image as ImageIcon, Folder, Mail, Phone, Copy, CheckCircle } from "lucide-react";
 import { Turnstile } from '@marsidev/react-turnstile';
 import confetti from 'canvas-confetti';
 
@@ -148,7 +148,7 @@ export default function MediaPage() {
                     onSuccess={setTurnstileToken}
                     onError={() => setTurnstileToken('')}
                     onExpire={() => setTurnstileToken('')}
-                    options={{ theme: 'light' }}
+                    options={{ theme: 'light' as const }}
                   />
                 </div>
 
