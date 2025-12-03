@@ -5,6 +5,8 @@ import Footer from '@/components/Footer';
 import NewsFilter from '@/components/NewsFilter';
 import Link from 'next/link';
 
+export const revalidate = 60;
+
 export const metadata = {
   title: 'News & Updates | Dr Brian Walker MLC',
   description: 'Latest news, parliamentary updates, and advocacy work from Dr Brian Walker MLC - Your Doctor in Parliament',

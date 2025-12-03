@@ -8,6 +8,8 @@ import Footer from '@/components/Footer';
 import ShareButton from '@/components/ShareButton';
 import NewsletterSignup from '@/components/NewsletterSignup';
 
+export const revalidate = 60;
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
