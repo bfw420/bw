@@ -16,7 +16,7 @@ export const metadata = {
 export default async function NewsPage() {
   const [featuredPosts, regularPosts] = await Promise.all([
     getFeaturedPosts(2),
-    getPosts(50) // Fetch more posts for filtering
+    getPosts(100) // Fetch more posts for filtering
   ]);
 
   // Filter out featured posts from regular posts
@@ -35,7 +35,7 @@ export default async function NewsPage() {
                 News & Updates
               </h1>
               <p className="text-xl md:text-2xl text-white/90">
-                Stay informed on parliamentary work, healthcare advocacy, and policy reforms
+                Stay informed on my parliamentary work, healthcare advocacy, and policy reforms
               </p>
             </div>
           </div>
