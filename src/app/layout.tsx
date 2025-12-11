@@ -76,6 +76,11 @@ export const metadata: Metadata = {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
   },
   category: "Politics & Government",
+  icons: {
+    icon: "/favicon-nav.svg",
+    shortcut: "/favicon-nav.svg",
+    apple: "/favicon-nav.svg",
+  },
 };
 
 export default function RootLayout({
