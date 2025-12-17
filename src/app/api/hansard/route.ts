@@ -19,9 +19,22 @@ export async function GET() {
     });
 
     if (!response.ok) {
-      console.error(`Hansard API error: ${response.status} ${response.statusText}`);
+      const errorText = await response.text();
+      console.error(`Hansard API error: ${response.status} ${response.statusText} - ${errorText}`);
+      
+      let errorDetails;
+      try {
+        errorDetails = JSON.parse(errorText);
+      } catch {
+        errorDetails = { message: errorText };
+      }
+
       return NextResponse.json(
-        { error: "Failed to fetch Hansard records" },
+        { 
+          error: "Failed to fetch Hansard records", 
+          details: errorDetails,
+          upstreamStatus: response.status
+        },
         { status: response.status }
       );
     }

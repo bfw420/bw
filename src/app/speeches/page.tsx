@@ -37,7 +37,14 @@ export default function SpeechesPage() {
         const response = await fetch("/api/hansard");
 
         if (!response.ok) {
-          throw new Error("Failed to fetch Hansard records");
+          const errData = await response.json().catch(() => ({}));
+          const detailMsg = errData.details?.message || JSON.stringify(errData.details) || "";
+
+          throw new Error(
+            (errData.error || "Failed to fetch Hansard records") +
+            (detailMsg ? `\nDetails: ${detailMsg}` : "") +
+            (errData.upstreamStatus ? ` (Status: ${errData.upstreamStatus})` : "")
+          );
         }
 
         const data = await response.json();
@@ -282,7 +289,7 @@ export default function SpeechesPage() {
           {/* Error State */}
           {error && (
             <div className="bg-red-50 border border-red-200 rounded-xl p-6 text-center">
-              <p className="text-red-800 font-semibold">Error: {error}</p>
+              <p className="text-red-800 font-semibold whitespace-pre-wrap break-words">Error: {error}</p>
             </div>
           )}
 

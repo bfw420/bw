@@ -44,7 +44,7 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 export default function AboutPage() {
-  const [selectedImage, setSelectedImage] = useState<{src: string, alt: string} | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ src: string, alt: string } | null>(null);
   const [shuffledImages, setShuffledImages] = useState(galleryImages);
 
   // Shuffle images only on client side after hydration
@@ -103,7 +103,7 @@ export default function AboutPage() {
               sizes="(max-width: 768px) 100vw, 1024px"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            {/* <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div> */}
           </div>
 
           {/* WHY I SERVE Section */}
@@ -356,10 +356,10 @@ export default function AboutPage() {
           {/* Downloads Button Section */}
           <div className="mt-16 text-center">
             <a
-              href="/downloads"
+              href="/media"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00653b] to-[#6cc24a] text-white font-semibold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
-              📥 View Downloads & Resources
+              🎬 View Media & Gallery
             </a>
           </div>
         </div>
