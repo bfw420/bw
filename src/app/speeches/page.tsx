@@ -16,6 +16,7 @@ interface HansardRecord {
   summary: string;
   house: string;
   text: string;
+  blog_url?: string;
 }
 
 export default function SpeechesPage() {
@@ -157,12 +158,10 @@ export default function SpeechesPage() {
     }
   };
 
-  // Format date by adding 1 day
+  // Format date
   const formatPerthDate = (dateString: string) => {
     const date = new Date(dateString);
-    // Add 1 day (24 hours)
-    const adjustedDate = new Date(date.getTime() + (24 * 60 * 60 * 1000));
-    return adjustedDate.toLocaleDateString("en-AU", {
+    return date.toLocaleDateString("en-AU", {
       year: "numeric",
       month: "short",
       day: "numeric",
@@ -346,7 +345,7 @@ export default function SpeechesPage() {
                           </td>
                           <td className="px-6 py-4">
                             <a
-                              href={record.subjecturl}
+                              href={record.blog_url || record.subjecturl}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="text-[#00653b] hover:text-[#6cc24a] font-semibold transition-colors"
@@ -363,15 +362,26 @@ export default function SpeechesPage() {
                             </span>
                           </td>
                           <td className="px-6 py-4 text-center">
-                            <a
-                              href={record.subjecturl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-[#00653b] hover:text-[#6cc24a] transition-colors inline-flex items-center"
-                              aria-label="View Hansard record"
-                            >
-                              <ExternalLink className="w-5 h-5" />
-                            </a>
+                            <div className="flex flex-row items-center justify-end gap-2">
+                              {record.blog_url && (
+                                <a
+                                  href={record.blog_url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center justify-center px-2.5 py-1.5 rounded text-xs font-medium text-[#00653b] bg-[#00653b]/10 hover:bg-[#00653b]/20 transition-colors"
+                                >
+                                  Blog
+                                </a>
+                              )}
+                              <a
+                                href={record.subjecturl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center px-2.5 py-1.5 rounded text-xs font-medium text-[#549637] bg-[#6cc24a]/10 hover:bg-[#6cc24a]/20 transition-colors"
+                              >
+                                Hansard
+                              </a>
+                            </div>
                           </td>
                         </tr>
                       ))}

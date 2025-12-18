@@ -44,12 +44,10 @@ export default function RecentSpeechesSection() {
     fetchSpeeches();
   }, []);
 
-  // Format date by adding 1 day
+  // Format date
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    // Add 1 day (24 hours)
-    const adjustedDate = new Date(date.getTime() + (24 * 60 * 60 * 1000));
-    return adjustedDate.toLocaleDateString("en-AU", {
+    return date.toLocaleDateString("en-AU", {
       year: "numeric",
       month: "short",
       day: "numeric",
