@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Search, ArrowUpDown, Filter, Loader2, ExternalLink } from "lucide-react";
+import { Search, ArrowUpDown, Filter, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface HansardRecord {
@@ -134,6 +134,11 @@ export default function SpeechesPage() {
         aValue = new Date(a.date).getTime();
         bValue = new Date(b.date).getTime();
       }
+
+      // Handle undefined values
+      if (aValue === undefined && bValue === undefined) return 0;
+      if (aValue === undefined) return sortDirection === "asc" ? 1 : -1;
+      if (bValue === undefined) return sortDirection === "asc" ? -1 : 1;
 
       if (aValue < bValue) return sortDirection === "asc" ? -1 : 1;
       if (aValue > bValue) return sortDirection === "asc" ? 1 : -1;
