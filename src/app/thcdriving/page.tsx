@@ -124,7 +124,7 @@ const upperHouse: MP[] = [
 // Combine all target emails for CC
 const ccEmails = [...ministers, ...upperHouse].map(m => m.email).join(',');
 
-const SocialLink = ({ href, icon: Icon, label }: { href: string; icon: any; label: string }) => (
+const SocialLink = ({ href, icon: Icon, label }: { href: string; icon: React.ElementType; label: string }) => (
     <a
         href={href}
         target="_blank"
@@ -330,7 +330,7 @@ Thank you for your time.”`;
                                         <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none w-5 h-5" />
                                     </div>
                                     <p className="text-xs text-gray-500 mt-2">
-                                        Don't know your electorate? <a href="https://www.elections.wa.gov.au/electorates" target="_blank" rel="noopener noreferrer" className="text-[#00653b] hover:underline">Check here</a>
+                                        Don&apos;t know your electorate? <a href="https://www.elections.wa.gov.au/electorates" target="_blank" rel="noopener noreferrer" className="text-[#00653b] hover:underline">Check here</a>
                                     </p>
                                 </div>
 
@@ -344,8 +344,8 @@ Thank you for your time.”`;
                                                 <button
                                                     onClick={() => setActiveTab('email')}
                                                     className={`p-6 rounded-xl border-2 transition-all flex flex-col items-center justify-center gap-2 ${activeTab === 'email'
-                                                            ? 'border-[#00653b] bg-emerald-50 text-[#00653b] ring-1 ring-[#00653b]'
-                                                            : 'border-gray-200 hover:border-emerald-200 hover:bg-gray-50 text-gray-600'
+                                                        ? 'border-[#00653b] bg-emerald-50 text-[#00653b] ring-1 ring-[#00653b]'
+                                                        : 'border-gray-200 hover:border-emerald-200 hover:bg-gray-50 text-gray-600'
                                                         }`}
                                                 >
                                                     <Mail className={`w-8 h-8 ${activeTab === 'email' ? 'text-[#00653b]' : 'text-gray-400'}`} />
@@ -354,8 +354,8 @@ Thank you for your time.”`;
                                                 <button
                                                     onClick={() => setActiveTab('phone')}
                                                     className={`p-6 rounded-xl border-2 transition-all flex flex-col items-center justify-center gap-2 ${activeTab === 'phone'
-                                                            ? 'border-[#00653b] bg-emerald-50 text-[#00653b] ring-1 ring-[#00653b]'
-                                                            : 'border-gray-200 hover:border-emerald-200 hover:bg-gray-50 text-gray-600'
+                                                        ? 'border-[#00653b] bg-emerald-50 text-[#00653b] ring-1 ring-[#00653b]'
+                                                        : 'border-gray-200 hover:border-emerald-200 hover:bg-gray-50 text-gray-600'
                                                         }`}
                                                 >
                                                     <Phone className={`w-8 h-8 ${activeTab === 'phone' ? 'text-[#00653b]' : 'text-gray-400'}`} />
@@ -372,7 +372,7 @@ Thank you for your time.”`;
                                                 <div className="bg-gradient-to-br from-emerald-50 to-white border border-emerald-100 rounded-xl p-6 text-center">
                                                     <h3 className="text-xl font-bold text-gray-900 mb-2">Ready to send?</h3>
                                                     <p className="text-gray-600 mb-6 max-w-lg mx-auto">
-                                                        Click the button below to open your email app. It will automatically fill in your MP's address, plus valuable CCs for maximum impact.
+                                                        Click the button below to open your email app. It will automatically fill in your MP&apos;s address, plus valuable CCs for maximum impact.
                                                     </p>
                                                     <a
                                                         href={`mailto:${selectedMP.email}?cc=${ccEmails}&subject=THC Driving Reform&body=${encodeURIComponent(getTemplate1(selectedMP.name))}`}
@@ -383,7 +383,7 @@ Thank you for your time.”`;
                                                         OPEN IN EMAIL APP
                                                     </a>
                                                     <p className="text-xs text-gray-400 mt-4">
-                                                        (We'll CC the Upper House MPs & Ministers for you automatically!)
+                                                        (We&apos;ll CC the Upper House MPs & Ministers for you automatically!)
                                                     </p>
                                                 </div>
 
