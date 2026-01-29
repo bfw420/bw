@@ -215,7 +215,7 @@ Thank you for your time.”`;
                     <div className="absolute inset-0 bg-[url('/images/assembly.jpg')] bg-cover bg-center opacity-10"></div>
                     <div className="container mx-auto px-4 relative z-10 max-w-4xl text-center">
                         <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-                            We have a historic opportunity!
+                            We have an historic opportunity!
                         </h1>
                         <p className="text-xl md:text-2xl font-medium text-emerald-100 max-w-2xl mx-auto">
                             Your MP Can Fix This. Tell Them Now 📢
@@ -255,7 +255,7 @@ Thank you for your time.”`;
                                 </div>
 
                                 <p>
-                                    Tasmania fixed this in 2023. Victoria followed in 2025. Both now allow courts to consider whether a driver was actually impaired, not merely whether traces of THC are detectable in their system. The law recognises what doctors, patients, and neuroscience already know: the presence of a substance is not the same as impairment.
+                                    Current WA road law does not distinguish between prescribed medical use and illicit use. It does not test for impairment. It punishes prescription-holding patients for traces of THC that may linger in their system long after any effect has worn off. Both Tasmania and Victoria have driving laws that consider medicinal cannabis. The law recognises what doctors, patients, and neuroscience already know: the presence of a substance is not the same as impairment.
                                 </p>
 
                                 <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">West Australia is about to have the same opportunity.</h3>
